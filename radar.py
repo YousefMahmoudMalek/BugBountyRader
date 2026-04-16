@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-import google.generativeai as genai
+from google import genai
 import sys
 import re
 from dotenv import load_dotenv
@@ -44,15 +44,19 @@ def extract_rating(ai_text):
 
 def analyze_with_ai(program, platform):
     if not GEMINI_API_KEY:
-        return "AI analysis skipped (No API Key).", 10 # Default to high rating to avoid filtering if no AI
+        return "AI analysis skipped (No API Key).", 10
 
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-1.5-flash')
-
-    prompt = f"{GEMINI_PROMPT}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
+    # Initialize New SDK Client
+    client = genai.Client(api_key=GEMINI_API_KEY)
+    
+    full_prompt = f"{GEMINI_PROMPT}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
     
     try:
-        response = model.generate_content(prompt)
+        # Using Gemini 2.0 Flash
+        response = client.models.generate_content(
+            model='gemini-2.0-flash',
+            contents=full_prompt
+        )
         text = response.text
         rating = extract_rating(text)
         return text, rating
@@ -62,6 +66,9 @@ def analyze_with_ai(program, platform):
 
 def send_discord_alert(message):
     if not DISCORD_WEBHOOK_URL:
+        # Note: Local error print for clarity
+        if "--test" in sys.argv:
+            print("  [!] Discord skipped (No DISCORD_WEBHOOK_URL environment variable found)")
         return
     payload = {"content": message}
     try:
@@ -71,6 +78,8 @@ def send_discord_alert(message):
 
 def send_whatsapp_alert(message):
     if not (WHATSAPP_PHONE and WHATSAPP_API_KEY):
+        if "--test" in sys.argv:
+            print("  [!] WhatsApp skipped (No WHATSAPP_PHONE or WHATSAPP_API_KEY found)")
         return
     url = "https://api.callmebot.com/whatsapp.php"
     params = {
@@ -87,19 +96,14 @@ def run_test():
     print("Running notification test...")
     test_msg = "🔔 **BugBountyRadar Connection Test**\nYour alert setup is working correctly! 🚀"
     
-    if DISCORD_WEBHOOK_URL:
-        print("- Sending Discord test...")
-        send_discord_alert(test_msg)
-    else:
-        print("- Discord skipped (URL not found).")
+    send_discord_alert(test_msg)
+    send_whatsapp_alert(test_msg)
     
-    if WHATSAPP_PHONE and WHATSAPP_API_KEY:
-        print("- Sending WhatsApp test...")
-        send_whatsapp_alert(test_msg)
-    else:
-        print("- WhatsApp skipped (Phone/API Key not found).")
-    
-    print("Test finished.")
+    print("\nTest finished.")
+    print("-" * 30)
+    print("NOTE: If you added secrets to GitHub, they will ONLY work when running on GitHub.")
+    print("To test locally, you need to add them to a '.env' file in this folder.")
+    print("-" * 30)
 
 def main():
     # Check for test mode
