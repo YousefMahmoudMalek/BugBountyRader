@@ -56,8 +56,12 @@ def analyze_with_ai(program, platform):
     client = genai.Client(api_key=GEMINI_API_KEY)
     full_prompt = f"{GEMINI_PROMPT}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
     
-    models_to_try = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-flash-002']
-    max_retries = 2
+    models_to_try = [
+        'models/gemini-2.0-flash',
+        'models/gemini-2.5-flash',
+        'models/gemini-flash-latest'
+    ]
+    max_retries = 3
     
     for model_name in models_to_try:
         retries = 0
@@ -80,7 +84,7 @@ def analyze_with_ai(program, platform):
                 
                 if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str or "QUOTA" in error_str:
                     retries += 1
-                    wait_time = 10 * retries
+                    wait_time = 15 * retries
                     print(f"  Quota hit (429). Retrying in {wait_time}s... (Attempt {retries}/{max_retries})")
                     time.sleep(wait_time)
                 elif "404" in error_str or "NOT_FOUND" in error_str:
