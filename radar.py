@@ -115,16 +115,37 @@ def send_whatsapp_alert(message):
         print(f"Error sending WhatsApp alert: {e}")
 
 def run_test():
-    print("Running notification test...")
-    test_msg = "🔔 **BugBountyRadar Connection Test**\nYour alert setup is working correctly! 🚀"
+    print("Running LIVE notification test...")
+    print("Fetching latest programs to provide real AI analysis samples...")
     
-    send_discord_alert(test_msg)
-    send_whatsapp_alert(test_msg)
+    for platform, url in DATA_SOURCES.items():
+        print(f"  Testing {platform}...")
+        programs = fetch_programs(platform, url)
+        if not programs:
+            print(f"  [!] No programs found for {platform}")
+            continue
+            
+        # Take the very latest program
+        latest = programs[0]
+        handle = latest.get("handle") or latest.get("name")
+        print(f"  Latest program on {platform}: {handle}")
+        
+        # Analyze with AI
+        ai_summary, rating = analyze_with_ai(latest, platform)
+        
+        test_msg = f"🧪 **BugBountyRadar LIVE TEST**\n"
+        test_msg += f"**Platform:** {platform}\n"
+        test_msg += f"**Program:** {handle} (Rating: {rating}/10)\n"
+        test_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
+        test_msg += f"\n🚀 *This was a simulated alert for testing.*"
+        
+        send_discord_alert(test_msg)
+        send_whatsapp_alert(test_msg)
     
     print("\nTest finished.")
     print("-" * 30)
-    print("NOTE: If you added secrets to GitHub, they will ONLY work when running on GitHub.")
-    print("To test locally, you need to add them to a '.env' file in this folder.")
+    print("NOTE: If you didn't receive notifications, check that your keys are in your '.env' file.")
+    print("GitHub Actions secrets ONLY work when the script runs in the cloud.")
     print("-" * 30)
 
 def main():
