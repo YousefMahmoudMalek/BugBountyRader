@@ -154,6 +154,8 @@ def main():
     new_programs_found = 0
     is_initial_run = len(state["notified_handles"]) == 0
 
+    print(f"\n--- BugBountyRadar Check Started: {time.strftime('%Y-%m-%d %H:%M:%S')} ---")
+
     if is_initial_run:
         print("Initial run. Seeding state...")
 
