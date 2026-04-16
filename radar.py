@@ -4,6 +4,7 @@ import requests
 from google import genai
 import sys
 import re
+import time
 from dotenv import load_dotenv
 from config import GEMINI_PROMPT, DATA_SOURCES, STATE_FILE, MIN_RATING
 
@@ -46,27 +47,42 @@ def analyze_with_ai(program, platform):
     if not GEMINI_API_KEY:
         return "AI analysis skipped (No API Key).", 10
 
-    # Initialize New SDK Client
     client = genai.Client(api_key=GEMINI_API_KEY)
-    
     full_prompt = f"{GEMINI_PROMPT}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
     
-    try:
-        # Using Gemini 2.0 Flash
-        response = client.models.generate_content(
-            model='gemini-2.0-flash',
-            contents=full_prompt
-        )
-        text = response.text
-        rating = extract_rating(text)
-        return text, rating
-    except Exception as e:
-        print(f"AI analysis failed for {platform} program: {e}")
-        return f"AI analysis failed: {e}", 0
+    # Implementation of Fallback and Retries
+    models_to_try = ['gemini-2.0-flash', 'gemini-1.5-flash']
+    max_retries = 2
+    
+    for model_name in models_to_try:
+        retries = 0
+        while retries < max_retries:
+            try:
+                print(f"  Attempting AI analysis with {model_name}...")
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=full_prompt
+                )
+                text = response.text
+                rating = extract_rating(text)
+                return text, rating
+            except Exception as e:
+                error_str = str(e).upper()
+                if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
+                    retries += 1
+                    wait_time = 30 * retries
+                    print(f"  Rate limit hit (429). Retrying in {wait_time}s... (Attempt {retries}/{max_retries})")
+                    time.sleep(wait_time)
+                else:
+                    print(f"  AI error with {model_name}: {e}")
+                    break # Try next model if it's not a rate limit error
+        
+        print(f"  {model_name} failed or timed out. Trying next model if available...")
+
+    return "AI analysis failed after multiple attempts and fallbacks.", 0
 
 def send_discord_alert(message):
     if not DISCORD_WEBHOOK_URL:
-        # Note: Local error print for clarity
         if "--test" in sys.argv:
             print("  [!] Discord skipped (No DISCORD_WEBHOOK_URL environment variable found)")
         return
@@ -106,7 +122,6 @@ def run_test():
     print("-" * 30)
 
 def main():
-    # Check for test mode
     if "--test" in sys.argv:
         run_test()
         return
@@ -137,7 +152,6 @@ def main():
 
             print(f"New program found: {handle} on {platform}")
             
-            # AI Analysis and Rating
             ai_summary, rating = analyze_with_ai(program, platform)
             
             if rating < MIN_RATING:
@@ -146,17 +160,14 @@ def main():
                 save_state(state)
                 continue
 
-            # Format message
             alert_msg = f"🚀 **New Bug Bounty Program!**\n"
             alert_msg += f"**Platform:** {platform}\n"
             alert_msg += f"**Program:** {handle}\n"
             alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
             
-            # Send alerts
             send_discord_alert(alert_msg)
             send_whatsapp_alert(alert_msg)
             
-            # Update state
             state["notified_handles"].append(unique_id)
             new_programs_found += 1
             save_state(state)
