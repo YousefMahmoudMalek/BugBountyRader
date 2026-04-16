@@ -2,7 +2,13 @@ name: BugBounty Monitor
 
 on:
   schedule:
-    - cron: '0 * * * *' # Every hour
+    # -------------------------------------------------------------
+    # CUSTOMIZE FREQUENCY HERE:
+    # '0 * * * *'      = Every Hour (Default)
+    # '*/30 * * * *'   = Every 30 Minutes
+    # '*/15 * * * *'   = Every 15 Minutes
+    # -------------------------------------------------------------
+    - cron: '0 * * * *'
   workflow_dispatch: # Allows manual run
 
 jobs:

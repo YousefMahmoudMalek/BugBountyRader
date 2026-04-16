@@ -2,24 +2,19 @@ import os
 import json
 import requests
 import google.generativeai as genai
+import sys
+import re
 from dotenv import load_dotenv
+from config import GEMINI_PROMPT, DATA_SOURCES, STATE_FILE, MIN_RATING
 
 # Load environment variables
 load_dotenv()
 
-# Configuration
+# Secrets
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
-WHATSAPP_PHONE = os.getenv("WHATSAPP_PHONE")  # For CallMeBot
-WHATSAPP_API_KEY = os.getenv("WHATSAPP_API_KEY") # For CallMeBot
-
-DATA_SOURCES = {
-    "HackerOne": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
-    "Bugcrowd": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/bugcrowd_data.json",
-    "Intigriti": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/intigriti_data.json"
-}
-
-STATE_FILE = "state.json"
+WHATSAPP_PHONE = os.getenv("WHATSAPP_PHONE")
+WHATSAPP_API_KEY = os.getenv("WHATSAPP_API_KEY")
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -33,41 +28,41 @@ def save_state(state):
 
 def fetch_programs(platform, url):
     try:
-        response = requests.get(url, timeout=10)
+        response = requests.get(url, timeout=15)
         response.raise_for_status()
         return response.json()
     except Exception as e:
         print(f"Error fetching {platform} data: {e}")
         return []
 
+def extract_rating(ai_text):
+    """Extracts X from 'RATING: X/10' format."""
+    match = re.search(r"RATING:\s*(\d+)/10", ai_text, re.IGNORECASE)
+    if match:
+        return int(match.group(1))
+    return 0
+
 def analyze_with_ai(program, platform):
     if not GEMINI_API_KEY:
-        return "AI analysis skipped (No API Key)."
+        return "AI analysis skipped (No API Key).", 10 # Default to high rating to avoid filtering if no AI
 
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel('gemini-1.5-flash')
 
-    prompt = f"""
-    Analyze the following bug bounty program from {platform} and provide a short summary.
-    Include:
-    1. A rating from 1 to 10 (based on potential rewards and program reputation if known).
-    2. Key highlights (e.g., target types, specific high-pay rewards).
-    3. A brief "Should I hunt?" advice.
-
-    Program Data:
-    {json.dumps(program)[:3000]}  # Limit data sent to AI
-    """
+    prompt = f"{GEMINI_PROMPT}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
     
     try:
         response = model.generate_content(prompt)
-        return response.text
+        text = response.text
+        rating = extract_rating(text)
+        return text, rating
     except Exception as e:
-        return f"AI analysis failed: {e}"
+        print(f"AI analysis failed for {platform} program: {e}")
+        return f"AI analysis failed: {e}", 0
 
 def send_discord_alert(message):
     if not DISCORD_WEBHOOK_URL:
         return
-    
     payload = {"content": message}
     try:
         requests.post(DISCORD_WEBHOOK_URL, json=payload, timeout=10)
@@ -77,8 +72,6 @@ def send_discord_alert(message):
 def send_whatsapp_alert(message):
     if not (WHATSAPP_PHONE and WHATSAPP_API_KEY):
         return
-    
-    # CallMeBot API format: https://api.callmebot.com/whatsapp.php?phone=[phone]&text=[message]&apikey=[apikey]
     url = "https://api.callmebot.com/whatsapp.php"
     params = {
         "phone": WHATSAPP_PHONE,
@@ -90,7 +83,30 @@ def send_whatsapp_alert(message):
     except Exception as e:
         print(f"Error sending WhatsApp alert: {e}")
 
+def run_test():
+    print("Running notification test...")
+    test_msg = "🔔 **BugBountyRadar Connection Test**\nYour alert setup is working correctly! 🚀"
+    
+    if DISCORD_WEBHOOK_URL:
+        print("- Sending Discord test...")
+        send_discord_alert(test_msg)
+    else:
+        print("- Discord skipped (URL not found).")
+    
+    if WHATSAPP_PHONE and WHATSAPP_API_KEY:
+        print("- Sending WhatsApp test...")
+        send_whatsapp_alert(test_msg)
+    else:
+        print("- WhatsApp skipped (Phone/API Key not found).")
+    
+    print("Test finished.")
+
 def main():
+    # Check for test mode
+    if "--test" in sys.argv:
+        run_test()
+        return
+
     state = load_state()
     new_programs_found = 0
     is_initial_run = len(state["notified_handles"]) == 0
@@ -117,14 +133,20 @@ def main():
 
             print(f"New program found: {handle} on {platform}")
             
-            # AI Analysis
-            ai_summary = analyze_with_ai(program, platform)
+            # AI Analysis and Rating
+            ai_summary, rating = analyze_with_ai(program, platform)
             
+            if rating < MIN_RATING:
+                print(f"Skipping {handle} (Rating {rating} < Min {MIN_RATING})")
+                state["notified_handles"].append(unique_id)
+                save_state(state)
+                continue
+
             # Format message
             alert_msg = f"🚀 **New Bug Bounty Program!**\n"
             alert_msg += f"**Platform:** {platform}\n"
             alert_msg += f"**Program:** {handle}\n"
-            alert_msg += f"--- AI SUMMARY ---\n{ai_summary}\n"
+            alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
             
             # Send alerts
             send_discord_alert(alert_msg)
@@ -133,8 +155,6 @@ def main():
             # Update state
             state["notified_handles"].append(unique_id)
             new_programs_found += 1
-            
-            # Save state after each to avoid losing progress
             save_state(state)
 
     if is_initial_run:
