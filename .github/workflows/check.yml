@@ -9,6 +9,8 @@ on:
     # '*/15 * * * *'   = Every 15 Minutes
     # -------------------------------------------------------------
     - cron: '*/15 * * * *'
+  push:
+    branches: [ main ]
   workflow_dispatch: # Allows manual run
 
 permissions:
