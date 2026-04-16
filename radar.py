@@ -51,7 +51,8 @@ def analyze_with_ai(program, platform):
     full_prompt = f"{GEMINI_PROMPT}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
     
     # Implementation of Fallback and Retries
-    models_to_try = ['gemini-2.0-flash', 'gemini-1.5-flash']
+    # Using more specific IDs to avoid 404 errors in certain regions
+    models_to_try = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-flash-002']
     max_retries = 2
     
     for model_name in models_to_try:
@@ -68,14 +69,19 @@ def analyze_with_ai(program, platform):
                 return text, rating
             except Exception as e:
                 error_str = str(e).upper()
-                if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
+                # Handle Quota / Rate Limits
+                if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str or "QUOTA" in error_str:
                     retries += 1
-                    wait_time = 30 * retries
-                    print(f"  Rate limit hit (429). Retrying in {wait_time}s... (Attempt {retries}/{max_retries})")
+                    wait_time = 10 * retries # Shorter wait for GitHub Actions
+                    print(f"  Quota hit (429). Retrying in {wait_time}s... (Attempt {retries}/{max_retries})")
                     time.sleep(wait_time)
+                # Handle Model Not Found
+                elif "404" in error_str or "NOT_FOUND" in error_str:
+                    print(f"  Model {model_name} not available in this region. Skipping...")
+                    break
                 else:
                     print(f"  AI error with {model_name}: {e}")
-                    break # Try next model if it's not a rate limit error
+                    break 
         
         print(f"  {model_name} failed or timed out. Trying next model if available...")
 
