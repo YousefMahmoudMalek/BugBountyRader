@@ -28,13 +28,19 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 def fetch_programs(platform, url):
-    try:
-        response = requests.get(url, timeout=15)
-        response.raise_for_status()
-        return response.json()
-    except Exception as e:
-        print(f"Error fetching {platform} data: {e}")
-        return []
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(url, timeout=20)
+            response.raise_for_status()
+            return response.json()
+        except Exception as e:
+            if attempt < max_retries - 1:
+                print(f"  Warning: Fetching {platform} failed (Attempt {attempt+1}/{max_retries}). Retrying in 5s...")
+                time.sleep(5)
+            else:
+                print(f"Error fetching {platform} data: {e}")
+                return []
 
 def extract_rating(ai_text):
     """Extracts X from 'RATING: X/10' format."""
@@ -180,6 +186,13 @@ def main():
             print(f"New program found: {handle} on {platform}")
             
             ai_summary, rating = analyze_with_ai(program, platform)
+            
+            # If AI fails or is skipped, we still notify the user
+            is_serious_failure = "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper()
+            
+            # If AI fails, we treat it as rating 10 to ensure it passes the filter
+            if is_serious_failure:
+                rating = 10
             
             if rating < MIN_RATING:
                 print(f"Skipping {handle} (Rating {rating})")

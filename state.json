@@ -1,6 +1,5 @@
 {
   "notified_handles": [
-    "HackerOne:clear_street_vdp",
     "HackerOne:getyourguide_vdp",
     "HackerOne:tbs-sct",
     "HackerOne:bose_vdp",
@@ -455,7 +454,6 @@
     "HackerOne:rails",
     "HackerOne:django",
     "HackerOne:security",
-    "Bugcrowd:CoinDesk Data - Data API ",
     "Bugcrowd:Acorns Grow, Inc.",
     "Bugcrowd:Afterpay Bug Bounty Program",
     "Bugcrowd:Aiven Managed Bug Bounty",
@@ -669,7 +667,6 @@
     "Bugcrowd:YNAB",
     "Bugcrowd:Zendesk Managed Bug Bounty Engagement",
     "Bugcrowd:Zola Managed Bug Bounty ",
-    "Intigriti:amd",
     "Intigriti:algemeendagblad",
     "Intigriti:altera",
     "Intigriti:anacondavdp",
