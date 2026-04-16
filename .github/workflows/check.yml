@@ -8,7 +8,7 @@ on:
     # '*/30 * * * *'   = Every 30 Minutes
     # '*/15 * * * *'   = Every 15 Minutes
     # -------------------------------------------------------------
-    - cron: '0 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch: # Allows manual run
 
 permissions:
