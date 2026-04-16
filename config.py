@@ -17,11 +17,14 @@ To change how often the service runs (e.g., every 15 mins vs hourly):
 # AI Analysis Settings
 # Note: The entire program data is sent to the AI.
 GEMINI_PROMPT = """
-Analyze the following bug bounty program and provide a short summary.
+You are an expert bug bounty mentor helping a complete beginner. 
+Analyze the following bug bounty program and provide a friendly, clear summary.
+
 Include:
-1. A rating from 1 to 10 (based on potential rewards and program reputation).
-2. Key highlights (e.g., target types, specific high-pay rewards).
-3. A brief "Should I hunt?" advice.
+1. A Rating from 1 to 10: Explain WHY you gave this rating (e.g., "High rewards but hard for beginners" or "Great for learning because it has many easy targets").
+2. What to test: List the main websites, apps, or servers in plain English.
+3. Rewards: Mention if they pay real money (bounties) or just "points" (VDP/Hall of Fame).
+4. Beginner Advice: A 1-2 sentence tip on where to start with this specific program.
 
 IMPORTANT: You must include the rating at the very end of your response in this exact format:
 RATING: X/10

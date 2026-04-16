@@ -50,8 +50,6 @@ def analyze_with_ai(program, platform):
     client = genai.Client(api_key=GEMINI_API_KEY)
     full_prompt = f"{GEMINI_PROMPT}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
     
-    # Implementation of Fallback and Retries
-    # Using more specific IDs to avoid 404 errors in certain regions
     models_to_try = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-flash-002']
     max_retries = 2
     
@@ -69,13 +67,16 @@ def analyze_with_ai(program, platform):
                 return text, rating
             except Exception as e:
                 error_str = str(e).upper()
-                # Handle Quota / Rate Limits
+                # Debug info for invalid key
+                if "API_KEY_INVALID" in error_str or "INVALID_ARGUMENT" in error_str:
+                    masked_key = f"{GEMINI_API_KEY[:4]}...{GEMINI_API_KEY[-4:]}" if GEMINI_API_KEY else "NONE"
+                    print(f"  [!] API Key Error. Current key being used: {masked_key}")
+                
                 if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str or "QUOTA" in error_str:
                     retries += 1
-                    wait_time = 10 * retries # Shorter wait for GitHub Actions
+                    wait_time = 10 * retries
                     print(f"  Quota hit (429). Retrying in {wait_time}s... (Attempt {retries}/{max_retries})")
                     time.sleep(wait_time)
-                # Handle Model Not Found
                 elif "404" in error_str or "NOT_FOUND" in error_str:
                     print(f"  Model {model_name} not available in this region. Skipping...")
                     break
@@ -90,7 +91,7 @@ def analyze_with_ai(program, platform):
 def send_discord_alert(message):
     if not DISCORD_WEBHOOK_URL:
         if "--test" in sys.argv:
-            print("  [!] Discord skipped (No DISCORD_WEBHOOK_URL environment variable found)")
+            print("  [!] Discord skipped (No DISCORD_WEBHOOK_URL env variable)")
         return
     payload = {"content": message}
     try:
@@ -125,28 +126,24 @@ def run_test():
             print(f"  [!] No programs found for {platform}")
             continue
             
-        # Take the very latest program
         latest = programs[0]
         handle = latest.get("handle") or latest.get("name")
+        prog_url = latest.get("url") or "Check platform for link"
         print(f"  Latest program on {platform}: {handle}")
         
-        # Analyze with AI
         ai_summary, rating = analyze_with_ai(latest, platform)
         
         test_msg = f"🧪 **BugBountyRadar LIVE TEST**\n"
         test_msg += f"**Platform:** {platform}\n"
         test_msg += f"**Program:** {handle} (Rating: {rating}/10)\n"
+        test_msg += f"**Link:** {prog_url}\n"
         test_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
-        test_msg += f"\n🚀 *This was a simulated alert for testing.*"
+        test_msg += f"\n🚀 *Simulated alert for testing.*"
         
         send_discord_alert(test_msg)
         send_whatsapp_alert(test_msg)
     
     print("\nTest finished.")
-    print("-" * 30)
-    print("NOTE: If you didn't receive notifications, check that your keys are in your '.env' file.")
-    print("GitHub Actions secrets ONLY work when the script runs in the cloud.")
-    print("-" * 30)
 
 def main():
     if "--test" in sys.argv:
@@ -158,7 +155,7 @@ def main():
     is_initial_run = len(state["notified_handles"]) == 0
 
     if is_initial_run:
-        print("Initial run detected. Seeding state with existing programs without notifying...")
+        print("Initial run. Seeding state...")
 
     for platform, url in DATA_SOURCES.items():
         print(f"Checking {platform}...")
@@ -166,6 +163,7 @@ def main():
         
         for program in programs:
             handle = program.get("handle") or program.get("name")
+            prog_url = program.get("url") or "Check platform for link"
             if not handle:
                 continue
 
@@ -182,7 +180,7 @@ def main():
             ai_summary, rating = analyze_with_ai(program, platform)
             
             if rating < MIN_RATING:
-                print(f"Skipping {handle} (Rating {rating} < Min {MIN_RATING})")
+                print(f"Skipping {handle} (Rating {rating})")
                 state["notified_handles"].append(unique_id)
                 save_state(state)
                 continue
@@ -190,6 +188,7 @@ def main():
             alert_msg = f"🚀 **New Bug Bounty Program!**\n"
             alert_msg += f"**Platform:** {platform}\n"
             alert_msg += f"**Program:** {handle}\n"
+            alert_msg += f"**Link:** {prog_url}\n"
             alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
             
             send_discord_alert(alert_msg)
@@ -201,9 +200,7 @@ def main():
 
     if is_initial_run:
         save_state(state)
-        print("State seeded successfully. Future runs will notify new programs.")
-    elif new_programs_found == 0:
-        print("No new programs found.")
+        print("State seeded.")
     else:
         print(f"Processed {new_programs_found} new programs.")
 
