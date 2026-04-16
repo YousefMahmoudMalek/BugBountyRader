@@ -790,6 +790,9 @@
     "Intigriti:amd",
     "HackerOne:twilio",
     "HackerOne:doordash",
-    "Intigriti:intel"
+    "Intigriti:intel",
+    "HackerOne:vercel-open-source",
+    "Bugcrowd:OpenAI",
+    "Intigriti:digitalocean"
   ]
 }
