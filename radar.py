@@ -2,21 +2,31 @@ import os
 import json
 import requests
 from google import genai
+from google.genai import types
 import sys
 import re
 import time
 from dotenv import load_dotenv
-from config import GEMINI_PROMPT, DATA_SOURCES, STATE_FILE, MIN_RATING
+from config import NEW_PROGRAM_PROMPT, SCOPE_UPDATE_PROMPT, DATA_SOURCES, STATE_FILE, MIN_RATING
 
 # Load environment variables
 load_dotenv()
 
 # Secrets
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# Parse multiple keys into a list
+_raw_keys = os.getenv("GEMINI_API_KEYS", "") or os.getenv("GEMINI_API_KEY", "")
+GEMINI_API_KEYS = [k.strip() for k in _raw_keys.split(",") if k.strip()]
+CURRENT_KEY_INDEX = 0
+
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 SCOPE_WEBHOOK_URL = os.getenv("SCOPE_WEBHOOK_URL")
+LOG_WEBHOOK_URL = os.getenv("LOG_WEBHOOK_URL")
 WHATSAPP_PHONE = os.getenv("WHATSAPP_PHONE")
 WHATSAPP_API_KEY = os.getenv("WHATSAPP_API_KEY")
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
+
+# Global log buffer for session summary
+LOG_BUFFER = []
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -52,34 +62,56 @@ def fetch_programs(platform, url):
                 return []
 
 def extract_targets(program, platform):
-    """Cleanly extracts a list of in-scope target strings for each platform."""
+    """Extracts a list of target dictionaries with metadata (type, bounty, etc)."""
     targets = []
     try:
-        if platform == "HackerOne":
-            # H1 can be a list or a dict with in_scope key
-            raw_targets = program.get("targets", [])
-            if isinstance(raw_targets, dict):
-                raw_targets = raw_targets.get("in_scope", [])
+        # Common structure is targets -> in_scope
+        raw_list = []
+        if isinstance(program.get("targets"), dict):
+            raw_list = program["targets"].get("in_scope", [])
+        elif isinstance(program.get("targets"), list):
+            raw_list = program["targets"]
+
+        for t in raw_list:
+            if not isinstance(t, dict):
+                # Fallback for simple string targets
+                targets.append({"target": str(t), "type": "Other", "bounty": True})
+                continue
+
+            # Extract target string based on platform keys
+            target_str = t.get("asset_identifier") or t.get("target") or t.get("endpoint") or ""
+            if not target_str: continue
+
+            # Extract type
+            asset_type = t.get("asset_type") or t.get("type") or "Other"
             
-            for t in raw_targets:
-                if isinstance(t, dict):
-                    # Check common H1 asset keys
-                    targets.append(t.get("asset_identifier", t.get("target", t.get("endpoint", ""))))
-                else:
-                    targets.append(str(t))
-        elif platform == "Bugcrowd":
-            raw_targets = program.get("targets", {}).get("in_scope", [])
-            for t in raw_targets:
-                targets.append(t.get("target", ""))
-        elif platform == "Intigriti":
-            raw_targets = program.get("targets", {}).get("in_scope", [])
-            for t in raw_targets:
-                targets.append(t.get("endpoint", t.get("target", "")))
+            # Extract bounty (Default to True unless explicitly False)
+            bounty = t.get("eligible_for_bounty")
+            if bounty is None:
+                bounty = t.get("offers_awards")
+            if bounty is None:
+                bounty = True # Default assumption for public BBP
+
+            # Extract severity
+            severity = t.get("max_severity") or t.get("impact") or "Unknown"
+
+            targets.append({
+                "target": str(target_str).strip(),
+                "type": str(asset_type).title(),
+                "bounty": bool(bounty),
+                "severity": str(severity)
+            })
     except Exception as e:
         print(f"  Warning: Target extraction failed for {platform}: {e}")
     
-    # Filter out empty or duplicate strings
-    return sorted(list(set([t for t in targets if t])))
+    # Sort and remove duplicates by 'target'
+    seen = set()
+    unique_targets = []
+    for t in targets:
+        if t["target"] not in seen:
+            unique_targets.append(t)
+            seen.add(t["target"])
+    return unique_targets
 
 def extract_rating(ai_text):
     """Extracts X from 'RATING: X/10' format."""
@@ -88,70 +120,152 @@ def extract_rating(ai_text):
         return int(match.group(1))
     return 0
 
-def analyze_with_ai(program, platform):
-    if not GEMINI_API_KEY:
-        return "AI analysis skipped (No API Key).", 10
-
-    client = genai.Client(api_key=GEMINI_API_KEY)
-    context = program.get("_scope_update_context", "This is a brand new bug bounty program.")
-    full_prompt = f"{GEMINI_PROMPT}\n\nCONTEXT: {context}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
+def analyze_with_deepseek(program, platform, base_prompt, context):
+    if not DEEPSEEK_API_KEY:
+        return None
     
-    models_to_try = [
-        'models/gemini-2.0-flash',
-        'models/gemini-2.5-flash',
-        'models/gemini-flash-latest'
-    ]
-    max_retries = 3
+    # DeepSeek is OpenAI-compatible
+    url = "https://api.deepseek.com/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+        "Content-Type": "application/json"
+    }
     
-    for model_name in models_to_try:
-        retries = 0
-        while retries < max_retries:
-            try:
-                print(f"  Attempting AI analysis with {model_name}...")
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents=full_prompt
-                )
-                text = response.text
-                rating = extract_rating(text)
-                return text, rating
-            except Exception as e:
-                error_str = str(e).upper()
-                # Debug info for invalid key
-                if "API_KEY_INVALID" in error_str or "INVALID_ARGUMENT" in error_str:
-                    masked_key = f"{GEMINI_API_KEY[:4]}...{GEMINI_API_KEY[-4:]}" if GEMINI_API_KEY else "NONE"
-                    print(f"  [!] API Key Error. Current key being used: {masked_key}")
-                
-                if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str or "QUOTA" in error_str:
-                    retries += 1
-                    wait_time = 5 * retries # Much shorter wait
-                    print(f"  Quota hit (429). Retrying in {wait_time}s... (Attempt {retries}/{max_retries})")
-                    time.sleep(wait_time)
-                elif "404" in error_str or "NOT_FOUND" in error_str:
-                    print(f"  Model {model_name} not available in this region. Skipping...")
-                    break
-                else:
-                    print(f"  AI error with {model_name}: {e}")
-                    break 
-        
-        print(f"  {model_name} failed or timed out. Trying next model if available...")
-
-    return "AI analysis failed after multiple attempts and fallbacks.", 0
-
-def send_discord_alert(message, webhook_url=None):
-    url = webhook_url or DISCORD_WEBHOOK_URL
-    if not url:
-        print("  [!] Discord alert skipped: No Webhook URL provided.")
-        return
+    payload = {
+        "model": "deepseek-chat",
+        "messages": [
+            {"role": "system", "content": "You are a professional bug bounty scout. Return concise, actionable intel."},
+            {"role": "user", "content": f"{base_prompt}\n\nCONTEXT: {context}\n\nData: {json.dumps(program)}"}
+        ],
+        "temperature": 0.7,
+        "max_tokens": 1000
+    }
     
-    # Debug: Print the last 5 chars of the webhook to verify target
-    print(f"  [Discord] Sending to webhook ending in ...{url[-5:]}")
-    
-    payload = {"content": message}
     try:
-        requests.post(url, json=payload, timeout=10)
+        print(f"  AI (DeepSeek) | Platform: {platform}")
+        response = requests.post(url, headers=headers, json=payload, timeout=20)
+        data = response.json()
+        
+        if response.status_code != 200:
+            err = data.get("error", {}).get("message", "Unknown Error")
+            print(f"  [!] DeepSeek Error {response.status_code}: {err}")
+            return None
+            
+        text = data["choices"][0]["message"]["content"]
+        return text
+    except Exception as e:
+        print(f"  [!] DeepSeek Connection Failed: {e}")
+        return None
+
+def analyze_with_ai(program, platform, prompt_type="new_program"):
+    global CURRENT_KEY_INDEX
+    
+    # Select prompt template (Shared by all providers)
+    if prompt_type == "scope_update":
+        base_prompt = SCOPE_UPDATE_PROMPT
+        ctx = program.get("_scope_update_context", "New assets added.")
+        context = f"Analyze these SPECIFIC new assets: {ctx}"
+    else:
+        base_prompt = NEW_PROGRAM_PROMPT
+        context = "New bug bounty program. Perform surface level research."
+
+    # 1. Try Gemini Key Pool First (User Priority)
+    if GEMINI_API_KEYS:
+        full_prompt = f"{base_prompt}\n\nCONTEXT: {context}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
+        models_to_try = ['models/gemini-2.5-flash', 'models/gemini-3-flash', 'models/gemini-2.0-flash', 'models/gemini-1.5-flash-latest']
+        
+        # Try max 2 keys to stay fast
+        max_key_attempts = min(len(GEMINI_API_KEYS), 2)  
+        keys_to_attempt = GEMINI_API_KEYS[CURRENT_KEY_INDEX:] + GEMINI_API_KEYS[:CURRENT_KEY_INDEX]
+        keys_to_attempt = keys_to_attempt[:max_key_attempts]
+        
+        for api_key in keys_to_attempt:
+            CURRENT_KEY_INDEX = GEMINI_API_KEYS.index(api_key)
+            client = genai.Client(api_key=api_key)
+            key_exhausted = False
+            
+            for model_name in models_to_try:
+                for use_search in [True, False]:
+                    retries = 0
+                    while retries < 1:
+                        try:
+                            search_label = "(Search)" if use_search else "(Basic)"
+                            print(f"  AI (Gemini-{model_name}) {search_label} | Key: ...{api_key[-5:]}")
+                            
+                            config = None
+                            if use_search:
+                                grounding_tool = types.Tool(google_search=types.GoogleSearch())
+                                config = types.GenerateContentConfig(tools=[grounding_tool])
+
+                            response = client.models.generate_content(model=model_name, contents=full_prompt, config=config)
+                            return response.text, extract_rating(response.text)
+                        except Exception as e:
+                            err_msg = str(e).upper()
+                            if "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg:
+                                if use_search: break 
+                                else:
+                                    print(f"  [!] Key exhausted (429). Rotating...")
+                                    key_exhausted = True
+                                    break 
+                            elif "404" in err_msg: break 
+                            else: retries += 1
+                    if key_exhausted or (not use_search and retries >= 1): break 
+                if key_exhausted: break 
+
+    # 2. Try DeepSeek as Fallback
+    ds_res = analyze_with_deepseek(program, platform, base_prompt, context)
+    if ds_res:
+        return ds_res, extract_rating(ds_res)
+
+    return "AI analysis failed (Gemini exhausted + DeepSeek fail).", 0
+
+def send_discord_alert(message, webhook_url=None, title="BugBountyRadar Info", use_embed=True):
+    url = webhook_url or DISCORD_WEBHOOK_URL
+    if not url: return
+    
+    if use_embed:
+        # We use Embeds to support masked links and look "Premium"
+        desc = message
+        if len(desc) > 3900:
+            desc = desc[:3850] + "\n\n... (Truncated)"
+            
+        payload = {
+            "embeds": [{
+                "title": title,
+                "description": desc,
+                "color": 0x5865F2, # Discord Blurple
+                "timestamp": time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+            }]
+        }
+    else:
+        # Plain text
+        clean_msg = message
+        if len(clean_msg) > 1950:
+            clean_msg = clean_msg[:1900] + "\n\n... (Truncated)"
+        payload = {"content": f"🚀 **{title}**\n{clean_msg}"}
+    
+    try:
+        r = requests.post(url, json=payload, timeout=10)
+        if r.status_code >= 400:
+            print(f"  [!] Discord Error {r.status_code}: {r.text}")
     except Exception as e:
         print(f"Error sending Discord alert: {e}")
+
+def send_log_alert(message):
+    """Sends a message to the dedicated logging webhook."""
+    if not LOG_WEBHOOK_URL:
+        return
+    
+    # Truncate log content for Discord (2000 limit)
+    clean_msg = message
+    if len(clean_msg) > 1950:
+        clean_msg = clean_msg[:1900] + "\n\n... (Log Truncated)"
+        
+    payload = {"content": f"📅 **{time.strftime('%Y-%m-%d %H:%M:%S')}**\n{clean_msg}"}
+    try:
+        requests.post(LOG_WEBHOOK_URL, json=payload, timeout=10)
+    except Exception as e:
+        print(f"Error sending log alert: {e}")
 
 def send_whatsapp_alert(message):
     if not (WHATSAPP_PHONE and WHATSAPP_API_KEY):
@@ -170,23 +284,23 @@ def send_whatsapp_alert(message):
         print(f"Error sending WhatsApp alert: {e}")
 
 def run_test():
-    print("Running LIVE notification test for both webhooks...")
-    print("Fetching latest programs to provide real AI analysis samples...")
+    print("Running LIVE notification test for all 3 webhooks...")
     
+    # Test 3: Log Webhook
+    print(f"  [Test 1/3] Sending Log alert to Webhook #3...")
+    send_log_alert("🚀 **BugBountyRadar TEST RUN**\nStatus: Healthy\nPlatforms: 5\nAI Status: Active")
+
     for platform, url in DATA_SOURCES.items():
         print(f"  Testing {platform}...")
         programs = fetch_programs(platform, url)
-        if not programs:
-            print(f"  [!] No programs found for {platform}")
-            continue
+        if not programs: continue
             
         latest = programs[0]
         handle = latest.get("handle") or latest.get("name")
         prog_url = latest.get("url") or "Check platform for link"
-        print(f"  Latest program on {platform}: {handle}")
         
-        # Test 1: New Program (Webhook 1)
-        print(f"  [Test 1/2] Sending New Program alert to Webhook #1...")
+        # Test 1: New Program
+        print(f"  [Test 2/3] Sending New Program alert to Webhook #1...")
         ai_summary, rating = analyze_with_ai(latest, platform)
         
         test_msg = f"🧪 **BugBountyRadar LIVE TEST (New Program)**\n"
@@ -194,27 +308,18 @@ def run_test():
         test_msg += f"**Program:** {handle} (Rating: {rating}/10)\n"
         test_msg += f"**Link:** {prog_url}\n"
         test_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
-        
         send_discord_alert(test_msg, DISCORD_WEBHOOK_URL)
         
-        # Test 2: Scope Expansion (Webhook 2)
-        print(f"  [Test 2/2] Sending Scope Expansion alert to Webhook #2...")
-        scope_context = "This is a simulated scope update. New targets found: test-scope-1.com, test-scope-2.com"
-        latest_with_context = latest.copy()
-        latest_with_context["_scope_update_context"] = scope_context
-        
-        ai_summary, rating = analyze_with_ai(latest_with_context, platform)
-        
+        # Test 2: Scope Expansion
+        print(f"  [Test 3/3] Sending Scope Expansion alert to Webhook #2...")
         update_msg = f"🧪 **BugBountyRadar LIVE TEST (Scope Expansion)**\n"
         update_msg += f"**Program:** {handle} ({platform})\n"
-        update_msg += f"**New Assets:** `test-scope-1.com, test-scope-2.com` \n"
+        update_msg += f"**New Assets:** `[WEB] test-domain.com`, `[APK] com.test.app` \n"
         update_msg += f"**Link:** {prog_url}\n"
-        update_msg += f"\n--- AI ANALYSIS OF NEW ASSETS ---\n{ai_summary}\n"
-        
         send_discord_alert(update_msg, SCOPE_WEBHOOK_URL)
-        break # Only test one platform to avoid spam
+        break
     
-    print("\nTest finished. Check both Discord channels!")
+    print("\nTest finished. Check all 3 Discord channels!")
 
 def main():
     if "--test" in sys.argv:
@@ -225,6 +330,8 @@ def main():
     state = load_state()
     new_programs_found = 0
     scope_updates_found = 0
+    ai_success = 0
+    ai_fail = 0
     is_initial_run = len(state.get("programs", {})) == 0
 
     if is_seed_run:
@@ -232,80 +339,100 @@ def main():
     else:
         print(f"\n--- BugBountyRadar Check Started: {time.strftime('%Y-%m-%d %H:%M:%S')} ---")
 
-    if is_initial_run or is_seed_run:
-        print("Initial or Seed run. Populating state silently...")
-
     for platform, url in DATA_SOURCES.items():
         print(f"Checking {platform}...")
         programs = fetch_programs(platform, url)
         
         for program in programs:
             handle = program.get("handle") or program.get("name")
-            prog_url = program.get("url") or "Check platform for link"
-            if not handle:
-                continue
+            prog_url = program.get("url") or "Check platform link"
+            if not handle: continue
 
             unique_id = f"{platform}:{handle}"
             current_targets = extract_targets(program, platform)
+            
+            # Migration/Prefill check
+            old_data = state["programs"].get(unique_id, [])
+            if old_data and isinstance(old_data[0], str):
+                print(f"  Migrating {unique_id} format...")
+                state["programs"][unique_id] = current_targets
+                old_data = current_targets
 
-            # Case 1: Initial or Seed Run (Silent Seed)
             if is_initial_run or is_seed_run:
                 state["programs"][unique_id] = current_targets
                 continue
 
-            # Case 2: Brand New Program
+            # Case: New Program
             if unique_id not in state["programs"]:
                 print(f"New program found: {handle} on {platform}")
-                
                 ai_summary, rating = analyze_with_ai(program, platform)
                 
-                # Notification fallback
                 if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
                     rating = 10
-                
+                    ai_fail += 1
+                    LOG_BUFFER.append(f"❌ **AI FAIL**: `{handle}` ({platform})")
+                else:
+                    ai_success += 1
+
                 if rating >= MIN_RATING:
-                    alert_msg = f"🚀 **New Bug Bounty Program!**\n"
-                    alert_msg += f"**Platform:** {platform}\n"
+                    alert_msg = f"**Platform:** {platform}\n"
                     alert_msg += f"**Program:** {handle}\n"
                     alert_msg += f"**Link:** {prog_url}\n"
                     alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
-                    
-                    send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL)
-                    send_whatsapp_alert(alert_msg)
+                    send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title="New Bug Bounty Program!", use_embed=False)
                     new_programs_found += 1
                 
                 state["programs"][unique_id] = current_targets
                 save_state(state)
                 continue
 
-            # Case 3: Existing Program - Check for Scope Updates
-            old_targets = state["programs"].get(unique_id, [])
-            new_targets = [t for t in current_targets if t not in old_targets]
+            # Case: Scope Update
+            old_targets_strs = [t["target"] if isinstance(t, dict) else t for t in old_data]
+            new_targets = [t for t in current_targets if t["target"] not in old_targets_strs]
 
             if new_targets:
-                print(f"Scope update found for {handle}: {len(new_targets)} new targets added.")
-                
-                # Skip AI for scope updates as requested to save time/quota
-                ai_summary = "AI analysis skipped for scope expansion."
-                # We skip analyze_with_ai entirely here
+                print(f"Scope update for {handle}: {len(new_targets)} new targets. Analyzing...")
+                target_summary = ", ".join([f"[{t['type']}] {t['target']}" for t in new_targets])
+                program["_scope_update_context"] = target_summary
+                ai_summary, rating = analyze_with_ai(program, platform, prompt_type="scope_update")
 
-                alert_msg = f"🛰️ **Scope Expansion Detect!**\n"
-                alert_msg += f"**Program:** {handle} ({platform})\n"
-                alert_msg += f"**New Assets:** `{', '.join(new_targets)}` \n"
-                alert_msg += f"**Link:** {prog_url}\n"
+                if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
+                    ai_fail += 1
+                    LOG_BUFFER.append(f"❌ **AI FAIL (Scope)**: `{handle}`")
+                else:
+                    ai_success += 1
+
+                scope_url = prog_url
+                if platform == "HackerOne": scope_url = f"https://hackerone.com/{handle}/policy_scopes"
+                elif platform == "Intigriti": scope_url = f"{prog_url}/scope"
+
+                asset_list = []
+                for nt in new_targets:
+                    b_label = "💰" if nt["bounty"] else "📋"
+                    asset_list.append(f"{b_label} `[{nt['type']}]` {nt['target']}")
+
+                alert_msg = f"**Program:** {handle} ({platform})\n"
+                alert_msg += f"**New Assets:**\n" + "\n".join(asset_list) + f"\n\n**Scope Link:** {scope_url}\n"
+                alert_msg += f"\n--- AI IMPACT ANALYSIS ---\n{ai_summary}\n"
                 
-                # Send to Webhook #2
-                send_discord_alert(alert_msg, SCOPE_WEBHOOK_URL)
-                
+                send_discord_alert(alert_msg, SCOPE_WEBHOOK_URL, title="🛰️ Scope Expansion Detected!")
                 state["programs"][unique_id] = current_targets
                 scope_updates_found += 1
                 save_state(state)
 
     if is_initial_run or is_seed_run:
         save_state(state)
-        print("State seeded and saved successfully.")
+        print("State seeded successfully.")
     else:
-        print(f"Processed {new_programs_found} new programs and {scope_updates_found} scope updates.")
+        # Final Consolidated Log Summary
+        summary = f"✅ **Scan Finished** | New: {new_programs_found} | Scope: {scope_updates_found} | AI: {ai_success} OK, {ai_fail} FAIL"
+        print(summary)
+        
+        full_log = [f"📡 **Scan Summary** - {time.strftime('%H:%M:%S')}"]
+        full_log.extend(LOG_BUFFER)
+        full_log.append(summary)
+        
+        send_log_alert("\n".join(full_log))
 
 if __name__ == "__main__":
     main()
