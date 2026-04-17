@@ -120,7 +120,7 @@ def analyze_with_ai(program, platform):
                 
                 if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str or "QUOTA" in error_str:
                     retries += 1
-                    wait_time = 15 * retries
+                    wait_time = 5 * retries # Much shorter wait
                     print(f"  Quota hit (429). Retrying in {wait_time}s... (Attempt {retries}/{max_retries})")
                     time.sleep(wait_time)
                 elif "404" in error_str or "NOT_FOUND" in error_str:
@@ -274,19 +274,14 @@ def main():
             if new_targets:
                 print(f"Scope update found for {handle}: {len(new_targets)} new targets added.")
                 
-                # Contextual AI prompt for scope update
-                scope_context = f"This existing program just added new targets: {', '.join(new_targets)}."
-                # We reuse the AI logic but prepend the scope context
-                program_with_context = program.copy()
-                program_with_context["_scope_update_context"] = scope_context
-                
-                ai_summary, rating = analyze_with_ai(program_with_context, platform)
+                # Skip AI for scope updates as requested to save time/quota
+                ai_summary = "AI analysis skipped for scope expansion."
+                # We skip analyze_with_ai entirely here
 
                 alert_msg = f"🛰️ **Scope Expansion Detect!**\n"
                 alert_msg += f"**Program:** {handle} ({platform})\n"
                 alert_msg += f"**New Assets:** `{', '.join(new_targets)}` \n"
                 alert_msg += f"**Link:** {prog_url}\n"
-                alert_msg += f"\n--- AI ANALYSIS OF NEW ASSETS ---\n{ai_summary}\n"
                 
                 # Send to Webhook #2
                 send_discord_alert(alert_msg, SCOPE_WEBHOOK_URL)
