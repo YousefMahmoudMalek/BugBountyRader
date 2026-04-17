@@ -56,11 +56,15 @@ def extract_targets(program, platform):
     targets = []
     try:
         if platform == "HackerOne":
+            # H1 can be a list or a dict with in_scope key
             raw_targets = program.get("targets", [])
-            # Some H1 programs provide a list of strings, others provide dicts
+            if isinstance(raw_targets, dict):
+                raw_targets = raw_targets.get("in_scope", [])
+            
             for t in raw_targets:
                 if isinstance(t, dict):
-                    targets.append(t.get("asset_identifier", t.get("target", "")))
+                    # Check common H1 asset keys
+                    targets.append(t.get("asset_identifier", t.get("target", t.get("endpoint", ""))))
                 else:
                     targets.append(str(t))
         elif platform == "Bugcrowd":
@@ -214,15 +218,19 @@ def main():
         run_test()
         return
 
+    is_seed_run = "--seed" in sys.argv
     state = load_state()
     new_programs_found = 0
     scope_updates_found = 0
     is_initial_run = len(state.get("programs", {})) == 0
 
-    print(f"\n--- BugBountyRadar Check Started: {time.strftime('%Y-%m-%d %H:%M:%S')} ---")
+    if is_seed_run:
+        print("\n--- BugBountyRadar SEED MODE (Silent) ---")
+    else:
+        print(f"\n--- BugBountyRadar Check Started: {time.strftime('%Y-%m-%d %H:%M:%S')} ---")
 
-    if is_initial_run:
-        print("Initial run. Seeding state...")
+    if is_initial_run or is_seed_run:
+        print("Initial or Seed run. Populating state silently...")
 
     for platform, url in DATA_SOURCES.items():
         print(f"Checking {platform}...")
@@ -237,8 +245,8 @@ def main():
             unique_id = f"{platform}:{handle}"
             current_targets = extract_targets(program, platform)
 
-            # Case 1: Initial Run (Silent Seed)
-            if is_initial_run:
+            # Case 1: Initial or Seed Run (Silent Seed)
+            if is_initial_run or is_seed_run:
                 state["programs"][unique_id] = current_targets
                 continue
 
@@ -290,9 +298,9 @@ def main():
                 scope_updates_found += 1
                 save_state(state)
 
-    if is_initial_run:
+    if is_initial_run or is_seed_run:
         save_state(state)
-        print("State seeded.")
+        print("State seeded and saved successfully.")
     else:
         print(f"Processed {new_programs_found} new programs and {scope_updates_found} scope updates.")
 
