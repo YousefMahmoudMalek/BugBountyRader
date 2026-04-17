@@ -141,9 +141,12 @@ def analyze_with_ai(program, platform):
 def send_discord_alert(message, webhook_url=None):
     url = webhook_url or DISCORD_WEBHOOK_URL
     if not url:
-        if "--test" in sys.argv:
-            print("  [!] Discord alert skipped (No Webhook URL found)")
+        print("  [!] Discord alert skipped: No Webhook URL provided.")
         return
+    
+    # Debug: Print the last 5 chars of the webhook to verify target
+    print(f"  [Discord] Sending to webhook ending in ...{url[-5:]}")
+    
     payload = {"content": message}
     try:
         requests.post(url, json=payload, timeout=10)
