@@ -46373,6 +46373,18 @@
       "*ubereats.com",
       "Recon Data",
       "uber.com"
+    ],
+    "Intigriti:wolt": [
+      "*.wolt.com",
+      "Wolt Courier Partner",
+      "Wolt Delivery: Food and more",
+      "authentication.wolt.com",
+      "corporate.wolt.com",
+      "drive.wolt.com",
+      "merchant.wolt.com",
+      "ops.wolt.com",
+      "restaurant-api.wolt.com",
+      "wolt.com"
     ]
   }
 }
