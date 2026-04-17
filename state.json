@@ -46367,6 +46367,12 @@
       "nummus.robinhood.com",
       "www.bitstamp.net",
       "www.tradepmr.com"
+    ],
+    "HackerOne:uber": [
+      "*.uberinternal.com",
+      "*ubereats.com",
+      "Recon Data",
+      "uber.com"
     ]
   }
 }
