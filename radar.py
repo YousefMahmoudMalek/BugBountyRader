@@ -14,14 +14,23 @@ load_dotenv()
 # Secrets
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
+SCOPE_WEBHOOK_URL = os.getenv("SCOPE_WEBHOOK_URL")
 WHATSAPP_PHONE = os.getenv("WHATSAPP_PHONE")
 WHATSAPP_API_KEY = os.getenv("WHATSAPP_API_KEY")
 
 def load_state():
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r") as f:
-            return json.load(f)
-    return {"notified_handles": []}
+            data = json.load(f)
+            # Migration: If it's the old list format, convert to the new dict format
+            if isinstance(data.get("notified_handles"), list):
+                print("Migrating state to new Scope Tracking format...")
+                new_state = {"programs": {}}
+                for entry in data["notified_handles"]:
+                    new_state["programs"][entry] = [] # Silently populate as we don't have old targets
+                return new_state
+            return data
+    return {"programs": {}}
 
 def save_state(state):
     with open(STATE_FILE, "w") as f:
@@ -42,6 +51,32 @@ def fetch_programs(platform, url):
                 print(f"Error fetching {platform} data: {e}")
                 return []
 
+def extract_targets(program, platform):
+    """Cleanly extracts a list of in-scope target strings for each platform."""
+    targets = []
+    try:
+        if platform == "HackerOne":
+            raw_targets = program.get("targets", [])
+            # Some H1 programs provide a list of strings, others provide dicts
+            for t in raw_targets:
+                if isinstance(t, dict):
+                    targets.append(t.get("asset_identifier", t.get("target", "")))
+                else:
+                    targets.append(str(t))
+        elif platform == "Bugcrowd":
+            raw_targets = program.get("targets", {}).get("in_scope", [])
+            for t in raw_targets:
+                targets.append(t.get("target", ""))
+        elif platform == "Intigriti":
+            raw_targets = program.get("targets", {}).get("in_scope", [])
+            for t in raw_targets:
+                targets.append(t.get("endpoint", t.get("target", "")))
+    except Exception as e:
+        print(f"  Warning: Target extraction failed for {platform}: {e}")
+    
+    # Filter out empty or duplicate strings
+    return sorted(list(set([t for t in targets if t])))
+
 def extract_rating(ai_text):
     """Extracts X from 'RATING: X/10' format."""
     match = re.search(r"RATING:\s*(\d+)/10", ai_text, re.IGNORECASE)
@@ -54,7 +89,8 @@ def analyze_with_ai(program, platform):
         return "AI analysis skipped (No API Key).", 10
 
     client = genai.Client(api_key=GEMINI_API_KEY)
-    full_prompt = f"{GEMINI_PROMPT}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
+    context = program.get("_scope_update_context", "This is a brand new bug bounty program.")
+    full_prompt = f"{GEMINI_PROMPT}\n\nCONTEXT: {context}\n\nProgram Data from {platform}:\n{json.dumps(program, indent=2)}"
     
     models_to_try = [
         'models/gemini-2.0-flash',
@@ -98,14 +134,15 @@ def analyze_with_ai(program, platform):
 
     return "AI analysis failed after multiple attempts and fallbacks.", 0
 
-def send_discord_alert(message):
-    if not DISCORD_WEBHOOK_URL:
+def send_discord_alert(message, webhook_url=None):
+    url = webhook_url or DISCORD_WEBHOOK_URL
+    if not url:
         if "--test" in sys.argv:
-            print("  [!] Discord skipped (No DISCORD_WEBHOOK_URL env variable)")
+            print("  [!] Discord alert skipped (No Webhook URL found)")
         return
     payload = {"content": message}
     try:
-        requests.post(DISCORD_WEBHOOK_URL, json=payload, timeout=10)
+        requests.post(url, json=payload, timeout=10)
     except Exception as e:
         print(f"Error sending Discord alert: {e}")
 
@@ -126,7 +163,7 @@ def send_whatsapp_alert(message):
         print(f"Error sending WhatsApp alert: {e}")
 
 def run_test():
-    print("Running LIVE notification test...")
+    print("Running LIVE notification test for both webhooks...")
     print("Fetching latest programs to provide real AI analysis samples...")
     
     for platform, url in DATA_SOURCES.items():
@@ -141,19 +178,36 @@ def run_test():
         prog_url = latest.get("url") or "Check platform for link"
         print(f"  Latest program on {platform}: {handle}")
         
+        # Test 1: New Program (Webhook 1)
+        print(f"  [Test 1/2] Sending New Program alert to Webhook #1...")
         ai_summary, rating = analyze_with_ai(latest, platform)
         
-        test_msg = f"🧪 **BugBountyRadar LIVE TEST**\n"
+        test_msg = f"🧪 **BugBountyRadar LIVE TEST (New Program)**\n"
         test_msg += f"**Platform:** {platform}\n"
         test_msg += f"**Program:** {handle} (Rating: {rating}/10)\n"
         test_msg += f"**Link:** {prog_url}\n"
         test_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
-        test_msg += f"\n🚀 *Simulated alert for testing.*"
         
-        send_discord_alert(test_msg)
-        send_whatsapp_alert(test_msg)
+        send_discord_alert(test_msg, DISCORD_WEBHOOK_URL)
+        
+        # Test 2: Scope Expansion (Webhook 2)
+        print(f"  [Test 2/2] Sending Scope Expansion alert to Webhook #2...")
+        scope_context = "This is a simulated scope update. New targets found: test-scope-1.com, test-scope-2.com"
+        latest_with_context = latest.copy()
+        latest_with_context["_scope_update_context"] = scope_context
+        
+        ai_summary, rating = analyze_with_ai(latest_with_context, platform)
+        
+        update_msg = f"🧪 **BugBountyRadar LIVE TEST (Scope Expansion)**\n"
+        update_msg += f"**Program:** {handle} ({platform})\n"
+        update_msg += f"**New Assets:** `test-scope-1.com, test-scope-2.com` \n"
+        update_msg += f"**Link:** {prog_url}\n"
+        update_msg += f"\n--- AI ANALYSIS OF NEW ASSETS ---\n{ai_summary}\n"
+        
+        send_discord_alert(update_msg, SCOPE_WEBHOOK_URL)
+        break # Only test one platform to avoid spam
     
-    print("\nTest finished.")
+    print("\nTest finished. Check both Discord channels!")
 
 def main():
     if "--test" in sys.argv:
@@ -162,7 +216,8 @@ def main():
 
     state = load_state()
     new_programs_found = 0
-    is_initial_run = len(state["notified_handles"]) == 0
+    scope_updates_found = 0
+    is_initial_run = len(state.get("programs", {})) == 0
 
     print(f"\n--- BugBountyRadar Check Started: {time.strftime('%Y-%m-%d %H:%M:%S')} ---")
 
@@ -180,48 +235,71 @@ def main():
                 continue
 
             unique_id = f"{platform}:{handle}"
-            if unique_id in state["notified_handles"]:
-                continue
+            current_targets = extract_targets(program, platform)
 
+            # Case 1: Initial Run (Silent Seed)
             if is_initial_run:
-                state["notified_handles"].append(unique_id)
+                state["programs"][unique_id] = current_targets
                 continue
 
-            print(f"New program found: {handle} on {platform}")
-            
-            ai_summary, rating = analyze_with_ai(program, platform)
-            
-            # If AI fails or is skipped, we still notify the user
-            is_serious_failure = "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper()
-            
-            # If AI fails, we treat it as rating 10 to ensure it passes the filter
-            if is_serious_failure:
-                rating = 10
-            
-            if rating < MIN_RATING:
-                print(f"Skipping {handle} (Rating {rating})")
-                state["notified_handles"].append(unique_id)
+            # Case 2: Brand New Program
+            if unique_id not in state["programs"]:
+                print(f"New program found: {handle} on {platform}")
+                
+                ai_summary, rating = analyze_with_ai(program, platform)
+                
+                # Notification fallback
+                if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
+                    rating = 10
+                
+                if rating >= MIN_RATING:
+                    alert_msg = f"🚀 **New Bug Bounty Program!**\n"
+                    alert_msg += f"**Platform:** {platform}\n"
+                    alert_msg += f"**Program:** {handle}\n"
+                    alert_msg += f"**Link:** {prog_url}\n"
+                    alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
+                    
+                    send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL)
+                    send_whatsapp_alert(alert_msg)
+                    new_programs_found += 1
+                
+                state["programs"][unique_id] = current_targets
                 save_state(state)
                 continue
 
-            alert_msg = f"🚀 **New Bug Bounty Program!**\n"
-            alert_msg += f"**Platform:** {platform}\n"
-            alert_msg += f"**Program:** {handle}\n"
-            alert_msg += f"**Link:** {prog_url}\n"
-            alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
-            
-            send_discord_alert(alert_msg)
-            send_whatsapp_alert(alert_msg)
-            
-            state["notified_handles"].append(unique_id)
-            new_programs_found += 1
-            save_state(state)
+            # Case 3: Existing Program - Check for Scope Updates
+            old_targets = state["programs"].get(unique_id, [])
+            new_targets = [t for t in current_targets if t not in old_targets]
+
+            if new_targets:
+                print(f"Scope update found for {handle}: {len(new_targets)} new targets added.")
+                
+                # Contextual AI prompt for scope update
+                scope_context = f"This existing program just added new targets: {', '.join(new_targets)}."
+                # We reuse the AI logic but prepend the scope context
+                program_with_context = program.copy()
+                program_with_context["_scope_update_context"] = scope_context
+                
+                ai_summary, rating = analyze_with_ai(program_with_context, platform)
+
+                alert_msg = f"🛰️ **Scope Expansion Detect!**\n"
+                alert_msg += f"**Program:** {handle} ({platform})\n"
+                alert_msg += f"**New Assets:** `{', '.join(new_targets)}` \n"
+                alert_msg += f"**Link:** {prog_url}\n"
+                alert_msg += f"\n--- AI ANALYSIS OF NEW ASSETS ---\n{ai_summary}\n"
+                
+                # Send to Webhook #2
+                send_discord_alert(alert_msg, SCOPE_WEBHOOK_URL)
+                
+                state["programs"][unique_id] = current_targets
+                scope_updates_found += 1
+                save_state(state)
 
     if is_initial_run:
         save_state(state)
         print("State seeded.")
     else:
-        print(f"Processed {new_programs_found} new programs.")
+        print(f"Processed {new_programs_found} new programs and {scope_updates_found} scope updates.")
 
 if __name__ == "__main__":
     main()

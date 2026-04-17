@@ -36,6 +36,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SCOPE_WEBHOOK_URL: ${{ secrets.SCOPE_WEBHOOK_URL }}
           WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
           WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
         run: python radar.py
