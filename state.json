@@ -275720,6 +275720,80 @@
         "bounty": true,
         "severity": "Unknown"
       }
+    ],
+    "Intigriti:soundtrackyourbrand": [
+      {
+        "target": "1114799709",
+        "type": "Ios",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "1114800186",
+        "type": "Ios",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "api.soundtrackyourbrand.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "billing.api.soundtrackyourbrand.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "builds.soundtrackyourbrand.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "business.soundtrackyourbrand.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "com.soundtrackyourbrand.soundtrack.player",
+        "type": "Android",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "https://auth.api.soundtrackyourbrand.com/",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "https://builds.soundtrackyourbrand.com/download/WIN32SOUNDTRACK/latest",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "https://radio.api.soundtrackyourbrand.com/",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "https://www.soundtrackyourbrand.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "macOS app",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Tier 1"
+      }
     ]
   }
 }
