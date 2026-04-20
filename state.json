@@ -3425,6 +3425,18 @@
         "severity": "critical"
       },
       {
+        "target": "investor.meesho.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "low"
+      },
+      {
+        "target": "meesho.io",
+        "type": "Url",
+        "bounty": true,
+        "severity": "low"
+      },
+      {
         "target": "prod.meeshoapi.com",
         "type": "Api",
         "bounty": true,
