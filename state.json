@@ -256299,7 +256299,50 @@
         "severity": "No Bounty"
       }
     ],
-    "Intigriti:eurid": [],
+    "Intigriti:eurid": [
+      {
+        "target": "my.eurid.eu",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.das.eu",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.dns.eu",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.eurid.eu",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.nic.eu",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.registry.eu",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.whois.eu",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      }
+    ],
     "Intigriti:exactvulnerabilitydisclosureprogram": [
       {
         "target": "www.itscope.com",
@@ -266204,6 +266247,60 @@
         "type": "Mobile-Application-Android",
         "bounty": true,
         "severity": "Unknown"
+      },
+      {
+        "target": "fhir.monespacesante.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "am.developer.monespacesante.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "api.developer.monespacesante.fr",
+        "type": "Api",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "fhir.developer.monespacesante.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "editeurs.developer.monespacesante.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "knowage.developer.monespacesante.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "adminstore.developer.monespacesante.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "admincms.developer.monespacesante.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "wps-cps.dmp.monespacesante.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
       }
     ],
     "YesWeHack:Moneybox Bug Bounty": [
@@ -275252,6 +275349,362 @@
       {
         "target": "https://play.google.com/store/apps/details?id=com.jora.android&hl=en_US",
         "type": "Android",
+        "bounty": true,
+        "severity": "Unknown"
+      }
+    ],
+    "Intigriti:challenge0426": [
+      {
+        "target": "https://challenge-0426.intigriti.io",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      }
+    ],
+    "Intigriti:datacamp": [
+      {
+        "target": "profiles-api.datacamp.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "app.datacamp.com/certification",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "app.datacamp.com/groups",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "app.datacamp.com/learn",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "assessment-api.datacamp.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "assessment-v2.datacamp.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "assessment.datacamp.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "campus.datacamp.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "com.datacamp",
+        "type": "Android",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "https://apps.apple.com/au/app/datacamp-learn-data-science/id1263413087",
+        "type": "Ios",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "practice.datacamp.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "projects.datacamp.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "www.datacamp.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "www.datacamp.com/datalab",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.datacamp.com",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 3"
+      }
+    ],
+    "Intigriti:intergamma": [
+      {
+        "target": "www.gamma.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "www.gamma.be/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "www.karwei.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "kassa.gamma.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "kassa.gamma.be/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "kassa.karwei.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "mijn.gamma.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "mijn.gamma.be/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "mijn.karwei.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "949829216",
+        "type": "Ios",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "950693949",
+        "type": "Ios",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "950680989",
+        "type": "Ios",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "1558129454",
+        "type": "Ios",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "nl.gamma.app.android",
+        "type": "Android",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "be.gamma.app.android",
+        "type": "Android",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "nl.karwei.app.android",
+        "type": "Android",
+        "bounty": true,
+        "severity": "Tier 1"
+      },
+      {
+        "target": "*.gamma.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.gamma.be/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.karwei.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.intergamma.cloud",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.intergamma.nl/*",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.restintergamma.nl",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.intergamma-test.nl",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 3"
+      },
+      {
+        "target": "*.werkenbijgamma.nl",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 3"
+      },
+      {
+        "target": "*.werkenbijgamma.be",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 3"
+      },
+      {
+        "target": "*.werkenbijkarwei.nl",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 3"
+      },
+      {
+        "target": "irmg.nl",
+        "type": "Url",
+        "bounty": true,
+        "severity": "Tier 3"
+      },
+      {
+        "target": "gammacademy.be",
+        "type": "Url",
+        "bounty": true,
+        "severity": "No Bounty"
+      },
+      {
+        "target": "karwei-promotiepunt.nl",
+        "type": "Url",
+        "bounty": true,
+        "severity": "No Bounty"
+      },
+      {
+        "target": "gammalokaal.nl",
+        "type": "Url",
+        "bounty": true,
+        "severity": "No Bounty"
+      },
+      {
+        "target": "*.karweioutletstore.nl",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "No Bounty"
+      },
+      {
+        "target": "nl.gamma.verf",
+        "type": "Android",
+        "bounty": true,
+        "severity": "No Bounty"
+      }
+    ],
+    "YesWeHack:Dossier Medical Partag\u00e9 Bug Bounty Program": [
+      {
+        "target": "https://www.dmp.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://www.dmp.gouv.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "api.dmp.gouv.fr",
+        "type": "Api",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "auth.dmp.gouv.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "wps-cps.dmp.gouv.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "wps-cps.cv.dmp.gouv.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "web-mh.dmp.gouv.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "lps.dmp.gouv.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "lps2.dmp.gouv.fr",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://sip2.dmp.gouv.fr",
+        "type": "Web-Application",
         "bounty": true,
         "severity": "Unknown"
       }
