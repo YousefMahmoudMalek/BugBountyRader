@@ -275918,6 +275918,128 @@
         "bounty": false,
         "severity": "critical"
       }
+    ],
+    "Bugcrowd:HPE Networking Product Public Program": [
+      {
+        "target": "HPE Aruba Networking Wireless - AOS-10.7 and above Gateways (GW)",
+        "type": "Network",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking Wireless - AOS-10.7 and above Access Points (AP)",
+        "type": "Network",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking Central - New UI (see Scope Details)",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "ArubaOS-CX Switches",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking Wireless - AOS-8 Controllers",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking Wireless - AOS-8 Instant AP (IAP)",
+        "type": "Network",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking Wireless - AOS-10.4 Gateways (GW)",
+        "type": "Network",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking Wireless - AOS-10.4 Access Points (AP)",
+        "type": "Network",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking ClearPass Policy Manager",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking EdgeConnect SD-WAN Orchestrator",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Networking Instant On APs and supporting backend infrastructure",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking Fabric Composer",
+        "type": "Network",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking NetEdit",
+        "type": "Network",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking Private 5G",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking SSE",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "HPE Aruba Networking VIA",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "*.central.arubanetworks.com",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "Aruba AirWave AMP",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "Aruba InstantOn Switches",
+        "type": "Other",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "Aruba User Experience Insight Sensors",
+        "type": "Hardware",
+        "bounty": true,
+        "severity": "Unknown"
+      }
     ]
   }
 }
