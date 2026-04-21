@@ -1190,6 +1190,12 @@
         "severity": "critical"
       },
       {
+        "target": "www.babcockinternational.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
         "target": "www.drumgrange.com",
         "type": "Url",
         "bounty": false,
@@ -230595,7 +230601,7 @@
         "severity": "critical"
       },
       {
-        "target": "Any other Malwarebytes asset",
+        "target": "Any other Malwarebytes and ThreatDown asset",
         "type": "Other",
         "bounty": true,
         "severity": "critical"
@@ -230704,6 +230710,12 @@
       },
       {
         "target": "cloud.malwarebytes.com",
+        "type": "Url",
+        "bounty": true,
+        "severity": "critical"
+      },
+      {
+        "target": "cloud.threatdown.com",
         "type": "Url",
         "bounty": true,
         "severity": "critical"
