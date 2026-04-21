@@ -275862,6 +275862,56 @@
         "bounty": true,
         "severity": "Unknown"
       }
+    ],
+    "HackerOne:mcgrawhill": [
+      {
+        "target": "boardsbeyond.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
+        "target": "mh.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
+        "target": "mhcampus.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
+        "target": "mheducation.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
+        "target": "mhhe.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
+        "target": "mhprofessional.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
+        "target": "simnetonline.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
+        "target": "tegrity.com",
+        "type": "Url",
+        "bounty": false,
+        "severity": "critical"
+      }
     ]
   }
 }
