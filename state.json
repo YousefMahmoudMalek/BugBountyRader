@@ -230613,12 +230613,6 @@
         "severity": "medium"
       },
       {
-        "target": "Malwarebytes Device Control",
-        "type": "Other",
-        "bounty": true,
-        "severity": "critical"
-      },
-      {
         "target": "Malwarebytes Privacy (VPN)",
         "type": "Other",
         "bounty": true,
@@ -230673,6 +230667,12 @@
         "severity": "critical"
       },
       {
+        "target": "ThreatDown Device Control",
+        "type": "Other",
+        "bounty": true,
+        "severity": "critical"
+      },
+      {
         "target": "ThreatDown Endpoint Detection & Response (EDR)",
         "type": "Other",
         "bounty": true,
@@ -230685,16 +230685,16 @@
         "severity": "critical"
       },
       {
+        "target": "ThreatDown Patch Management",
+        "type": "Other",
+        "bounty": true,
+        "severity": "critical"
+      },
+      {
         "target": "USB Flash Drive Control",
         "type": "Downloadable_Executables",
         "bounty": false,
         "severity": "medium"
-      },
-      {
-        "target": "Vulnerability & Patch Management",
-        "type": "Other",
-        "bounty": true,
-        "severity": "critical"
       },
       {
         "target": "blog.malwarebytes.com",
