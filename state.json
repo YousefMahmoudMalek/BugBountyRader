@@ -275800,6 +275800,56 @@
         "bounty": true,
         "severity": "Tier 1"
       }
+    ],
+    "Bugcrowd:Centers for Medicare & Medicaid Services - Public Bug Bounty Program 2026": [
+      {
+        "target": "https://eua.cms.gov/",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://eua.cms.gov/efi",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://portal.cms.gov/",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://www.cms.gov/",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://cmsnationaltrainingprogram.cms.gov/",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://*nsa-idr.cms.gov",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://*qpp.cms.gov/",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://csscoperations.com/",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
+      }
     ]
   }
 }
