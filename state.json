@@ -15351,6 +15351,12 @@
         "severity": "critical"
       },
       {
+        "target": "https://github.com/circlefin/stablecoin-xlm",
+        "type": "Source_Code",
+        "bounty": true,
+        "severity": "critical"
+      },
+      {
         "target": "https://github.com/circlefin/starknet-cctp",
         "type": "Smart_Contract",
         "bounty": true,
