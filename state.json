@@ -74121,6 +74121,12 @@
     ],
     "HackerOne:compass-bbp": [
       {
+        "target": "*.porchlightgroup.com",
+        "type": "Wildcard",
+        "bounty": false,
+        "severity": "critical"
+      },
+      {
         "target": "com.compass.compass",
         "type": "Google_Play_App_Id",
         "bounty": true,
