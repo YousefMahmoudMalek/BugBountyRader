@@ -231679,6 +231679,12 @@
         "severity": "critical"
       },
       {
+        "target": "DRM (Digital Rights Management) System",
+        "type": "Other",
+        "bounty": true,
+        "severity": "critical"
+      },
+      {
         "target": "GHE",
         "type": "Other",
         "bounty": true,
