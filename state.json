@@ -268769,6 +268769,12 @@
         "type": "Website",
         "bounty": true,
         "severity": "Unknown"
+      },
+      {
+        "target": "https://marketplace.atlassian.com/apps/1899492230/live-tables-from-csv-json-for-confluence?hosting=cloud&tab=overview",
+        "type": "Website",
+        "bounty": true,
+        "severity": "Unknown"
       }
     ],
     "HackerOne:ibm": [
@@ -276049,6 +276055,20 @@
       {
         "target": "Aruba User Experience Insight Sensors",
         "type": "Hardware",
+        "bounty": true,
+        "severity": "Unknown"
+      }
+    ],
+    "YesWeHack:toom Baumarkt GmbH - Webshop": [
+      {
+        "target": "https://toom.de",
+        "type": "Web-Application",
+        "bounty": true,
+        "severity": "Unknown"
+      },
+      {
+        "target": "https://api.toom.de",
+        "type": "Api",
         "bounty": true,
         "severity": "Unknown"
       }
