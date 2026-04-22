@@ -266353,19 +266353,19 @@
     ],
     "YesWeHack:Moneybox Bug Bounty": [
       {
-        "target": "https://api.moneyboxapp.com/",
+        "target": "https://api.moneyboxapp.com",
         "type": "Api",
         "bounty": true,
         "severity": "Unknown"
       },
       {
-        "target": "https://admin.moneyboxapp.org/",
+        "target": "https://admin.moneyboxapp.org",
         "type": "Web-Application",
         "bounty": true,
         "severity": "Unknown"
       },
       {
-        "target": "https://admin-roundups.moneyboxapp.org/",
+        "target": "https://admin-roundups.moneyboxapp.org",
         "type": "Web-Application",
         "bounty": true,
         "severity": "Unknown"
@@ -266383,7 +266383,7 @@
         "severity": "Unknown"
       },
       {
-        "target": "https://sycamore.moneyboxapp.org/",
+        "target": "https://sycamore.moneyboxapp.org",
         "type": "Web-Application",
         "bounty": true,
         "severity": "Unknown"
