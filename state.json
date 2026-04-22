@@ -276072,6 +276072,26 @@
         "bounty": true,
         "severity": "Unknown"
       }
+    ],
+    "Intigriti:allegrobugbounty": [
+      {
+        "target": "*.allegro.cz.allegrosandbox.pl",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.allegro.pl.allegrosandbox.pl",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      },
+      {
+        "target": "*.allegro.sk.allegrosandbox.pl",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "Tier 2"
+      }
     ]
   }
 }
