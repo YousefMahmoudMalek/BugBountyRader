@@ -31649,6 +31649,12 @@
         "severity": "critical"
       },
       {
+        "target": "*.superbet.gr",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "critical"
+      },
+      {
         "target": "*.superbet.pl",
         "type": "Wildcard",
         "bounty": true,
