@@ -6679,6 +6679,12 @@
         "severity": "critical"
       },
       {
+        "target": "https://developers.oppomobile.com/",
+        "type": "Url",
+        "bounty": true,
+        "severity": "critical"
+      },
+      {
         "target": "https://drp.myoppo.com/",
         "type": "Url",
         "bounty": true,
@@ -257361,6 +257367,12 @@
         "severity": "No Bounty"
       },
       {
+        "target": "*.kiwaimpact.com",
+        "type": "Wildcard",
+        "bounty": true,
+        "severity": "No Bounty"
+      },
+      {
         "target": "*.kiwa.info",
         "type": "Wildcard",
         "bounty": true,
@@ -257373,13 +257385,13 @@
         "severity": "No Bounty"
       },
       {
-        "target": "*.kiwa.no",
+        "target": "*.kiwa.se",
         "type": "Wildcard",
         "bounty": true,
         "severity": "No Bounty"
       },
       {
-        "target": "*.kiwa.se",
+        "target": "*.kiwa.no",
         "type": "Wildcard",
         "bounty": true,
         "severity": "No Bounty"
