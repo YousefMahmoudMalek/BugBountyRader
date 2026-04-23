@@ -31,14 +31,31 @@ LOG_BUFFER = []
 def load_state():
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r") as f:
-            data = json.load(f)
-            # Migration: If it's the old list format, convert to the new dict format
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                return {"programs": {}}
+
+            # 1. Legacy Migration: notified_handles list -> programs dict
             if isinstance(data.get("notified_handles"), list):
-                print("Migrating state to new Scope Tracking format...")
+                print("Migrating legacy state format...")
                 new_state = {"programs": {}}
+                now = time.time()
                 for entry in data["notified_handles"]:
-                    new_state["programs"][entry] = [] # Silently populate as we don't have old targets
+                    new_state["programs"][entry] = {"targets": [], "last_seen": now}
                 return new_state
+            
+            # 2. Schema Migration: [targets] -> {"targets": [...], "last_seen": ...}
+            if "programs" in data:
+                modified = False
+                now = time.time()
+                for uid, val in data["programs"].items():
+                    if isinstance(val, list):
+                        data["programs"][uid] = {"targets": val, "last_seen": now}
+                        modified = True
+                if modified:
+                    print("Migrated program entries to include 'last_seen' timestamp.")
+            
             return data
     return {"programs": {}}
 
@@ -339,6 +356,10 @@ def main():
     else:
         print(f"\n--- BugBountyRadar Check Started: {time.strftime('%Y-%m-%d %H:%M:%S')} ---")
 
+    now = time.time()
+    REOPEN_THRESHOLD = 3600 * 2 # 2 hours (Considered 'closed' if gone for this long)
+    ALERT_THRESHOLD = 3600 * 24 * 7 # 7 days (Re-alert if gone for longer than this)
+
     for platform, url in DATA_SOURCES.items():
         print(f"Checking {platform}...")
         programs = fetch_programs(platform, url)
@@ -351,20 +372,44 @@ def main():
             unique_id = f"{platform}:{handle}"
             current_targets = extract_targets(program, platform)
             
-            # Migration/Prefill check
-            old_data = state["programs"].get(unique_id, [])
-            if old_data and isinstance(old_data[0], str):
-                print(f"  Migrating {unique_id} format...")
-                state["programs"][unique_id] = current_targets
-                old_data = current_targets
-
+            # Initial Run / Seed Mode
             if is_initial_run or is_seed_run:
-                state["programs"][unique_id] = current_targets
+                state["programs"][unique_id] = {"targets": current_targets, "last_seen": now}
                 continue
 
-            # Case: New Program
+            # Case: New Program or Reopened after long time
             if unique_id not in state["programs"]:
                 print(f"New program found: {handle} on {platform}")
+                is_reopen = False
+            else:
+                entry = state["programs"][unique_id]
+                last_seen = entry.get("last_seen", 0)
+                time_since = now - last_seen
+                
+                # Check if it was gone for a while
+                if time_since > REOPEN_THRESHOLD:
+                    is_reopen = True
+                    days_since = int(time_since // (3600 * 24))
+                    time_desc = f"{days_since} days" if days_since > 0 else f"{int(time_since // 3600)} hours"
+                    
+                    if time_since > ALERT_THRESHOLD:
+                        print(f"Program REOPENED (Long absence: {time_desc}): {handle}")
+                    else:
+                        print(f"Program reopened ({time_desc}): {handle}")
+                        LOG_BUFFER.append(f"🔄 **Reopened**: `{handle}` ({platform}) - Back after {time_desc}")
+                        
+                        # Just update state and continue to scope check (don't alert New Program)
+                        state["programs"][unique_id]["last_seen"] = now
+                        old_data = state["programs"][unique_id].get("targets", [])
+                        # Proceed to scope check below
+                else:
+                    # Still active, just update last_seen and proceed to scope check
+                    state["programs"][unique_id]["last_seen"] = now
+                    old_data = state["programs"][unique_id].get("targets", [])
+                    is_reopen = None # Not a reopen event
+
+            # Trigger "New Program" alert if actually new OR reopened after long time
+            if unique_id not in state["programs"] or (is_reopen and (now - state["programs"][unique_id].get("last_seen", 0)) > ALERT_THRESHOLD):
                 ai_summary, rating = analyze_with_ai(program, platform)
                 
                 if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
@@ -375,14 +420,20 @@ def main():
                     ai_success += 1
 
                 if rating >= MIN_RATING:
+                    alert_title = "New Bug Bounty Program!"
+                    if unique_id in state["programs"]:
+                        time_since = now - state["programs"][unique_id].get("last_seen", 0)
+                        days = int(time_since // (3600 * 24))
+                        alert_title = f"🛰️ Program Reopened! (After {days} days)"
+
                     alert_msg = f"**Platform:** {platform}\n"
                     alert_msg += f"**Program:** {handle}\n"
                     alert_msg += f"**Link:** {prog_url}\n"
                     alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
-                    send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title="New Bug Bounty Program!", use_embed=False)
+                    send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title=alert_title, use_embed=False)
                     new_programs_found += 1
                 
-                state["programs"][unique_id] = current_targets
+                state["programs"][unique_id] = {"targets": current_targets, "last_seen": now}
                 save_state(state)
                 continue
 
@@ -416,7 +467,7 @@ def main():
                 alert_msg += f"\n--- AI IMPACT ANALYSIS ---\n{ai_summary}\n"
                 
                 send_discord_alert(alert_msg, SCOPE_WEBHOOK_URL, title="🛰️ Scope Expansion Detected!")
-                state["programs"][unique_id] = current_targets
+                state["programs"][unique_id]["targets"] = current_targets
                 scope_updates_found += 1
                 save_state(state)
 
