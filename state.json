@@ -276110,6 +276110,14 @@
         "bounty": true,
         "severity": "Tier 2"
       }
+    ],
+    "YesWeHack:PowerDNS": [
+      {
+        "target": "PowerDNS authoritative server, recursor and DNSdist (see \"Software packages\" and \"Source-code\")",
+        "type": "Open-Source",
+        "bounty": true,
+        "severity": "Unknown"
+      }
     ]
   }
 }
