@@ -357,7 +357,7 @@ def main():
         print(f"\n--- BugBountyRadar Check Started: {time.strftime('%Y-%m-%d %H:%M:%S')} ---")
 
     now = time.time()
-    REOPEN_THRESHOLD = 3600 * 2 # 2 hours (Considered 'closed' if gone for this long)
+    REOPEN_THRESHOLD = 3600 * 6 # 6 hours (Considered 'closed' if gone for this long)
     ALERT_THRESHOLD = 3600 * 24 * 7 # 7 days (Re-alert if gone for longer than this)
 
     for platform, url in DATA_SOURCES.items():
@@ -380,36 +380,36 @@ def main():
             # Case: New Program or Reopened after long time
             if unique_id not in state["programs"]:
                 print(f"New program found: {handle} on {platform}")
-                is_reopen = False
+                is_new = True
+                should_alert_new = True
+                old_data = []
             else:
+                is_new = False
                 entry = state["programs"][unique_id]
-                last_seen = entry.get("last_seen", 0)
-                time_since = now - last_seen
+                prev_last_seen = entry.get("last_seen", 0)
+                time_since = now - prev_last_seen
+                old_data = entry.get("targets", [])
                 
                 # Check if it was gone for a while
                 if time_since > REOPEN_THRESHOLD:
-                    is_reopen = True
                     days_since = int(time_since // (3600 * 24))
                     time_desc = f"{days_since} days" if days_since > 0 else f"{int(time_since // 3600)} hours"
                     
                     if time_since > ALERT_THRESHOLD:
                         print(f"Program REOPENED (Long absence: {time_desc}): {handle}")
+                        should_alert_new = True
                     else:
                         print(f"Program reopened ({time_desc}): {handle}")
                         LOG_BUFFER.append(f"🔄 **Reopened**: `{handle}` ({platform}) - Back after {time_desc}")
-                        
-                        # Just update state and continue to scope check (don't alert New Program)
-                        state["programs"][unique_id]["last_seen"] = now
-                        old_data = state["programs"][unique_id].get("targets", [])
-                        # Proceed to scope check below
+                        should_alert_new = False
                 else:
-                    # Still active, just update last_seen and proceed to scope check
-                    state["programs"][unique_id]["last_seen"] = now
-                    old_data = state["programs"][unique_id].get("targets", [])
-                    is_reopen = None # Not a reopen event
+                    should_alert_new = False
+
+                # Always update last_seen for seen programs
+                state["programs"][unique_id]["last_seen"] = now
 
             # Trigger "New Program" alert if actually new OR reopened after long time
-            if unique_id not in state["programs"] or (is_reopen and (now - state["programs"][unique_id].get("last_seen", 0)) > ALERT_THRESHOLD):
+            if should_alert_new:
                 ai_summary, rating = analyze_with_ai(program, platform)
                 
                 if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
@@ -421,8 +421,8 @@ def main():
 
                 if rating >= MIN_RATING:
                     alert_title = "New Bug Bounty Program!"
-                    if unique_id in state["programs"]:
-                        time_since = now - state["programs"][unique_id].get("last_seen", 0)
+                    if not is_new:
+                        time_since = now - prev_last_seen
                         days = int(time_since // (3600 * 24))
                         alert_title = f"🛰️ Program Reopened! (After {days} days)"
 
@@ -434,7 +434,7 @@ def main():
                     new_programs_found += 1
                 
                 state["programs"][unique_id] = {"targets": current_targets, "last_seen": now}
-                save_state(state)
+                # No need to save here, we save at the end
                 continue
 
             # Case: Scope Update
@@ -469,7 +469,6 @@ def main():
                 send_discord_alert(alert_msg, SCOPE_WEBHOOK_URL, title="🛰️ Scope Expansion Detected!")
                 state["programs"][unique_id]["targets"] = current_targets
                 scope_updates_found += 1
-                save_state(state)
 
     if is_initial_run or is_seed_run:
         save_state(state)
@@ -479,10 +478,23 @@ def main():
         summary = f"✅ **Scan Finished** | New: {new_programs_found} | Scope: {scope_updates_found} | AI: {ai_success} OK, {ai_fail} FAIL"
         print(summary)
         
+        # Save state at the end of every scan to persist last_seen updates
+        save_state(state)
+
         full_log = [f"📡 **Scan Summary** - {time.strftime('%H:%M:%S')}"]
-        full_log.extend(LOG_BUFFER)
-        full_log.append(summary)
         
+        # Robust log truncation: ensure summary is always visible
+        # Discord limit is 2000, we aim for ~1900 to be safe
+        current_len = len(full_log[0]) + len(summary) + 10
+        for entry in LOG_BUFFER:
+            if current_len + len(entry) + 5 < 1900:
+                full_log.append(entry)
+                current_len += len(entry) + 1
+            else:
+                full_log.append("... (Log Truncated)")
+                break
+        
+        full_log.append(summary)
         send_log_alert("\n".join(full_log))
 
 if __name__ == "__main__":
