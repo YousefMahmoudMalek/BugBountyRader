@@ -33,7 +33,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tbs-sct": {
       "targets": [
@@ -128,7 +128,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bose_vdp": {
       "targets": [
@@ -169,7 +169,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mod_supply_chain_vdp": {
       "targets": [
@@ -1254,7 +1254,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:anduril_industries": {
       "targets": [
@@ -1295,7 +1295,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tines_automation_vdp": {
       "targets": [
@@ -1312,7 +1312,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:luminor": {
       "targets": [
@@ -1347,7 +1347,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mufg-vdp": {
       "targets": [
@@ -1364,7 +1364,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bankunited": {
       "targets": [
@@ -1489,11 +1489,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mueller_water_products_vdp": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hexagon_vdp": {
       "targets": [
@@ -1504,7 +1504,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:henkel_vdp": {
       "targets": [
@@ -2931,7 +2931,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:vueling_vdp": {
       "targets": [
@@ -2942,7 +2942,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:robinhood_markets": {
       "targets": [
@@ -3109,7 +3109,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:docusign": {
       "targets": [
@@ -3120,7 +3120,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:british_airways_vdp": {
       "targets": [
@@ -3155,7 +3155,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:regions_financial": {
       "targets": [
@@ -3232,7 +3232,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:1win_com": {
       "targets": [
@@ -3273,7 +3273,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:citi_group": {
       "targets": [
@@ -3284,7 +3284,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tucows_vdp": {
       "targets": [
@@ -3355,7 +3355,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:banco_plata": {
       "targets": [
@@ -3384,7 +3384,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:netscaler_public_program": {
       "targets": [
@@ -3407,7 +3407,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hack_the_box": {
       "targets": [
@@ -3466,7 +3466,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:meesho_bbp": {
       "targets": [
@@ -3543,7 +3543,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:kaseya": {
       "targets": [
@@ -3764,7 +3764,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:lovable-vdp": {
       "targets": [
@@ -3793,7 +3793,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:braze_inc": {
       "targets": [
@@ -3816,7 +3816,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:kong": {
       "targets": [
@@ -3905,7 +3905,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hyland_software": {
       "targets": [
@@ -3994,7 +3994,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:worldpay": {
       "targets": [
@@ -4017,7 +4017,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hertz": {
       "targets": [
@@ -4034,7 +4034,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:qinetiq": {
       "targets": [
@@ -4219,15 +4219,15 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:kraken-tech": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:experian": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ferrero": {
       "targets": [
@@ -5876,7 +5876,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:baird_vdp": {
       "targets": [
@@ -5893,7 +5893,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:dust": {
       "targets": [
@@ -5910,7 +5910,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:msci": {
       "targets": [
@@ -5921,7 +5921,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hotmartvdp": {
       "targets": [
@@ -5932,7 +5932,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:whoop_bug_bounty": {
       "targets": [
@@ -5985,7 +5985,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hex": {
       "targets": [
@@ -6008,7 +6008,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hubspot": {
       "targets": [
@@ -6103,7 +6103,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:alibaba_vdp": {
       "targets": [
@@ -6276,7 +6276,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:oppo_bbp": {
       "targets": [
@@ -7091,7 +7091,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:1password_ctf": {
       "targets": [
@@ -7102,7 +7102,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:1password": {
       "targets": [
@@ -7131,7 +7131,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bill_vdp": {
       "targets": [
@@ -7208,7 +7208,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bcny": {
       "targets": [
@@ -7273,7 +7273,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:verily_life_sciences": {
       "targets": [
@@ -7314,7 +7314,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:neon_bbp": {
       "targets": [
@@ -7337,7 +7337,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bumba_bbp": {
       "targets": [
@@ -7348,7 +7348,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:starbucks_japan": {
       "targets": [
@@ -7395,7 +7395,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:adevinta_vdp": {
       "targets": [
@@ -7538,7 +7538,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:recreation_gov_vdp": {
       "targets": [
@@ -7585,7 +7585,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:syfe_bbp": {
       "targets": [
@@ -7644,7 +7644,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:pepsico_vdp": {
       "targets": [
@@ -8945,7 +8945,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:aws_vdp": {
       "targets": [
@@ -12292,7 +12292,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:nba-public": {
       "targets": [
@@ -13149,7 +13149,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hpe_vdp": {
       "targets": [
@@ -14396,7 +14396,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:itau_unibanco": {
       "targets": [
@@ -15229,7 +15229,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:supabase": {
       "targets": [
@@ -15294,7 +15294,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:finnair_vdp": {
       "targets": [
@@ -15305,7 +15305,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:liverpool_victoria": {
       "targets": [
@@ -15316,7 +15316,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:6sense-vdp": {
       "targets": [
@@ -15345,7 +15345,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mintel": {
       "targets": [
@@ -15506,7 +15506,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:circle-bbp": {
       "targets": [
@@ -15673,7 +15673,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:lpl_financial-vdp": {
       "targets": [
@@ -15696,7 +15696,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:peloton": {
       "targets": [
@@ -15731,7 +15731,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:varonis": {
       "targets": [
@@ -15754,7 +15754,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:anthropic-vdp": {
       "targets": [
@@ -15789,7 +15789,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ion": {
       "targets": [
@@ -23906,7 +23906,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:klarna": {
       "targets": [
@@ -23983,7 +23983,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:unico_idtech": {
       "targets": [
@@ -24078,7 +24078,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wallet_on_telegram": {
       "targets": [
@@ -24125,7 +24125,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tomtom": {
       "targets": [
@@ -24154,7 +24154,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fanduel-vdp": {
       "targets": [
@@ -24165,7 +24165,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:singlestore": {
       "targets": [
@@ -24278,7 +24278,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:lowes": {
       "targets": [
@@ -24331,7 +24331,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:rei_vdp": {
       "targets": [
@@ -24372,7 +24372,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:chia_network": {
       "targets": [
@@ -24431,7 +24431,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:corebridge_financial": {
       "targets": [
@@ -24562,7 +24562,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:3cx": {
       "targets": [
@@ -24615,7 +24615,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:interco_vdp": {
       "targets": [
@@ -24770,7 +24770,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:privy-bbp": {
       "targets": [
@@ -24847,7 +24847,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:dailypay_vdp": {
       "targets": [
@@ -24906,7 +24906,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:netflix": {
       "targets": [
@@ -25091,7 +25091,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:transunion": {
       "targets": [
@@ -25918,7 +25918,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wellhive": {
       "targets": [
@@ -25947,7 +25947,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:23andme_bbp": {
       "targets": [
@@ -26060,7 +26060,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:aeromexico_vdp": {
       "targets": [
@@ -26143,7 +26143,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:audible": {
       "targets": [
@@ -26172,7 +26172,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:temu": {
       "targets": [
@@ -26201,7 +26201,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:vectra_ai_vdp": {
       "targets": [
@@ -26260,7 +26260,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:lightspark_bbp": {
       "targets": [
@@ -26343,7 +26343,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bybit_fintech": {
       "targets": [
@@ -26402,7 +26402,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:trip_com": {
       "targets": [
@@ -26509,7 +26509,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bykea": {
       "targets": [
@@ -26610,7 +26610,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:aon": {
       "targets": [
@@ -28169,7 +28169,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:oaknorth_bank": {
       "targets": [
@@ -28240,7 +28240,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wonder-vdp": {
       "targets": [
@@ -28431,7 +28431,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:aven_response": {
       "targets": [
@@ -28460,7 +28460,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:visa": {
       "targets": [
@@ -29341,7 +29341,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:brightspeed": {
       "targets": [
@@ -29376,7 +29376,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:aboitizpower_corporation": {
       "targets": [
@@ -29807,7 +29807,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:toolsforhumanity": {
       "targets": [
@@ -29944,7 +29944,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:alshaya": {
       "targets": [
@@ -30945,7 +30945,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:eurofins": {
       "targets": [
@@ -31141,7 +31141,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:truist_financial": {
       "targets": [
@@ -31236,7 +31236,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:six-group": {
       "targets": [
@@ -31577,7 +31577,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:eufy_security": {
       "targets": [
@@ -31678,7 +31678,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:eero": {
       "targets": [
@@ -31713,7 +31713,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fertitta_entertainment": {
       "targets": [
@@ -31850,7 +31850,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mozilla": {
       "targets": [
@@ -32029,7 +32029,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:stripchat": {
       "targets": [
@@ -32046,7 +32046,7 @@
           "severity": "none"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:redox_bbp": {
       "targets": [
@@ -32105,7 +32105,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:okg": {
       "targets": [
@@ -32170,7 +32170,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wisdomtree": {
       "targets": [
@@ -32205,7 +32205,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:pornbox": {
       "targets": [
@@ -32234,7 +32234,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tron_dao": {
       "targets": [
@@ -32245,7 +32245,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:superbet": {
       "targets": [
@@ -32406,7 +32406,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:abn_amro_vdp": {
       "targets": [
@@ -32531,7 +32531,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:magic-eden": {
       "targets": [
@@ -32572,7 +32572,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:prudential-financial": {
       "targets": [
@@ -32589,7 +32589,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:boozt": {
       "targets": [
@@ -32636,7 +32636,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:us-department-of-state": {
       "targets": [
@@ -32785,7 +32785,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:sheer_bbp": {
       "targets": [
@@ -32802,7 +32802,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:vodafone_oman": {
       "targets": [
@@ -32849,7 +32849,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:frontegg": {
       "targets": [
@@ -32866,7 +32866,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:kkr_vdp": {
       "targets": [
@@ -32949,7 +32949,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:intuit_rdp": {
       "targets": [
@@ -32984,7 +32984,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fifth_third_bank_vdp": {
       "targets": [
@@ -33409,7 +33409,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:indrive": {
       "targets": [
@@ -34122,7 +34122,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:amazonvrp-devices": {
       "targets": [
@@ -34325,7 +34325,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:rei_bbp": {
       "targets": [
@@ -34366,7 +34366,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mergify": {
       "targets": [
@@ -34383,7 +34383,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:zabbix": {
       "targets": [
@@ -34394,7 +34394,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:coinhako": {
       "targets": [
@@ -34423,7 +34423,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:arkose_labs": {
       "targets": [
@@ -34476,7 +34476,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:productboard": {
       "targets": [
@@ -34493,7 +34493,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:abb": {
       "targets": [
@@ -40726,7 +40726,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:avalara": {
       "targets": [
@@ -40815,7 +40815,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:alsco": {
       "targets": [
@@ -40832,7 +40832,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:abercrombie_fitch": {
       "targets": [
@@ -40885,7 +40885,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:city_of_los_angeles_vdp": {
       "targets": [
@@ -40902,7 +40902,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:dynamic_labs": {
       "targets": [
@@ -40925,7 +40925,7 @@
           "severity": "low"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:resmed": {
       "targets": [
@@ -41308,7 +41308,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:modern_treasury": {
       "targets": [
@@ -41325,7 +41325,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:notion": {
       "targets": [
@@ -41402,7 +41402,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mpesa": {
       "targets": [
@@ -41479,7 +41479,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:daimler_truck": {
       "targets": [
@@ -43116,7 +43116,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:canada_goose_inc": {
       "targets": [
@@ -43139,7 +43139,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:monarch_money": {
       "targets": [
@@ -43168,7 +43168,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:clarivate": {
       "targets": [
@@ -73335,7 +73335,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:render": {
       "targets": [
@@ -73358,7 +73358,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:metamask": {
       "targets": [
@@ -73459,7 +73459,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:floqast": {
       "targets": [
@@ -73488,7 +73488,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:callsign": {
       "targets": [
@@ -73523,7 +73523,7 @@
           "severity": "low"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:palantir_public": {
       "targets": [
@@ -73540,7 +73540,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ro": {
       "targets": [
@@ -73647,7 +73647,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:unitigroup": {
       "targets": [
@@ -73748,7 +73748,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mongodb": {
       "targets": [
@@ -73909,7 +73909,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ripio": {
       "targets": [
@@ -74058,7 +74058,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:deribit": {
       "targets": [
@@ -74111,7 +74111,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fidelity": {
       "targets": [
@@ -74224,7 +74224,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:sorare": {
       "targets": [
@@ -74247,15 +74247,15 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fresenius": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:caterpillar": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:disney": {
       "targets": [
@@ -74362,7 +74362,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:alohi": {
       "targets": [
@@ -74427,7 +74427,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hilton": {
       "targets": [
@@ -74534,7 +74534,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:gymshark": {
       "targets": [
@@ -74575,7 +74575,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:moov": {
       "targets": [
@@ -74622,7 +74622,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:vodafone": {
       "targets": [
@@ -75029,7 +75029,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:compass-bbp": {
       "targets": [
@@ -75058,7 +75058,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:sidefx": {
       "targets": [
@@ -75069,7 +75069,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wellsfargo-bbp": {
       "targets": [
@@ -75158,7 +75158,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:allegion": {
       "targets": [
@@ -75937,7 +75937,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wickr": {
       "targets": [
@@ -76020,7 +76020,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:pagerduty": {
       "targets": [
@@ -76133,7 +76133,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:oanda": {
       "targets": [
@@ -76180,7 +76180,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:payoneer": {
       "targets": [
@@ -76215,7 +76215,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tesco": {
       "targets": [
@@ -76364,7 +76364,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:planet-labs": {
       "targets": [
@@ -76393,7 +76393,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:moonpay": {
       "targets": [
@@ -76482,7 +76482,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:koho": {
       "targets": [
@@ -76541,7 +76541,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:veeam": {
       "targets": [
@@ -76576,7 +76576,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:redis-vdp": {
       "targets": [
@@ -76629,11 +76629,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:godaddy-vdp": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mondelez": {
       "targets": [
@@ -78648,7 +78648,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:inspectorio": {
       "targets": [
@@ -78683,6 +78683,12 @@
           "severity": "critical"
         },
         {
+          "target": "https://collabora.stg.inspectorio.com",
+          "type": "Url",
+          "bounty": false,
+          "severity": "critical"
+        },
+        {
           "target": "https://testflight.apple.com/join/vwFxXX7t",
           "type": "Testflight",
           "bounty": true,
@@ -78713,7 +78719,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:capital-one-bounty": {
       "targets": [
@@ -78778,7 +78784,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:apnic": {
       "targets": [
@@ -78891,7 +78897,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:blend-labs": {
       "targets": [
@@ -78902,7 +78908,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:razorpay": {
       "targets": [
@@ -78943,7 +78949,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hy-vee": {
       "targets": [
@@ -78966,7 +78972,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:zooplus": {
       "targets": [
@@ -78995,7 +79001,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tenable": {
       "targets": [
@@ -79090,7 +79096,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:sega": {
       "targets": [
@@ -79149,7 +79155,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:octopus-energy": {
       "targets": [
@@ -79160,7 +79166,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fastly-vdp": {
       "targets": [
@@ -79201,7 +79207,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:servicenow-disclosure": {
       "targets": [
@@ -79224,7 +79230,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:zurich-insurance": {
       "targets": [
@@ -79534,7 +79540,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:krisp": {
       "targets": [
@@ -79629,7 +79635,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:whatnot": {
       "targets": [
@@ -79676,7 +79682,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:latamairlines": {
       "targets": [
@@ -79855,7 +79861,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:khealth": {
       "targets": [
@@ -80004,7 +80010,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:smtp2go": {
       "targets": [
@@ -80027,7 +80033,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:jetblue": {
       "targets": [
@@ -80116,7 +80122,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:nominet": {
       "targets": [
@@ -80139,7 +80145,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:zebra_vdp": {
       "targets": [
@@ -80480,7 +80486,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fiserv": {
       "targets": [
@@ -144985,7 +144991,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ups": {
       "targets": [
@@ -145008,7 +145014,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:playtika": {
       "targets": [
@@ -145403,11 +145409,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:beiersdorf": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:john-deere": {
       "targets": [
@@ -156854,7 +156860,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:trendyol": {
       "targets": [
@@ -156931,7 +156937,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mtb": {
       "targets": [
@@ -157002,7 +157008,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:global-payments": {
       "targets": [
@@ -157229,7 +157235,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:blackrock": {
       "targets": [
@@ -157258,7 +157264,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:costco": {
       "targets": [
@@ -157347,7 +157353,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:consensys": {
       "targets": [
@@ -157405,7 +157411,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hypr-corp": {
       "targets": [
@@ -157440,7 +157446,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mars": {
       "targets": [
@@ -158105,7 +158111,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:who-covid-19-mobile-app": {
       "targets": [
@@ -158140,7 +158146,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:stripe": {
       "targets": [
@@ -158421,11 +158427,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:pfizer": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:emoney-advisor": {
       "targets": [
@@ -158448,7 +158454,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:paystack-vdp": {
       "targets": [
@@ -158537,7 +158543,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:judgeme": {
       "targets": [
@@ -158578,7 +158584,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:r3": {
       "targets": [
@@ -158589,7 +158595,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:cbre": {
       "targets": [
@@ -210890,7 +210896,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:doppler": {
       "targets": [
@@ -210931,7 +210937,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:grindr": {
       "targets": [
@@ -210990,7 +210996,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:csg-public": {
       "targets": [
@@ -211097,7 +211103,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:xvideos": {
       "targets": [
@@ -211132,7 +211138,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:anywhererealestate": {
       "targets": [
@@ -211233,7 +211239,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ohiosecretaryofstate": {
       "targets": [
@@ -211298,7 +211304,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:openmage": {
       "targets": [
@@ -211321,7 +211327,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:8x8-bounty": {
       "targets": [
@@ -211932,7 +211938,7 @@
           "severity": "low"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tiktok": {
       "targets": [
@@ -212171,7 +212177,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:estee-lauder": {
       "targets": [
@@ -215002,7 +215008,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:aig": {
       "targets": [
@@ -215109,7 +215115,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:finra": {
       "targets": [
@@ -215126,7 +215132,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:launchdarkly": {
       "targets": [
@@ -215167,7 +215173,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:polygon-technology": {
       "targets": [
@@ -215220,7 +215226,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:cognizant": {
       "targets": [
@@ -215381,7 +215387,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:vendasta": {
       "targets": [
@@ -215452,7 +215458,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:insightly": {
       "targets": [
@@ -215511,7 +215517,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:figma": {
       "targets": [
@@ -215558,7 +215564,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mendix": {
       "targets": [
@@ -215701,7 +215707,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:amazonvrp": {
       "targets": [
@@ -216306,7 +216312,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:cs_money": {
       "targets": [
@@ -216341,7 +216347,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:cedars-sinai": {
       "targets": [
@@ -216580,7 +216586,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:n45ht": {
       "targets": [
@@ -216591,7 +216597,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hostinger": {
       "targets": [
@@ -216662,7 +216668,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:shutterfly_vdp": {
       "targets": [
@@ -216877,7 +216883,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:usps": {
       "targets": [
@@ -216984,7 +216990,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:shein": {
       "targets": [
@@ -217031,7 +217037,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:navient_solutions": {
       "targets": [
@@ -217042,7 +217048,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:stagingdoteverydotorg": {
       "targets": [
@@ -217053,7 +217059,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:td-bank": {
       "targets": [
@@ -217178,7 +217184,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:flexport_vdp": {
       "targets": [
@@ -217195,7 +217201,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:thnks": {
       "targets": [
@@ -217224,7 +217230,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:myndr": {
       "targets": [
@@ -217247,7 +217253,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:faraday_inc": {
       "targets": [
@@ -217294,7 +217300,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:playstation": {
       "targets": [
@@ -217407,7 +217413,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:truecaller": {
       "targets": [
@@ -217466,7 +217472,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:insulet_corporation": {
       "targets": [
@@ -217585,7 +217591,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:simple_poll": {
       "targets": [
@@ -217614,7 +217620,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:pubg": {
       "targets": [
@@ -217631,7 +217637,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:picsart": {
       "targets": [
@@ -217744,7 +217750,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:evernote": {
       "targets": [
@@ -217803,7 +217809,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hcl_software": {
       "targets": [
@@ -218096,7 +218102,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bestbuy": {
       "targets": [
@@ -218107,7 +218113,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:stripo": {
       "targets": [
@@ -218124,7 +218130,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:lemlist": {
       "targets": [
@@ -218159,7 +218165,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:exodus": {
       "targets": [
@@ -218230,7 +218236,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:keybank": {
       "targets": [
@@ -218343,7 +218349,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:gmelius": {
       "targets": [
@@ -218366,7 +218372,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:thomsonreuters-public": {
       "targets": [
@@ -218383,7 +218389,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:streak_com": {
       "targets": [
@@ -218412,7 +218418,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:palo_alto_software": {
       "targets": [
@@ -218441,7 +218447,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:overloop": {
       "targets": [
@@ -218452,7 +218458,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:jnj_mobile": {
       "targets": [
@@ -218463,7 +218469,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mtn_group": {
       "targets": [
@@ -221432,7 +221438,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:kubernetes": {
       "targets": [
@@ -221929,7 +221935,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:coinspot": {
       "targets": [
@@ -221958,7 +221964,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:gocardless_bbp": {
       "targets": [
@@ -222065,7 +222071,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:equifax": {
       "targets": [
@@ -223762,7 +223768,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:forescout_technologies": {
       "targets": [
@@ -224145,7 +224151,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:att": {
       "targets": [
@@ -224156,7 +224162,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:lark_technologies": {
       "targets": [
@@ -224269,7 +224275,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:top_echelon_software": {
       "targets": [
@@ -224292,7 +224298,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:worklytics": {
       "targets": [
@@ -224303,7 +224309,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:defectdojo": {
       "targets": [
@@ -224314,7 +224320,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:trellix": {
       "targets": [
@@ -224355,7 +224361,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:curl": {
       "targets": [
@@ -224366,7 +224372,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:dynatrace": {
       "targets": [
@@ -224437,7 +224443,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ridewithvia": {
       "targets": [
@@ -224520,7 +224526,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:xiaomi": {
       "targets": [
@@ -224915,7 +224921,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:starling_bank": {
       "targets": [
@@ -224992,7 +224998,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:central-security-project": {
       "targets": [
@@ -225015,7 +225021,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:capital-one": {
       "targets": [
@@ -225182,7 +225188,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:reddit": {
       "targets": [
@@ -225355,7 +225361,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:msd": {
       "targets": [
@@ -225378,7 +225384,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:early_warning": {
       "targets": [
@@ -225437,7 +225443,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:instacart": {
       "targets": [
@@ -225502,7 +225508,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:phpbb": {
       "targets": [
@@ -225513,7 +225519,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ford": {
       "targets": [
@@ -225680,7 +225686,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:expediagroup_bbp": {
       "targets": [
@@ -226003,7 +226009,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fronthq": {
       "targets": [
@@ -226038,7 +226044,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:netlify": {
       "targets": [
@@ -226127,7 +226133,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fanduel": {
       "targets": [
@@ -226252,7 +226258,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:creditkarma": {
       "targets": [
@@ -226329,7 +226335,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mercadolibre": {
       "targets": [
@@ -226736,7 +226742,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:urbancompany": {
       "targets": [
@@ -226777,7 +226783,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:remitly": {
       "targets": [
@@ -226944,7 +226950,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:expediagroup": {
       "targets": [
@@ -227147,7 +227153,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:nutanix": {
       "targets": [
@@ -227254,7 +227260,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:s-pankki": {
       "targets": [
@@ -227343,7 +227349,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:flickr": {
       "targets": [
@@ -227378,7 +227384,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:matomo": {
       "targets": [
@@ -227437,7 +227443,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:nisc": {
       "targets": [
@@ -227508,7 +227514,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:logitech": {
       "targets": [
@@ -228029,7 +228035,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:marriott": {
       "targets": [
@@ -228514,7 +228520,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:hyatt": {
       "targets": [
@@ -228903,7 +228909,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:flipkart": {
       "targets": [
@@ -228968,7 +228974,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:acronis": {
       "targets": [
@@ -229099,7 +229105,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:chainlink": {
       "targets": [
@@ -229152,7 +229158,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:paypal": {
       "targets": [
@@ -229403,7 +229409,7 @@
           "severity": "low"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mariadb": {
       "targets": [
@@ -229438,7 +229444,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:chaturbate": {
       "targets": [
@@ -229497,7 +229503,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:pixiv": {
       "targets": [
@@ -229604,11 +229610,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:arkadiyt-projects": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:cosmos": {
       "targets": [
@@ -229715,7 +229721,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:duckduckgo": {
       "targets": [
@@ -229744,7 +229750,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:affirm": {
       "targets": [
@@ -229767,7 +229773,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:crypto": {
       "targets": [
@@ -229916,7 +229922,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:goodrx": {
       "targets": [
@@ -229939,7 +229945,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:nodejs": {
       "targets": [
@@ -229950,7 +229956,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:pingidentity": {
       "targets": [
@@ -230015,7 +230021,7 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:flutteruki": {
       "targets": [
@@ -230272,7 +230278,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:toyota": {
       "targets": [
@@ -230445,7 +230451,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bitmex": {
       "targets": [
@@ -230498,7 +230504,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:crowdstrike": {
       "targets": [
@@ -230617,7 +230623,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:databricks": {
       "targets": [
@@ -230652,7 +230658,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:coalition": {
       "targets": [
@@ -230675,7 +230681,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:elastic": {
       "targets": [
@@ -231040,7 +231046,7 @@
           "severity": "low"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:goldmansachs": {
       "targets": [
@@ -231321,7 +231327,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:yoti": {
       "targets": [
@@ -231380,7 +231386,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:valve": {
       "targets": [
@@ -231505,7 +231511,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:epicgames": {
       "targets": [
@@ -232014,7 +232020,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:sony": {
       "targets": [
@@ -232025,7 +232031,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:malwarebytes": {
       "targets": [
@@ -232252,7 +232258,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:superhuman": {
       "targets": [
@@ -232401,15 +232407,15 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:autodesk": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:monero": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:usertesting": {
       "targets": [
@@ -232420,7 +232426,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bitwarden": {
       "targets": [
@@ -232527,7 +232533,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:oportun_vdp": {
       "targets": [
@@ -232796,7 +232802,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wakatime": {
       "targets": [
@@ -232807,7 +232813,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bumble": {
       "targets": [
@@ -233112,7 +233118,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:spotify": {
       "targets": [
@@ -233369,7 +233375,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:roblox": {
       "targets": [
@@ -233416,11 +233422,11 @@
           "severity": "low"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:stellar": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:dyson": {
       "targets": [
@@ -233821,7 +233827,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:weblate": {
       "targets": [
@@ -233862,11 +233868,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:disclosure-assistance": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:nordsecurity": {
       "targets": [
@@ -233967,7 +233973,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:lyst": {
       "targets": [
@@ -234014,7 +234020,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:kiwicom": {
       "targets": [
@@ -234079,7 +234085,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:discourse": {
       "targets": [
@@ -234096,7 +234102,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:enjin": {
       "targets": [
@@ -234137,7 +234143,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:nintendo": {
       "targets": [
@@ -234184,11 +234190,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:deptofdefense": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:plaid": {
       "targets": [
@@ -234265,7 +234271,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:semrush": {
       "targets": [
@@ -234348,7 +234354,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:quora": {
       "targets": [
@@ -234377,7 +234383,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:brave": {
       "targets": [
@@ -234412,7 +234418,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:portswigger": {
       "targets": [
@@ -234477,7 +234483,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:rubygems": {
       "targets": [
@@ -234506,7 +234512,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:files": {
       "targets": [
@@ -234571,11 +234577,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:owox": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:exness": {
       "targets": [
@@ -234688,7 +234694,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:scopely": {
       "targets": [
@@ -234819,7 +234825,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wordpress": {
       "targets": [
@@ -234950,7 +234956,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:gocd": {
       "targets": [
@@ -234961,7 +234967,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:nextcloud": {
       "targets": [
@@ -235530,11 +235536,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:publitas": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:starbucks": {
       "targets": [
@@ -235599,7 +235605,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ruby": {
       "targets": [
@@ -235610,7 +235616,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:rockstargames": {
       "targets": [
@@ -235669,7 +235675,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:github": {
       "targets": [
@@ -235836,7 +235842,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:wealthsimple": {
       "targets": [
@@ -235865,7 +235871,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:eternal": {
       "targets": [
@@ -236074,11 +236080,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:gm": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:torproject": {
       "targets": [
@@ -236095,7 +236101,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:deriv": {
       "targets": [
@@ -236208,7 +236214,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:tinder": {
       "targets": [
@@ -236261,7 +236267,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:fetlife": {
       "targets": [
@@ -236284,7 +236290,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:versioncake": {
       "targets": [
@@ -236295,7 +236301,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:grab": {
       "targets": [
@@ -236498,15 +236504,15 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:cert": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:coinmate": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:clear": {
       "targets": [
@@ -236613,7 +236619,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:revive_adserver": {
       "targets": [
@@ -236624,7 +236630,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:moneybird": {
       "targets": [
@@ -236653,7 +236659,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:coursera": {
       "targets": [
@@ -236664,7 +236670,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:udemy": {
       "targets": [
@@ -236681,7 +236687,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:kayak": {
       "targets": [
@@ -236758,7 +236764,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:basecamp": {
       "targets": [
@@ -236859,7 +236865,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:shopify": {
       "targets": [
@@ -236984,7 +236990,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mapbox": {
       "targets": [
@@ -237031,11 +237037,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ips": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:airbnb": {
       "targets": [
@@ -237202,7 +237208,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:bookingcom": {
       "targets": [
@@ -237501,7 +237507,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:airtable": {
       "targets": [
@@ -237536,7 +237542,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:adobe": {
       "targets": [
@@ -237955,7 +237961,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:formassembly": {
       "targets": [
@@ -238002,7 +238008,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ui": {
       "targets": [
@@ -238307,7 +238313,7 @@
           "severity": "none"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:snapchat": {
       "targets": [
@@ -238546,7 +238552,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:priceline": {
       "targets": [
@@ -238629,7 +238635,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:yelp": {
       "targets": [
@@ -238688,7 +238694,7 @@
           "severity": "low"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:informatica": {
       "targets": [
@@ -238723,7 +238729,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:vimeo": {
       "targets": [
@@ -238944,7 +238950,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:linkedin": {
       "targets": [
@@ -238979,7 +238985,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:greenhouse": {
       "targets": [
@@ -239056,11 +239062,11 @@
           "severity": "high"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:expressionengine": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:gitlab": {
       "targets": [
@@ -239185,7 +239191,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:x": {
       "targets": [
@@ -239304,7 +239310,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:cloudflare": {
       "targets": [
@@ -239627,7 +239633,7 @@
           "severity": "medium"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:automattic": {
       "targets": [
@@ -239818,11 +239824,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:khanacademy": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:coinbase": {
       "targets": [
@@ -240001,7 +240007,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:concretecms": {
       "targets": [
@@ -240012,7 +240018,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:slack": {
       "targets": [
@@ -240131,11 +240137,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:phabricator": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:rails": {
       "targets": [
@@ -240146,11 +240152,11 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:django": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:security": {
       "targets": [
@@ -240317,7 +240323,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Acorns Grow, Inc.": {
       "targets": [
@@ -240358,7 +240364,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Afterpay Bug Bounty Program": {
       "targets": [
@@ -240459,7 +240465,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Aiven Managed Bug Bounty": {
       "targets": [
@@ -240572,7 +240578,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:AnyTask: Freelancer Platform": {
       "targets": [],
@@ -240767,7 +240773,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Asana": {
       "targets": [
@@ -240832,7 +240838,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Atlassian": {
       "targets": [
@@ -241125,7 +241131,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Atlassian-Built Apps": {
       "targets": [
@@ -242864,7 +242870,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Aurory Managed Bug Bounty Engagement (Public)": {
       "targets": [
@@ -242893,7 +242899,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Auth0 by Okta": {
       "targets": [
@@ -243048,7 +243054,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:AppFox": {
       "targets": [
@@ -243083,7 +243089,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:AXIS OS": {
       "targets": [
@@ -243094,7 +243100,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Backblaze": {
       "targets": [
@@ -243153,7 +243159,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Balsamiq for Atlassian Products": {
       "targets": [
@@ -243182,7 +243188,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Appliances - Barracuda Networks, Inc.": {
       "targets": [
@@ -243223,7 +243229,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Binance": {
       "targets": [
@@ -243348,7 +243354,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Bitdefender": {
       "targets": [
@@ -243383,7 +243389,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Bitdefender Box v2": {
       "targets": [
@@ -243394,7 +243400,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:BitGo Managed Public Bug Bounty Engagement ": {
       "targets": [
@@ -243435,7 +243441,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:BitGo Mobile Apps Bug Bounty Engagement ": {
       "targets": [
@@ -243464,7 +243470,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Bitpanda Ongoing Bug Bounty": {
       "targets": [
@@ -243529,7 +243535,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Bitso Managed Bug Bounty Engagement": {
       "targets": [
@@ -243576,11 +243582,11 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Bitstamp": {
       "targets": [],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Blockchain.com Managed Bug Bounty Engagement": {
       "targets": [
@@ -243615,7 +243621,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Block Open Source": {
       "targets": [
@@ -243674,7 +243680,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Bolt Technology O\u00dc": {
       "targets": [
@@ -243715,7 +243721,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Braze Public BB": {
       "targets": [
@@ -243785,7 +243791,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Bullish.com": {
       "targets": [
@@ -243802,7 +243808,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Bullish Exchange": {
       "targets": [
@@ -243819,7 +243825,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Canva": {
       "targets": [
@@ -243932,7 +243938,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Majid Al Futtaim Retail": {
       "targets": [
@@ -243961,7 +243967,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Cash App": {
       "targets": [
@@ -243990,7 +243996,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Council on Foreign Relations": {
       "targets": [
@@ -244013,7 +244019,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Chime Managed Bug Bounty Engagement": {
       "targets": [
@@ -244138,7 +244144,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Chipotle Managed Bug Bounty Engagement": {
       "targets": [
@@ -244179,7 +244185,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Cisco Meraki": {
       "targets": [
@@ -244256,7 +244262,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:City of Vienna Managed Bug Bounty": {
       "targets": [
@@ -244411,7 +244417,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:ClassDojo": {
       "targets": [
@@ -244512,7 +244518,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:ClickHouse": {
       "targets": [
@@ -244535,7 +244541,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Cloudinary": {
       "targets": [
@@ -244570,7 +244576,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Centers for Medicare & Medicaid Services - Public Bug Bounty Program 2025": {
       "targets": [],
@@ -244603,7 +244609,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:codefortynine": {
       "targets": [
@@ -244704,7 +244710,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Code.org": {
       "targets": [
@@ -244721,7 +244727,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:CoinDesk.com": {
       "targets": [
@@ -244732,7 +244738,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:CoinDesk Mobile": {
       "targets": [
@@ -244749,7 +244755,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Colined": {
       "targets": [
@@ -244790,7 +244796,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Comcast Xfinity Bug Bounty": {
       "targets": [
@@ -244819,7 +244825,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd: Comcast Xfinity Vulnerability Disclosure Program": {
       "targets": [
@@ -244860,7 +244866,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Consensus by CoinDesk": {
       "targets": [
@@ -244871,7 +244877,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Craft Coders Marketplace Bug Bounty": {
       "targets": [
@@ -244894,7 +244900,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Dell Technologies Application Bug Bounty": {
       "targets": [
@@ -244935,7 +244941,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Dell Technologies' Products Bug Bounty Program": {
       "targets": [
@@ -244952,7 +244958,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Directly": {
       "targets": [
@@ -244975,7 +244981,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Elementor: Bug Bounty Program": {
       "targets": [
@@ -245028,7 +245034,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Entain Game Logic Flaws Bug Bounty Program": {
       "targets": [
@@ -245069,7 +245075,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Entain Public Managed Bug Bounty Engagement 2024": {
       "targets": [
@@ -245146,7 +245152,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:EPAM Systems Managed Bug Bounty Program": {
       "targets": [
@@ -245241,7 +245247,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:eToro Managed Bug Bounty Engagement": {
       "targets": [
@@ -245492,7 +245498,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Etsy": {
       "targets": [
@@ -245551,7 +245557,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Felix Health Managed Bug Bounty Engagement": {
       "targets": [
@@ -245568,7 +245574,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Certinia (formerly FinancialForce)": {
       "targets": [
@@ -245585,7 +245591,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Fireblocks Web Managed Bug Bounty Engagement": {
       "targets": [
@@ -245608,7 +245614,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Fireblocks MPC Managed Bug Bounty Engagement": {
       "targets": [
@@ -245619,7 +245625,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:FIS": {
       "targets": [
@@ -245630,7 +245636,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Fivetran": {
       "targets": [
@@ -245641,7 +245647,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Flourish": {
       "targets": [
@@ -245682,7 +245688,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:SecureDrop": {
       "targets": [
@@ -245705,7 +245711,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Gearset: Managed Bug Bounty": {
       "targets": [
@@ -245734,7 +245740,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Glean Technologies Public Engagement": {
       "targets": [
@@ -245769,7 +245775,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:HostGator LATAM Bug Bounty": {
       "targets": [
@@ -245786,7 +245792,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:HotDoc": {
       "targets": [
@@ -245809,7 +245815,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:HPE Aruba Networking Product Public Program": {
       "targets": [
@@ -245993,7 +245999,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Ibotta": {
       "targets": [
@@ -246076,7 +246082,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:iFood: Bug Bounty Program": {
       "targets": [
@@ -246201,7 +246207,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Immutable Bug Bounty": {
       "targets": [
@@ -246296,7 +246302,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Imperva - Thales Bug Bounty": {
       "targets": [
@@ -246331,7 +246337,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Indeed": {
       "targets": [
@@ -246438,7 +246444,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Intercom": {
       "targets": [
@@ -246515,7 +246521,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Internet Brands Public": {
       "targets": [
@@ -246664,7 +246670,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:iRobot": {
       "targets": [
@@ -246837,7 +246843,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Izymes": {
       "targets": [
@@ -246896,7 +246902,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Just Eat Takeaway.com": {
       "targets": [
@@ -247141,7 +247147,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:K15t": {
       "targets": [
@@ -247278,7 +247284,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Kaleido": {
       "targets": [
@@ -247307,7 +247313,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Keeper Security Public Bounty Program": {
       "targets": [
@@ -247420,7 +247426,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Kiteworks": {
       "targets": [
@@ -247431,7 +247437,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Kohl's": {
       "targets": [
@@ -247454,7 +247460,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:KuCoin Managed Bug Bounty Program": {
       "targets": [
@@ -247477,7 +247483,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:TheFork - B2B - TFM3": {
       "targets": [
@@ -247518,7 +247524,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:LastPass": {
       "targets": [
@@ -247601,7 +247607,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Latitude Financial Services Bug Bounty ": {
       "targets": [
@@ -247762,7 +247768,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Electroneum Legacy Blockchain: EOL": {
       "targets": [
@@ -247779,7 +247785,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Lightspeed Hospitality": {
       "targets": [
@@ -247796,7 +247802,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Lightspeed Retail": {
       "targets": [
@@ -247849,7 +247855,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Lime": {
       "targets": [
@@ -247974,7 +247980,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Linktree": {
       "targets": [
@@ -248081,7 +248087,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:lululemon": {
       "targets": [
@@ -248122,7 +248128,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Luno Bug Bounty Program": {
       "targets": [
@@ -248169,7 +248175,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Majid Al Futtaim Lifestyle": {
       "targets": [
@@ -248252,7 +248258,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Magic Labs Managed Bug Bounty Engagement": {
       "targets": [
@@ -248275,7 +248281,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Majid Al Futtaim Loyalty Program (Share Rewards)": {
       "targets": [
@@ -248322,7 +248328,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Majid Al Futtaim Properties": {
       "targets": [
@@ -248363,7 +248369,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Mastercard Public Bug Bounty ": {
       "targets": [
@@ -248500,7 +248506,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Mattermost Public Bug Bounty Engagement ": {
       "targets": [
@@ -248601,7 +248607,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:MGM China Holdings Limited Managed Bug Bounty Program": {
       "targets": [
@@ -248672,7 +248678,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Monash University Bug Bounty": {
       "targets": [
@@ -248947,7 +248953,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Moneytree KK": {
       "targets": [
@@ -249018,7 +249024,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Moovit Managed Bug Bounty Program": {
       "targets": [
@@ -249047,7 +249053,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Motorola Mobility Hardware Engagement": {
       "targets": [
@@ -249058,7 +249064,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Electroneum Wallet: Gateway to the ETN Cryptocurrency": {
       "targets": [
@@ -249105,7 +249111,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:MyFitnessPal Managed Bug Bounty": {
       "targets": [
@@ -249128,7 +249134,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Navan": {
       "targets": [
@@ -249139,7 +249145,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:NEOGOV Public Assets": {
       "targets": [
@@ -249246,96 +249252,78 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:NETGEAR Cash Rewards": {
       "targets": [
         {
-          "target": "Nighthawk Pro Gaming Switch",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Iot",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "Nighthawk Router",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Iot",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "Nighthawk Switch",
-          "type": "Iot",
-          "bounty": true,
-          "severity": "Unknown"
-        },
-        {
-          "target": "Nighthawk iOS App",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Ios",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "Nighthawk Android App",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Android",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "Orbi",
+          "target": "\u2588\u2588\u2588\u2588\u2588",
           "type": "Iot",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "Orbi iOS App",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Ios",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "Orbi Android App",
-          "type": "Android",
-          "bounty": true,
-          "severity": "Unknown"
-        },
-        {
-          "target": "Insight Managed Smart Cloud Wireless Access Point",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Iot",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "https://api.netgear.com",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Api",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "Insight iOS App",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Ios",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "Insight Android App",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Android",
           "bounty": true,
           "severity": "Unknown"
         },
         {
-          "target": "CHP Cloud Portal",
-          "type": "Website",
-          "bounty": true,
-          "severity": "Unknown"
-        },
-        {
-          "target": "Meural",
+          "target": "\u2588\u2588\u2588\u2588\u2588\u2588",
           "type": "Iot",
           "bounty": true,
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:New Relic Public Bug Bounty Program": {
       "targets": [
@@ -249418,7 +249406,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Nextup.ai": {
       "targets": [
@@ -249453,7 +249441,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Northwestern Mutual - Public Bug Bounty": {
       "targets": [
@@ -249506,7 +249494,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Nubank Brasil Managed Bug Bounty Program": {
       "targets": [
@@ -249565,7 +249553,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Octopus Deploy": {
       "targets": [
@@ -249576,7 +249564,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Octopus": {
       "targets": [
@@ -249599,7 +249587,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:oDesk ": {
       "targets": [
@@ -249610,7 +249598,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Okta": {
       "targets": [
@@ -249741,7 +249729,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:OneTrust": {
       "targets": [
@@ -249752,7 +249740,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Safety Bug Bounty": {
       "targets": [
@@ -249781,7 +249769,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:OpenSea Managed Bug Bounty Program": {
       "targets": [
@@ -249840,7 +249828,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Opera Public Bug Bounty": {
       "targets": [
@@ -250367,7 +250355,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Opsgenie": {
       "targets": [
@@ -250402,7 +250390,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Optimizely": {
       "targets": [
@@ -250497,7 +250485,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Optus Managed Bug Bounty": {
       "targets": [
@@ -251504,7 +251492,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Orderly Network: Bug Bounty Program": {
       "targets": [
@@ -251521,7 +251509,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Orderly Network Public Managed Bug Bounty Engagement": {
       "targets": [
@@ -251538,7 +251526,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Origin Energy": {
       "targets": [
@@ -251693,7 +251681,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:OSL Managed Public Bug Bounty Engagement ": {
       "targets": [
@@ -251722,7 +251710,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Pantheon": {
       "targets": [
@@ -251733,7 +251721,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Empower Personal Wealth": {
       "targets": [
@@ -251744,7 +251732,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Pexels": {
       "targets": [
@@ -251755,7 +251743,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Pinterest": {
       "targets": [
@@ -251838,7 +251826,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Pixabay": {
       "targets": [
@@ -251849,7 +251837,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:PlanetHoster Bug Bounty ": {
       "targets": [
@@ -251884,7 +251872,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:The Plugin People": {
       "targets": [
@@ -251901,7 +251889,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Plusgrade Loyalty Public Program": {
       "targets": [
@@ -251918,7 +251906,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:PNI Media - Bug Bounty": {
       "targets": [
@@ -252079,7 +252067,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:ProjectBalm": {
       "targets": [
@@ -252090,7 +252078,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Prosus": {
       "targets": [
@@ -252155,7 +252143,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:QuintoAndar Managed Bug Bounty Engagement": {
       "targets": [
@@ -252220,7 +252208,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Quizlet": {
       "targets": [
@@ -252249,7 +252237,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Rapyd": {
       "targets": [
@@ -252314,7 +252302,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:REA Group | realestate.com.au, realcommercial.com.au, property.com.au": {
       "targets": [
@@ -252391,7 +252379,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Recorded Future Public Managed Bug Bounty Engagement": {
       "targets": [
@@ -252456,7 +252444,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Rec Room Video Games": {
       "targets": [
@@ -252527,7 +252515,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:SAP Invitational Bug Bounty Program": {
       "targets": [
@@ -252682,7 +252670,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:SEEK ": {
       "targets": [
@@ -252789,7 +252777,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Seek.com": {
       "targets": [
@@ -252902,7 +252890,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Sendbird": {
       "targets": [
@@ -252967,7 +252955,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Shipwire": {
       "targets": [
@@ -252990,7 +252978,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:SimpliSafe Managed Bug Bounty Engagement": {
       "targets": [
@@ -253139,7 +253127,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Skroutz Public Managed Bug Bounty": {
       "targets": [
@@ -253150,7 +253138,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Sky UK/ROI Vulnerability Disclosure Program": {
       "targets": [
@@ -253161,7 +253149,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Sky Italy Vulnerability Disclosure Program": {
       "targets": [
@@ -253172,7 +253160,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Sky DACH Vulnerability Disclosure Program": {
       "targets": [
@@ -253183,7 +253171,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Skyscanner": {
       "targets": [
@@ -253248,7 +253236,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Electroneum Smart Chain (ETN-SC) \u2014 EVM-Compatible Blockchain": {
       "targets": [
@@ -253271,7 +253259,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:SnapNames Bug Bounty": {
       "targets": [
@@ -253288,7 +253276,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Sophos": {
       "targets": [
@@ -253377,7 +253365,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Soteri Marketplace Bug Bounty": {
       "targets": [
@@ -253412,7 +253400,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:SoundCloud": {
       "targets": [
@@ -253477,7 +253465,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:SpaceX/Starlink": {
       "targets": [
@@ -253488,7 +253476,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Square": {
       "targets": [
@@ -253535,7 +253523,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Statuspage": {
       "targets": [
@@ -253552,7 +253540,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:T-Mobile": {
       "targets": [
@@ -254049,7 +254037,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Tamedia": {
       "targets": [
@@ -254066,7 +254054,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Infinite Athlete": {
       "targets": [
@@ -254101,7 +254089,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Tesla": {
       "targets": [
@@ -254172,7 +254160,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:TheFork - B2C - WNG": {
       "targets": [
@@ -254249,7 +254237,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:TheFork Managed Bug Bounty Engagement": {
       "targets": [
@@ -254332,7 +254320,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:The Trade Desk": {
       "targets": [
@@ -254565,7 +254553,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Cisco ThousandEyes Vulnerability Hunting aka Bug Bounty ": {
       "targets": [
@@ -254600,7 +254588,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:TIDAL": {
       "targets": [
@@ -254665,7 +254653,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Trello": {
       "targets": [
@@ -254748,7 +254736,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Tripadvisor ": {
       "targets": [
@@ -254915,7 +254903,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:TRM Labs Public Bug Bounty Engagement": {
       "targets": [
@@ -254932,7 +254920,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:20 Minuten": {
       "targets": [
@@ -254979,7 +254967,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Tyler Technologies Data & Insights \u2013 Tyler Data Platform, powered by Socrata": {
       "targets": [
@@ -255002,7 +254990,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Ultra Mobile Public ECOMM 2025 Bug Bounty Engagement": {
       "targets": [
@@ -255031,7 +255019,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Ultra Mobile Mobile Apps Bug Bounty Engagement": {
       "targets": [
@@ -255048,7 +255036,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Ultra Mobile Public Bug Bounty Engagement": {
       "targets": [
@@ -255065,7 +255053,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Ultra Mobile Retailer Portal Bug Bounty Engagement": {
       "targets": [
@@ -255076,7 +255064,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Under Armour Product Security": {
       "targets": [
@@ -255165,7 +255153,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Under Armour Corporate": {
       "targets": [
@@ -255308,7 +255296,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Unity Technologies": {
       "targets": [
@@ -255355,7 +255343,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Upwork": {
       "targets": [
@@ -255432,7 +255420,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:USAA": {
       "targets": [
@@ -255731,7 +255719,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Verisign Bug Bounty": {
       "targets": [
@@ -255796,7 +255784,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Viator": {
       "targets": [
@@ -255885,7 +255873,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Volkswagen ": {
       "targets": [
@@ -255896,7 +255884,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:New Blue Website (NBW) - VWFS Bug Bounty Program": {
       "targets": [
@@ -256027,7 +256015,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Majid Al Futtaim Entertainment": {
       "targets": [
@@ -256062,7 +256050,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:weweave UG Marketplace Bug Bounty": {
       "targets": [
@@ -256211,7 +256199,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Web.com Bug Bounty": {
       "targets": [
@@ -256234,7 +256222,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Wise (ex-TransferWise)": {
       "targets": [
@@ -256287,7 +256275,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Wyze Bug Bounty": {
       "targets": [
@@ -256322,7 +256310,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Xfinity Home & xFi": {
       "targets": [
@@ -256483,7 +256471,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:YNAB": {
       "targets": [
@@ -256506,7 +256494,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Zendesk Managed Bug Bounty Engagement": {
       "targets": [
@@ -256547,7 +256535,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Zola Managed Bug Bounty ": {
       "targets": [
@@ -256564,7 +256552,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:algemeendagblad": {
       "targets": [
@@ -256599,7 +256587,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:altera": {
       "targets": [
@@ -256681,7 +256669,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:arm": {
       "targets": [
@@ -256698,7 +256686,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:atollsvdp": {
       "targets": [
@@ -256925,7 +256913,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:nmt": {
       "targets": [
@@ -257170,7 +257158,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:axelspringersevulnerabilitydisclosureprogram": {
       "targets": [
@@ -257181,7 +257169,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:bmc": {
       "targets": [
@@ -257192,7 +257180,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:bmwgroup-automotive": {
       "targets": [
@@ -257221,7 +257209,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:bitvavovdp": {
       "targets": [
@@ -257256,7 +257244,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:dummy": {
       "targets": [
@@ -257381,7 +257369,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:buhlergroupvdp": {
       "targets": [
@@ -257440,7 +257428,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:cmcom": {
       "targets": [
@@ -257565,7 +257553,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:innovapost": {
       "targets": [
@@ -257606,7 +257594,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:capitalcom": {
       "targets": [
@@ -257677,7 +257665,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:responsiblevulnerabilitydisclosureprogram": {
       "targets": [
@@ -258168,7 +258156,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:cloudways": {
       "targets": [
@@ -258215,7 +258203,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:crossborderfines": {
       "targets": [
@@ -258226,7 +258214,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:cybersecuritycoalition": {
       "targets": [
@@ -258255,7 +258243,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:dhlvdp": {
       "targets": [
@@ -258302,7 +258290,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:digi-vdp": {
       "targets": [
@@ -258349,7 +258337,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:dpgmedia": {
       "targets": [
@@ -258372,7 +258360,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:demorgen": {
       "targets": [
@@ -258407,7 +258395,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:devolkskrant": {
       "targets": [
@@ -258448,7 +258436,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:privatebankdelen": {
       "targets": [
@@ -258567,7 +258555,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:donorboxvdp": {
       "targets": [
@@ -258614,7 +258602,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:driessenvdp": {
       "targets": [
@@ -258625,7 +258613,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:dropbox": {
       "targets": [
@@ -258792,7 +258780,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:dropbox-vdp": {
       "targets": [
@@ -258803,7 +258791,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:dstnybugbounty": {
       "targets": [
@@ -258832,7 +258820,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:eurid": {
       "targets": [
@@ -258879,7 +258867,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:exactvulnerabilitydisclosureprogram": {
       "targets": [
@@ -258980,7 +258968,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:excoscalebugbounty": {
       "targets": [
@@ -259027,7 +259015,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:freepikcompany": {
       "targets": [
@@ -259038,7 +259026,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:fing": {
       "targets": [
@@ -259067,7 +259055,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:grafanaossbbp": {
       "targets": [
@@ -259126,7 +259114,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:hrsgroupvdp": {
       "targets": [
@@ -259137,7 +259125,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:hetlaatstenieuws": {
       "targets": [
@@ -259184,7 +259172,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:hetparool": {
       "targets": [
@@ -259225,7 +259213,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:houseofhrvulnerabilitydisclosureprogram": {
       "targets": [
@@ -259236,7 +259224,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:huisvesting": {
       "targets": [
@@ -259247,7 +259235,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:humo": {
       "targets": [
@@ -259288,7 +259276,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:iciparisxl": {
       "targets": [
@@ -259515,7 +259503,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:ing-responsible-disclosure": {
       "targets": [
@@ -259526,7 +259514,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:innogames": {
       "targets": [
@@ -259561,7 +259549,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:kuleuvenrdp": {
       "targets": [
@@ -259578,7 +259566,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:website": {
       "targets": [
@@ -259889,7 +259877,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:kiwavdp": {
       "targets": [
@@ -259930,7 +259918,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:kruidvat": {
       "targets": [
@@ -260265,7 +260253,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:lansweeper1": {
       "targets": [
@@ -260354,7 +260342,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:libelle": {
       "targets": [
@@ -260371,7 +260359,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:liferay-vdp": {
       "targets": [
@@ -260418,7 +260406,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:marionnaud": {
       "targets": [
@@ -260867,7 +260855,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:mobilevikings": {
       "targets": [
@@ -260980,7 +260968,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:monzopublicbugbountyprogram": {
       "targets": [
@@ -261021,7 +261009,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:moralisio": {
       "targets": [
@@ -261086,7 +261074,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:nvidiavdp": {
       "targets": [
@@ -261097,7 +261085,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:nestl\u00e9vdp": {
       "targets": [
@@ -261108,7 +261096,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:nexuzhealth": {
       "targets": [
@@ -261161,7 +261149,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:nexuzhealthvdp": {
       "targets": [
@@ -261172,7 +261160,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:nexuzhealthwebpacs": {
       "targets": [
@@ -261189,7 +261177,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:ninjakiwigames": {
       "targets": [
@@ -261296,7 +261284,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:orbiavdp": {
       "targets": [
@@ -261487,7 +261475,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:pdqcomprivate": {
       "targets": [
@@ -261522,7 +261510,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:peoplecert": {
       "targets": [
@@ -261563,7 +261551,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:personio": {
       "targets": [
@@ -261652,7 +261640,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:portofantwerp": {
       "targets": [
@@ -261975,7 +261963,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:proofvdp": {
       "targets": [
@@ -261998,7 +261986,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:qualifiedresponsibledisclosureprogram": {
       "targets": [
@@ -262021,7 +262009,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:rgfbe-vdp": {
       "targets": [
@@ -262068,7 +262056,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:ripencc": {
       "targets": [
@@ -262145,7 +262133,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:randstad": {
       "targets": [
@@ -262174,7 +262162,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:redbull": {
       "targets": [
@@ -262191,7 +262179,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:revolutvdp": {
       "targets": [
@@ -262202,7 +262190,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:rivianbugbounty": {
       "targets": [
@@ -262261,7 +262249,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:sbbglobal": {
       "targets": [
@@ -262320,7 +262308,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:signicatresponsibledisclosure": {
       "targets": [
@@ -262343,7 +262331,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:simscale": {
       "targets": [
@@ -262372,7 +262360,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:skodaautoprivatebugbountyprogram": {
       "targets": [
@@ -262389,7 +262377,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:socialdeal": {
       "targets": [
@@ -262430,7 +262418,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:speakapresponsibledisclosure": {
       "targets": [
@@ -262465,7 +262453,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:storebrand-rd": {
       "targets": [
@@ -262698,7 +262686,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:superdrug": {
       "targets": [
@@ -262871,7 +262859,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:tempo-team": {
       "targets": [
@@ -262906,7 +262894,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:coca-cola": {
       "targets": [
@@ -262941,7 +262929,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:toastvdp": {
       "targets": [
@@ -263036,7 +263024,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:tomorrowland": {
       "targets": [
@@ -263173,7 +263161,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:trouw": {
       "targets": [
@@ -263214,7 +263202,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:truelayer": {
       "targets": [
@@ -263452,7 +263440,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:twago": {
       "targets": [
@@ -263463,7 +263451,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:tweakers": {
       "targets": [
@@ -263486,7 +263474,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:uzleuven": {
       "targets": [
@@ -263695,7 +263683,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:ubisoftvdp": {
       "targets": [
@@ -263712,7 +263700,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:usz-vdp": {
       "targets": [
@@ -263729,7 +263717,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:upholdcom": {
       "targets": [
@@ -263902,7 +263890,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:vdp": {
       "targets": [
@@ -263913,7 +263901,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:vtmgo": {
       "targets": [
@@ -263948,7 +263936,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:arkanenetwork": {
       "targets": [
@@ -264001,7 +263989,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:vinted-bugbountyprogram": {
       "targets": [
@@ -264215,7 +264203,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:VismaResponsibleDisclosure": {
       "targets": [
@@ -264226,7 +264214,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:vlerickbusinessschool": {
       "targets": [
@@ -264261,7 +264249,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:voiscooters": {
       "targets": [
@@ -264326,7 +264314,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:voivulnerabilitydisclosureprogram": {
       "targets": [
@@ -264337,7 +264325,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:wpenginebugbounty": {
       "targets": [
@@ -264450,7 +264438,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:wpengine": {
       "targets": [
@@ -264545,7 +264533,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:water-link": {
       "targets": [
@@ -264586,7 +264574,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:water-linkvdp": {
       "targets": [
@@ -264615,7 +264603,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:watsons": {
       "targets": [
@@ -265352,7 +265340,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:yacht": {
       "targets": [
@@ -265363,7 +265351,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:yahoobugbounty": {
       "targets": [
@@ -265596,7 +265584,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:zabkagroup-vdp": {
       "targets": [
@@ -265661,7 +265649,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:e-tracker": {
       "targets": [
@@ -265672,7 +265660,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:ehealthhub&meta-hubvznkul": {
       "targets": [
@@ -265713,7 +265701,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:intigriti": {
       "targets": [
@@ -265742,7 +265730,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:aikido": {
       "targets": [
@@ -265765,7 +265753,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:aikidoruntime": {
       "targets": [
@@ -265842,7 +265830,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777280958.2120385
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:clear_street_vdp": {
       "targets": [
@@ -265853,7 +265841,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:CoinDesk Data - Data API ": {
       "targets": [
@@ -265870,7 +265858,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:amd": {
       "targets": [
@@ -266042,7 +266030,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:doordash": {
       "targets": [
@@ -266065,7 +266053,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:intel": {
       "targets": [
@@ -266100,7 +266088,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:vercel-open-source": {
       "targets": [
@@ -266207,7 +266195,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:OpenAI": {
       "targets": [
@@ -266290,7 +266278,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:digitalocean": {
       "targets": [
@@ -266409,7 +266397,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:robinhood": {
       "targets": [
@@ -266546,7 +266534,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:uber": {
       "targets": [
@@ -266575,7 +266563,7 @@
           "severity": "none"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:wolt": {
       "targets": [
@@ -266640,7 +266628,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:3DS OUTSCALE": {
       "targets": [
@@ -266693,7 +266681,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:ATG Public Bug Bounty Program": {
       "targets": [
@@ -266740,7 +266728,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Alasco GmbH - Bug Bounty Program": {
       "targets": [
@@ -266769,7 +266757,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Ant Group Security Response Center - Bug Bounty Program": {
       "targets": [
@@ -266822,7 +266810,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:BitOasis - Bug Bounty Program": {
       "targets": [
@@ -266845,7 +266833,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:BookBeat": {
       "targets": [
@@ -266886,7 +266874,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Bug Bounty Program - BlaBlaCar": {
       "targets": [
@@ -266957,7 +266945,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Bug Bounty SNCF Connect": {
       "targets": [
@@ -266986,7 +266974,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Coindcx - Bug Bounty Program": {
       "targets": [
@@ -267015,7 +267003,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Contentsquare Bug Bounty Program": {
       "targets": [
@@ -267050,7 +267038,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Cryptobox": {
       "targets": [
@@ -267073,7 +267061,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:CyberGhost - Bug Bounty Program": {
       "targets": [
@@ -267150,7 +267138,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Cybermalveillance.gouv.fr  - sensibilization, prevention and support in terms of cybersecurity": {
       "targets": [
@@ -267161,7 +267149,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:DANA Bug Bounty Program": {
       "targets": [
@@ -267172,7 +267160,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:DECATHLON": {
       "targets": [
@@ -267207,7 +267195,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:DINUM - AGORA GOUV - Public Bug Bounty Program": {
       "targets": [
@@ -267236,7 +267224,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:DINUM - ProConnect Identit\u00e9 - Public Bug Bounty Program": {
       "targets": [
@@ -267247,7 +267235,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:DINUM - Tchap - Bug Bounty Program": {
       "targets": [
@@ -267312,7 +267300,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Dailymotion Public Bug Bounty": {
       "targets": [
@@ -267431,7 +267419,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:DataDome Bot Bounty": {
       "targets": [
@@ -267472,7 +267460,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:DataDome Bug Bounty": {
       "targets": [
@@ -267525,7 +267513,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Digital Flanders Vulnerability Disclosure Program": {
       "targets": [
@@ -267566,7 +267554,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Doctolib": {
       "targets": [
@@ -267625,7 +267613,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:ExpressVPN - Bug Bounty Program": {
       "targets": [
@@ -267810,7 +267798,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Ezviz - Bug Bounty Program": {
       "targets": [
@@ -267893,7 +267881,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:FDJ United (Online Betting and Gaming) - Bug Bounty program": {
       "targets": [
@@ -268096,7 +268084,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:GOJEK - Public Bounty Program": {
       "targets": [
@@ -268173,7 +268161,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:GRW Trading FZE - Open Bug Bounty Program": {
       "targets": [
@@ -268279,7 +268267,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:GovTech - Vulnerability Disclosure Programme": {
       "targets": [
@@ -268296,7 +268284,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:HARMAN International - Web Applications": {
       "targets": [
@@ -268469,7 +268457,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Harman International Lifestyle Products & Services": {
       "targets": [
@@ -268624,7 +268612,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:IMOU Public Bug Bounty Program": {
       "targets": [
@@ -268665,7 +268653,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:KOMOJU - Public Bug Bounty Program": {
       "targets": [
@@ -268682,7 +268670,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Louis Vuitton Malletier - Public Bug Bounty Program": {
       "targets": [
@@ -268723,7 +268711,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Maya - Public Bug Bounty Program": {
       "targets": [
@@ -268782,7 +268770,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:MediaMarktSaturn Bug Bounty Program": {
       "targets": [
@@ -268973,7 +268961,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Memento - Public Bug Bounty Program": {
       "targets": [
@@ -268996,7 +268984,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Mon Espace Sant\u00e9 (MES)": {
       "targets": [
@@ -269259,7 +269247,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Moneybox Bug Bounty": {
       "targets": [
@@ -269300,7 +269288,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:OTTO.DE Bug Bounty": {
       "targets": [
@@ -269365,7 +269353,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:OVHcloud": {
       "targets": [
@@ -269388,7 +269376,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Okto - Bug Bounty Program": {
       "targets": [
@@ -269405,7 +269393,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:OneDoc": {
       "targets": [
@@ -269434,7 +269422,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Ooredoo QPSC - Customer Portal Bug Bounty Program": {
       "targets": [
@@ -269469,7 +269457,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Paddle.com Public Bug Bounty Program": {
       "targets": [
@@ -269546,7 +269534,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Pine Labs Bug Bounty Program": {
       "targets": [
@@ -269689,7 +269677,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Private Internet Access - Bug Bounty Program": {
       "targets": [
@@ -269766,7 +269754,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Programme de prime aux bogues du Gouvernement du Qu\u00e9bec": {
       "targets": [
@@ -269879,7 +269867,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Qwant": {
       "targets": [
@@ -269920,7 +269908,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Salt Mobile SA - Bug Bounty Program": {
       "targets": [
@@ -269943,7 +269931,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Sant\u00e9 Publique France Bug Bounty Program": {
       "targets": [
@@ -269996,7 +269984,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Sogexia": {
       "targets": [
@@ -270019,7 +270007,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Swapcard": {
       "targets": [
@@ -270096,7 +270084,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Swiss Post": {
       "targets": [
@@ -270167,7 +270155,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Swiss Post - E-Voting": {
       "targets": [
@@ -270196,7 +270184,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:TeamViewer - Bounty Program": {
       "targets": [
@@ -270255,7 +270243,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Telenor Sweden Public Bug Bounty Program": {
       "targets": [
@@ -270314,7 +270302,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Tencent Bug Bounty Program": {
       "targets": [
@@ -270325,7 +270313,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Th\u00fcringer Aufbaubank Bug Bounty Program": {
       "targets": [
@@ -270342,7 +270330,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:VFS Global Bug Bounty Program": {
       "targets": [
@@ -270599,7 +270587,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:VINCI SA - Public program": {
       "targets": [
@@ -270724,7 +270712,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:VidaXL Holding - Open Bug Bounty Program": {
       "targets": [
@@ -270823,7 +270811,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:Xelians - Blackbox program": {
       "targets": [
@@ -270840,7 +270828,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:YesWeHack": {
       "targets": [
@@ -270869,7 +270857,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:YesWeHack Dojo": {
       "targets": [
@@ -270880,7 +270868,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:ZECIBLE PUBLIC BUG BOUNTY PROGRAM": {
       "targets": [
@@ -270987,7 +270975,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:toom Baumarkt GmbH - Bug Bounty Program (toom.de)": {
       "targets": [
@@ -271039,7 +271027,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:AngelList VDP": {
       "targets": [
@@ -271050,7 +271038,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Archive-Intel-Inc": {
       "targets": [
@@ -271073,7 +271061,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Belvo Technologies Inc.": {
       "targets": [
@@ -271126,7 +271114,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Check": {
       "targets": [
@@ -271149,7 +271137,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Clay": {
       "targets": [
@@ -271166,7 +271154,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Confido": {
       "targets": [
@@ -271183,7 +271171,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Convictional": {
       "targets": [
@@ -271200,7 +271188,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Cyber Info": {
       "targets": [
@@ -271211,7 +271199,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Edgedive": {
       "targets": [
@@ -271228,7 +271216,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Federacy": {
       "targets": [
@@ -271239,7 +271227,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Level365": {
       "targets": [
@@ -271280,7 +271268,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:LimaCharlie": {
       "targets": [
@@ -271297,7 +271285,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:MobileAction": {
       "targets": [
@@ -271338,7 +271326,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Nanonets": {
       "targets": [
@@ -271355,7 +271343,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Nelogica": {
       "targets": [
@@ -271396,7 +271384,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Nucla": {
       "targets": [
@@ -271413,7 +271401,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Officely": {
       "targets": [
@@ -271430,7 +271418,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:OneStepGPS": {
       "targets": [
@@ -271441,7 +271429,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Parafin": {
       "targets": [
@@ -271458,7 +271446,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Prevu3D": {
       "targets": [
@@ -271493,7 +271481,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Rally": {
       "targets": [
@@ -271510,7 +271498,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Recidiviz": {
       "targets": [
@@ -271527,7 +271515,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:RenoFi": {
       "targets": [
@@ -271562,7 +271550,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Spacelift": {
       "targets": [
@@ -271573,7 +271561,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Stacksi": {
       "targets": [
@@ -271596,7 +271584,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:SupportBee": {
       "targets": [
@@ -271607,7 +271595,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Sylaps": {
       "targets": [
@@ -271618,7 +271606,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Tuple": {
       "targets": [
@@ -271635,7 +271623,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Upfort": {
       "targets": [
@@ -271664,7 +271652,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:Vertex": {
       "targets": [
@@ -271687,7 +271675,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:biorender": {
       "targets": [
@@ -271715,7 +271703,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:crowdai": {
       "targets": [
@@ -271726,7 +271714,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:delight-im": {
       "targets": [
@@ -271755,7 +271743,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:eqtble": {
       "targets": [
@@ -271772,7 +271760,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Federacy:okteto": {
       "targets": [
@@ -271783,7 +271771,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:anacondavdp": {
       "targets": [
@@ -271794,7 +271782,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Stiltsoft": {
       "targets": [
@@ -271883,7 +271871,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:ibm": {
       "targets": [
@@ -271906,7 +271894,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:eazyBI": {
       "targets": [
@@ -271941,7 +271929,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:SecureFlag Marketplace Bug Bounty": {
       "targets": [
@@ -271958,7 +271946,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:newegg": {
       "targets": [
@@ -272005,7 +271993,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:dib-vdp": {
       "targets": [
@@ -278190,7 +278178,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:penn_entertainment": {
       "targets": [
@@ -278261,7 +278249,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:starbucks_china": {
       "targets": [
@@ -278284,7 +278272,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:vrtnv": {
       "targets": [
@@ -278343,7 +278331,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:inditex": {
       "targets": [
@@ -278372,7 +278360,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:heretechnologies": {
       "targets": [
@@ -278455,7 +278443,7 @@
           "severity": "Tier 3"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:theperfumeshop": {
       "targets": [
@@ -278520,7 +278508,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Bugcrowd:Jora": {
       "targets": [
@@ -278549,7 +278537,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:challenge0426": {
       "targets": [
@@ -278917,7 +278905,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:soundtrackyourbrand": {
       "targets": [
@@ -279047,7 +279035,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:mcgrawhill": {
       "targets": [
@@ -279225,7 +279213,7 @@
           "severity": "Unknown"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:toom Baumarkt GmbH - Webshop": {
       "targets": [
@@ -279265,7 +279253,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "YesWeHack:PowerDNS": {
       "targets": [
@@ -279304,7 +279292,7 @@
           "severity": "No Bounty"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:liferaydxp": {
       "targets": [
@@ -279344,7 +279332,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:taxwell-vdp": {
       "targets": [
@@ -279361,7 +279349,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "Intigriti:onlineinschrijvingenbetalingstoepassing": {
       "targets": [
@@ -279378,7 +279366,7 @@
           "severity": "Tier 2"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     },
     "HackerOne:freshworks": {
       "targets": [
@@ -279485,7 +279473,7 @@
           "severity": "critical"
         }
       ],
-      "last_seen": 1777908118.0820074
+      "last_seen": 1777914645.3942046
     }
   }
 }
