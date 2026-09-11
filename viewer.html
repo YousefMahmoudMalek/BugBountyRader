@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BugBountyRadar — State Viewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #0d0f14;
+      --bg2:      #13161e;
+      --bg3:      #1a1e2a;
+      --border:   #252936;
+      --border2:  #2f3447;
+      --accent:   #6c63ff;
+      --accent2:  #a78bfa;
+      --green:    #22c55e;
+      --yellow:   #eab308;
+      --red:      #ef4444;
+      --blue:     #38bdf8;
+      --orange:   #f97316;
+      --pink:     #ec4899;
+      --cyan:     #06b6d4;
+      --text:     #e2e8f0;
+      --text2:    #94a3b8;
+      --text3:    #4b5675;
+      --radius:   12px;
+      --radius-sm: 6px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Scrollbar ─────────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    /* ── Header ────────────────────────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,15,20,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: flex; align-items: center; gap: 16px;
+      height: 60px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 1rem; color: var(--text);
+      white-space: nowrap;
+    }
+    .logo-icon {
+      width: 30px; height: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .header-stats {
+      display: flex; gap: 12px; margin-left: auto;
+      flex-wrap: wrap;
+    }
+    .stat-chip {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 20px; padding: 4px 12px;
+      font-size: 0.75rem; color: var(--text2);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .stat-chip b { color: var(--text); }
+
+    /* ── Load overlay ──────────────────────────────────────────────────── */
+    #load-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: var(--bg);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 24px; transition: opacity .4s;
+    }
+    #load-overlay.hidden { opacity: 0; pointer-events: none; }
+    .load-card {
+      background: var(--bg2); border: 1px solid var(--border2);
+      border-radius: 20px; padding: 40px 48px;
+      text-align: center; max-width: 420px;
+    }
+    .load-icon { font-size: 48px; margin-bottom: 16px; }
+    .load-card h2 { font-size: 1.4rem; margin-bottom: 8px; }
+    .load-card p { color: var(--text2); font-size: .9rem; line-height: 1.6; }
+    .btn-load {
+      margin-top: 24px;
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; border: none; border-radius: var(--radius);
+      padding: 12px 28px; font-size: .95rem; font-weight: 600;
+      cursor: pointer; transition: opacity .2s, transform .15s;
+    }
+    .btn-load:hover { opacity: .9; transform: translateY(-1px); }
+    #file-input { display: none; }
+    .auto-note { font-size: .78rem; color: var(--text3); margin-top: 12px; }
+
+    /* ── Main layout ───────────────────────────────────────────────────── */
+    main {
+      max-width: 1400px; margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* ── Filter bar ────────────────────────────────────────────────────── */
+    .filter-bar {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 18px;
+      display: flex; flex-wrap: wrap; gap: 12px;
+      align-items: center; margin-bottom: 20px;
+    }
+    .search-wrap {
+      flex: 1; min-width: 200px;
+      position: relative;
+    }
+    .search-wrap svg {
+      position: absolute; left: 12px; top: 50%;
+      transform: translateY(-50%); color: var(--text3);
+      pointer-events: none;
+    }
+    #search {
+      width: 100%; background: var(--bg3);
+      border: 1px solid var(--border2); border-radius: var(--radius-sm);
+      padding: 9px 12px 9px 36px;
+      color: var(--text); font-size: .9rem; font-family: inherit;
+      outline: none; transition: border-color .2s;
+    }
+    #search:focus { border-color: var(--accent); }
+    #search::placeholder { color: var(--text3); }
+
+    .pill-group { display: flex; gap: 6px; flex-wrap: wrap; }
+    .pill {
+      border: 1px solid var(--border2); border-radius: 20px;
+      padding: 5px 13px; font-size: .8rem; cursor: pointer;
+      background: var(--bg3); color: var(--text2);
+      transition: all .15s; white-space: nowrap;
+    }
+    .pill:hover { border-color: var(--accent); color: var(--text); }
+    .pill.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff; font-weight: 600;
+    }
+    .pill.bounty-on.active  { background: var(--green);  border-color: var(--green); }
+    .pill.vdp-on.active     { background: var(--yellow); border-color: var(--yellow); color: #111; }
+    .pill.chaos-on.active   { background: var(--orange); border-color: var(--orange); }
+
+    .filter-right { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+    select#sort-by {
+      background: var(--bg3); border: 1px solid var(--border2);
+      color: var(--text2); border-radius: var(--radius-sm);
+      padding: 7px 10px; font-size: .82rem; font-family: inherit; outline: none;
+      cursor: pointer;
+    }
+    #results-count { font-size: .82rem; color: var(--text3); white-space: nowrap; }
+
+    /* ── Grid ──────────────────────────────────────────────────────────── */
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+    }
+
+    /* ── Card ──────────────────────────────────────────────────────────── */
+    .card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: border-color .2s, transform .15s, box-shadow .2s;
+      cursor: pointer;
+    }
+    .card.missing { border-color: var(--red); opacity: 0.85; }
+    .card:hover {
+      border-color: var(--border2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,.4);
+    }
+    .card.expanded { border-color: var(--accent); }
+
+    .card-header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 16px;
+    }
+    .favicon-wrap {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 8px; overflow: hidden;
+      background: var(--bg3); border: 1px solid var(--border2);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .favicon-wrap img {
+      width: 20px; height: 20px; object-fit: contain;
+    }
+    .favicon-placeholder { font-size: 16px; }
+
+    .card-meta { flex: 1; min-width: 0; }
+    .card-name {
+      font-weight: 600; font-size: .93rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .card-sub {
+      display: flex; align-items: center; gap: 6px;
+      margin-top: 3px; flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: .7rem; font-weight: 600; border-radius: 4px;
+      padding: 2px 7px; white-space: nowrap;
+    }
+    .badge-h1   { background: #ff650020; color: #ff6500; }
+    .badge-bc   { background: #f9731620; color: var(--orange); }
+    .badge-ig   { background: #3b82f620; color: var(--blue); }
+    .badge-yw   { background: #22c55e20; color: var(--green); }
+    .badge-fd   { background: #a78bfa20; color: var(--accent2); }
+    .badge-ch   { background: #f9731630; color: var(--orange); }
+    .badge-paid { background: #22c55e18; color: var(--green); }
+    .badge-vdp  { background: #eab30820; color: var(--yellow); }
+    .badge-last { background: var(--bg3); color: var(--text3); }
+
+    .card-chevron {
+      color: var(--text3); transition: transform .2s; flex-shrink: 0;
+    }
+    .card.expanded .card-chevron { transform: rotate(180deg); }
+
+    .card-footer {
+      padding: 0 16px 12px;
+      display: flex; gap: 8px; align-items: center;
+    }
+    .target-count {
+      font-size: .78rem; color: var(--text3);
+    }
+    .target-types { display: flex; gap: 4px; flex-wrap: wrap; }
+    .type-dot {
+      font-size: .7rem; background: var(--bg3);
+      border: 1px solid var(--border2); border-radius: 4px;
+      padding: 1px 6px; color: var(--text3);
+    }
+
+    /* ── Expanded targets ──────────────────────────────────────────────── */
+    .targets-panel {
+      display: none; border-top: 1px solid var(--border);
+      padding: 12px 16px; background: var(--bg);
+      max-height: 280px; overflow-y: auto;
+    }
+    .card.expanded .targets-panel { display: block; }
+    .target-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 5px 0; border-bottom: 1px solid var(--border);
+      font-size: .8rem;
+    }
+    .target-row:last-child { border-bottom: none; }
+    .t-icon { font-size: .9rem; flex-shrink: 0; }
+    .t-name {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text2); flex: 1; min-width: 0;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .t-type {
+      font-size: .68rem; background: var(--bg3);
+      border-radius: 3px; padding: 1px 5px; color: var(--text3);
+      flex-shrink: 0;
+    }
+    .t-sev {
+      font-size: .68rem; border-radius: 3px; padding: 1px 5px;
+      flex-shrink: 0; text-transform: capitalize;
+    }
+    .t-sev.critical { background: #ef444420; color: var(--red); }
+    .t-sev.high     { background: #f9731620; color: var(--orange); }
+    .t-sev.medium   { background: #eab30820; color: var(--yellow); }
+    .t-sev.low      { background: #22c55e20; color: var(--green); }
+    .t-sev.unknown  { background: var(--bg3); color: var(--text3); }
+
+    /* ── Empty state ───────────────────────────────────────────────────── */
+    #empty {
+      display: none; text-align: center;
+      padding: 80px 20px; color: var(--text3);
+    }
+    #empty .empty-icon { font-size: 48px; margin-bottom: 16px; }
+    #empty p { font-size: .95rem; }
+
+    /* ── Platform color map for pills ──────────────────────────────────── */
+    .pill[data-p="HackerOne"].active  { background: #ff6500; border-color: #ff6500; }
+    .pill[data-p="Bugcrowd"].active   { background: var(--orange); border-color: var(--orange); }
+    .pill[data-p="Intigriti"].active  { background: var(--blue); border-color: var(--blue); }
+    .pill[data-p="YesWeHack"].active  { background: var(--green); border-color: var(--green); }
+    .pill[data-p="Federacy"].active   { background: var(--accent2); border-color: var(--accent2); }
+    .pill[data-p="Chaos"].active      { background: var(--orange); border-color: var(--orange); }
+
+    @media (max-width: 600px) {
+      main { padding: 12px; }
+      .header-stats { display: none; }
+      #grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Load overlay ───────────────────────────────────────────────────────── -->
+<div id="load-overlay">
+  <div class="load-card">
+    <div class="load-icon">📡</div>
+    <h2>BugBountyRadar Viewer</h2>
+    <p>Select your <code>state.json</code> file to explore all tracked programs with filtering and search.</p>
+    <button class="btn-load" onclick="document.getElementById('file-input').click()">
+      Open state.json
+    </button>
+    <input type="file" id="file-input" accept=".json" />
+    <p class="auto-note">Tip: place this HTML in the same folder as state.json and open via a local server to auto-load.</p>
+  </div>
+</div>
+
+<!-- ── Header ─────────────────────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🎯</div>
+      BugBountyRadar
+    </div>
+    <div class="header-stats" id="header-stats"></div>
+  </div>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────────────────────── -->
+<main>
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input id="search" placeholder="Search programs or domains…" autocomplete="off" />
+    </div>
+
+    <div class="pill-group" id="platform-pills">
+      <span class="pill active" data-p="all">All</span>
+      <span class="pill" data-p="HackerOne">HackerOne</span>
+      <span class="pill" data-p="Bugcrowd">Bugcrowd</span>
+      <span class="pill" data-p="Intigriti">Intigriti</span>
+      <span class="pill" data-p="YesWeHack">YesWeHack</span>
+      <span class="pill" data-p="Federacy">Federacy</span>
+      <span class="pill" data-p="Chaos">Chaos 🌐</span>
+    </div>
+
+    <div class="pill-group">
+      <span class="pill status-filter active" data-s="active">🟢 Active</span>
+      <span class="pill status-filter" data-s="missing">🔴 Missing</span>
+      <span class="pill status-filter" data-s="all">All</span>
+    </div>
+
+    <div class="pill-group">
+      <span class="pill bounty-filter" data-b="all">💰+📋</span>
+      <span class="pill bounty-filter bounty-on" data-b="bounty">💰 Paid</span>
+      <span class="pill bounty-filter vdp-on" data-b="vdp">📋 VDP</span>
+    </div>
+
+    <div class="filter-right">
+      <select id="sort-by">
+        <option value="first_seen">↓ Date Added</option>
+        <option value="last_seen">↓ Last Checked</option>
+        <option value="name_asc">A → Z</option>
+        <option value="name_desc">Z → A</option>
+        <option value="targets">Most Targets</option>
+      </select>
+      <span id="results-count"></span>
+    </div>
+  </div>
+
+  <div id="grid"></div>
+  <div id="empty">
+    <div class="empty-icon">🔍</div>
+    <p>No programs match your filters.</p>
+  </div>
+</main>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────────
+let ALL_PROGRAMS = [];
+let filtered = [];
+let activePlatform = 'all';
+let activeBounty = 'all';
+let activeStatus = 'active';
+let searchQuery = '';
+let sortMode = 'first_seen';
+let maxLastSeen = 0;
+
+const PLATFORM_META = {
+  HackerOne: { short: 'H1',  cls: 'badge-h1',  emoji: '🟠' },
+  Bugcrowd:  { short: 'BC',  cls: 'badge-bc',  emoji: '🟡' },
+  Intigriti: { short: 'IG',  cls: 'badge-ig',  emoji: '🔵' },
+  YesWeHack: { short: 'YWH', cls: 'badge-yw',  emoji: '🟢' },
+  Federacy:  { short: 'FED', cls: 'badge-fd',  emoji: '🟣' },
+  Chaos:     { short: 'EXT', cls: 'badge-ch',  emoji: '🌐' },
+};
+
+// ── Load ──────────────────────────────────────────────────────────────────────
+async function tryAutoLoad() {
+  try {
+    const r = await fetch('./state.json');
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    parseState(data);
+  } catch {
+    // Stay on load overlay — user must pick file
+  }
+}
+
+document.getElementById('file-input').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      parseState(JSON.parse(ev.target.result));
+    } catch {
+      alert('Invalid JSON file.');
+    }
+  };
+  reader.readAsText(file);
+});
+
+function parseState(data) {
+  const programs = data.programs || data;
+  ALL_PROGRAMS = Object.entries(programs).map(([uid, entry]) => {
+    const [platform, ...nameParts] = uid.split(':');
+    const name = nameParts.join(':');
+    const targets = (entry.targets || []).map(t =>
+      typeof t === 'string' ? { target: t, type: 'Other', bounty: true, severity: 'unknown' } : t
+    );
+    const hasBounty = targets.some(t => t.bounty === true) ||
+                      (platform === 'Chaos' && targets.length > 0);
+    const domain = extractDomain(targets, name);
+    return { uid, platform, name, targets, hasBounty, first_seen: entry.first_seen || entry.last_seen || 0, last_seen: entry.last_seen || 0, domain };
+  });
+  maxLastSeen = Math.max(...ALL_PROGRAMS.map(p => p.last_seen));
+  ALL_PROGRAMS.forEach(p => {
+    p.isActive = p.last_seen >= maxLastSeen - 86400 * 2; // Active if checked within 48h of latest run
+  });
+  renderStats();
+  applyFilters();
+  document.getElementById('load-overlay').classList.add('hidden');
+}
+
+function extractDomain(targets, name) {
+  for (const t of targets) {
+    const raw = (t.target || '').replace(/^\*\./, '').replace(/^https?:\/\//, '').split('/')[0];
+    if (raw && raw.includes('.') && !raw.includes('*')) return raw;
+  }
+  return null;
+}
+
+function faviconUrl(domain) {
+  if (!domain) return null;
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
+}
+
+function getProgramUrl(platform, handle) {
+  if (platform === 'HackerOne') return `https://hackerone.com/${handle}`;
+  if (platform === 'Bugcrowd') return `https://bugcrowd.com/${handle}`;
+  if (platform === 'Intigriti') return `https://app.intigriti.com/programs/${handle}`;
+  if (platform === 'YesWeHack') return `https://yeswehack.com/programs/${handle}`;
+  if (platform === 'Federacy') return `https://federacy.com/${handle}`;
+  return null;
+}
+
+// ── Stats ─────────────────────────────────────────────────────────────────────
+function renderStats() {
+  const total = ALL_PROGRAMS.length;
+  const chaos = ALL_PROGRAMS.filter(p => p.platform === 'Chaos').length;
+  const paid  = ALL_PROGRAMS.filter(p => p.hasBounty).length;
+  document.getElementById('header-stats').innerHTML = `
+    <div class="stat-chip">Total <b>${total.toLocaleString()}</b></div>
+    <div class="stat-chip">💰 Paid <b>${paid.toLocaleString()}</b></div>
+    <div class="stat-chip">📋 VDP <b>${(total-paid).toLocaleString()}</b></div>
+    <div class="stat-chip">🌐 Chaos <b>${chaos.toLocaleString()}</b></div>
+  `;
+}
+
+// ── Filter + sort ──────────────────────────────────────────────────────────────
+function applyFilters() {
+  const q = searchQuery.toLowerCase();
+  filtered = ALL_PROGRAMS.filter(p => {
+    if (activeStatus === 'active' && !p.isActive) return false;
+    if (activeStatus === 'missing' && p.isActive) return false;
+    if (activePlatform !== 'all' && p.platform !== activePlatform) return false;
+    if (activeBounty === 'bounty' && !p.hasBounty) return false;
+    if (activeBounty === 'vdp' && p.hasBounty) return false;
+    if (q) {
+      const inName = p.name.toLowerCase().includes(q);
+      const inDomain = p.domain && p.domain.includes(q);
+      const inTargets = p.targets.some(t => t.target.toLowerCase().includes(q));
+      if (!inName && !inDomain && !inTargets) return false;
+    }
+    return true;
+  });
+
+  filtered.sort((a, b) => {
+    if (sortMode === 'first_seen') return b.first_seen - a.first_seen;
+    if (sortMode === 'last_seen') return b.last_seen - a.last_seen;
+    if (sortMode === 'name_asc')  return a.name.localeCompare(b.name);
+    if (sortMode === 'name_desc') return b.name.localeCompare(a.name);
+    if (sortMode === 'targets')   return b.targets.length - a.targets.length;
+    return 0;
+  });
+
+  renderGrid();
+}
+
+// ── Render grid ───────────────────────────────────────────────────────────────
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  document.getElementById('results-count').textContent =
+    `${filtered.length.toLocaleString()} programs`;
+
+  if (!filtered.length) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  grid.innerHTML = filtered.map(p => cardHTML(p)).join('');
+
+  // Attach expand toggle
+  grid.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('expanded'));
+  });
+}
+
+function cardHTML(p) {
+  const meta = PLATFORM_META[p.platform] || { short: p.platform, cls: '', emoji: '⚪' };
+  const favicon = faviconUrl(p.domain);
+  const faviconEl = favicon
+    ? `<img src="${favicon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="favicon-placeholder" style="display:none">${meta.emoji}</span>`
+    : `<span class="favicon-placeholder">${meta.emoji}</span>`;
+
+  const addedStr = p.first_seen
+    ? timeAgo(p.first_seen)
+    : '—';
+  const checkedStr = p.last_seen
+    ? timeAgo(p.last_seen)
+    : '—';
+
+  const bountyBadge = p.hasBounty
+    ? `<span class="badge badge-paid">💰 Paid</span>`
+    : `<span class="badge badge-vdp">📋 VDP</span>`;
+
+  const platformBadge = `<span class="badge ${meta.cls}">${meta.short}</span>`;
+
+  // Target type summary
+  const typeCounts = {};
+  p.targets.forEach(t => {
+    const ty = t.type || 'Other';
+    typeCounts[ty] = (typeCounts[ty] || 0) + 1;
+  });
+  const typeChips = Object.entries(typeCounts)
+    .sort((a,b) => b[1]-a[1]).slice(0,4)
+    .map(([ty, n]) => `<span class="type-dot">${ty} ${n}</span>`).join('');
+
+  const targetRows = p.targets.slice(0, 100).map(t => {
+    const sev = (t.severity || 'unknown').toLowerCase();
+    const icon = t.bounty ? '💰' : '📋';
+    
+    // Make target clickable link
+    let tLink = esc(t.target);
+    if (t.type === 'Domain' || t.type === 'URL' || t.type === 'Web' || tLink.includes('.')) {
+      let url = t.target;
+      if (!url.startsWith('http')) url = 'https://' + url;
+      tLink = `<a href="${esc(url)}" target="_blank" style="color:var(--blue);text-decoration:none">${tLink}</a>`;
+    }
+
+    return `<div class="target-row">
+      <span class="t-icon">${icon}</span>
+      <span class="t-name" title="${esc(t.target)}">${tLink}</span>
+      <span class="t-type">${esc(t.type || 'Other')}</span>
+      <span class="t-sev ${sev}">${sev}</span>
+    </div>`;
+  }).join('');
+
+  const moreNote = p.targets.length > 100
+    ? `<div style="text-align:center;padding:8px;color:var(--text3);font-size:.78rem">+${p.targets.length - 100} more targets</div>` : '';
+
+  const cardClass = p.isActive ? "card" : "card missing";
+  
+  const progUrl = getProgramUrl(p.platform, p.name);
+  const nameEl = progUrl
+    ? `<a href="${esc(progUrl)}" target="_blank" style="color:inherit;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${esc(p.name)}</a> <a href="${esc(progUrl)}" target="_blank" style="text-decoration:none;font-size:0.85em;opacity:0.7;margin-left:4px">🔗</a>`
+    : esc(p.name);
+
+  return `<div class="${cardClass}" data-uid="${esc(p.uid)}">
+    <div class="card-header">
+      <div class="favicon-wrap">${faviconEl}</div>
+      <div class="card-meta">
+        <div class="card-name" title="${esc(p.name)}">${nameEl}</div>
+        <div class="card-sub">
+          ${platformBadge}
+          ${bountyBadge}
+          <span class="badge badge-last" title="Date Added">🚀 ${addedStr}</span>
+          <span class="badge badge-last" title="Last Checked">🔍 ${checkedStr}</span>
+        </div>
+      </div>
+      <svg class="card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+    <div class="card-footer">
+      <span class="target-count">${p.targets.length} target${p.targets.length !== 1 ? 's' : ''}</span>
+      <div class="target-types">${typeChips}</div>
+    </div>
+    <div class="targets-panel">
+      ${targetRows || '<div style="color:var(--text3);font-size:.82rem;padding:8px 0">No targets recorded.</div>'}
+      ${moreNote}
+    </div>
+  </div>`;
+}
+
+// ── Utils ─────────────────────────────────────────────────────────────────────
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function timeAgo(ts) {
+  const diff = Date.now() / 1000 - ts;
+  if (diff < 3600)   return `${Math.round(diff/60)}m ago`;
+  if (diff < 86400)  return `${Math.round(diff/3600)}h ago`;
+  return `${Math.round(diff/86400)}d ago`;
+}
+
+// ── Event listeners ────────────────────────────────────────────────────────────
+document.getElementById('search').addEventListener('input', e => {
+  searchQuery = e.target.value;
+  applyFilters();
+});
+
+document.getElementById('platform-pills').addEventListener('click', e => {
+  const pill = e.target.closest('.pill');
+  if (!pill) return;
+  document.querySelectorAll('#platform-pills .pill').forEach(p => p.classList.remove('active'));
+  pill.classList.add('active');
+  activePlatform = pill.dataset.p;
+  applyFilters();
+});
+
+document.querySelectorAll('.bounty-filter').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.bounty-filter').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    activeBounty = pill.dataset.b;
+    applyFilters();
+  });
+});
+
+document.querySelectorAll('.status-filter').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.status-filter').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    activeStatus = pill.dataset.s;
+    applyFilters();
+  });
+});
+
+document.getElementById('sort-by').addEventListener('change', e => {
+  sortMode = e.target.value;
+  applyFilters();
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+tryAutoLoad();
+</script>
+</body>
+</html>

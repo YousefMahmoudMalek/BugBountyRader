@@ -142,11 +142,11 @@ def _try_groq(messages: list) -> str | None:
     """Groq free API (generous free tier, fast inference)."""
     if not GROQ_API_KEY:
         return None
-    print("    Groq/llama-3.3-70b-versatile")
+    print("    Groq/llama3-70b-8192")
     return _call_openai_compat(
         url="https://api.groq.com/openai/v1/chat/completions",
         api_key=GROQ_API_KEY,
-        model="llama-3.3-70b-versatile",
+        model="llama3-70b-8192",
         messages=messages,
     )
 
@@ -155,11 +155,11 @@ def _try_openrouter(messages: list) -> str | None:
     """OpenRouter — uses a free-tier model (:free suffix)."""
     if not OPENROUTER_API_KEY:
         return None
-    print("    OpenRouter/gemini-2.0-flash:free")
+    print("    OpenRouter/gemini-2.0-flash-lite-preview-02-05:free")
     return _call_openai_compat(
         url="https://openrouter.ai/api/v1/chat/completions",
         api_key=OPENROUTER_API_KEY,
-        model="google/gemini-2.0-flash-001:free",
+        model="google/gemini-2.0-flash-lite-preview-02-05:free",
         messages=messages,
         timeout=20,  # OpenRouter can be slightly slower
     )
@@ -665,6 +665,16 @@ def main():
 
     # ── Chaos Processing Block ────────────────────────────────────────────────
     if not (is_initial_run or is_seed_run):
+        # Update last_seen for all currently active Chaos programs
+        chaos_raw = fetch_programs("Chaos", CHAOS_URL)
+        if chaos_raw and isinstance(chaos_raw, dict):
+            for p in chaos_raw.get("programs", []):
+                name = p.get("name", "").strip()
+                if name:
+                    uid = f"Chaos:{name}"
+                    if uid in state["programs"]:
+                        state["programs"][uid]["last_seen"] = now
+
         chaos_new = fetch_chaos_programs(state)
         for program in chaos_new:
             name     = program.get("name", "").strip()
