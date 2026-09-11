@@ -566,7 +566,8 @@ def main():
 
             # Initial Run / Seed Mode
             if is_initial_run or is_seed_run:
-                state["programs"][unique_id] = {"targets": current_targets, "last_seen": now}
+                old_last_seen = state.get("programs", {}).get(unique_id, {}).get("last_seen", now)
+                state["programs"][unique_id] = {"targets": current_targets, "last_seen": old_last_seen}
                 continue
 
             # Case: New Program or Reopened after long time
@@ -706,7 +707,8 @@ def main():
                 continue
             unique_id = f"Chaos:{name}"
             current_targets = extract_targets(prog, "Chaos")
-            state["programs"][unique_id] = {"targets": current_targets, "last_seen": now}
+            old_last_seen = state.get("programs", {}).get(unique_id, {}).get("last_seen", now)
+            state["programs"][unique_id] = {"targets": current_targets, "last_seen": old_last_seen}
         print(f"  Chaos: seeded {len(chaos_programs)} programs.")
 
     # ── Wrap-up ───────────────────────────────────────────────────────────────
