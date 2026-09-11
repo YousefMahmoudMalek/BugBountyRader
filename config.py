@@ -60,5 +60,10 @@ DATA_SOURCES = {
     "Federacy": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/federacy_data.json"
 }
 
+# Chaos / ProjectDiscovery Public Bug Bounty Programs
+# Processed separately from DATA_SOURCES — uses domain-based dedup to filter
+# programs already tracked via the 5 platforms above.
+CHAOS_URL = "https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-programs/main/dist/data.json"
+
 # State File (where notified programs are saved)
 STATE_FILE = "state.json"
