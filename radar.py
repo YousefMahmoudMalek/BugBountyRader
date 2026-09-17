@@ -30,6 +30,7 @@ OPENROUTER_API_KEY  = os.getenv("OPENROUTER_API_KEY")
 # Built lazily in get_providers(); a flat list of provider names that have keys.
 _PROVIDERS = None
 PROVIDER_INDEX = 0  # Index into _PROVIDERS, advances after each successful call
+DISABLED_PROVIDERS: set[str] = set()  # Providers that failed fatally during this scan
 
 # Per-run provider usage counters  {provider_name: {"ok": int, "fail": int}}
 PROVIDER_STATS: dict = {}
@@ -41,7 +42,7 @@ LOG_BUFFER = []
 # ── Provider helpers ──────────────────────────────────────────────────────────
 
 def get_providers() -> list[str]:
-    """Return the ordered list of available AI providers (those with keys)."""
+    """Return the ordered list of available AI providers that have keys and haven't failed fatally."""
     global _PROVIDERS
     if _PROVIDERS is None:
         _PROVIDERS = []
@@ -53,7 +54,7 @@ def get_providers() -> list[str]:
             _PROVIDERS.append("groq")
         if OPENROUTER_API_KEY:
             _PROVIDERS.append("openrouter")
-    return _PROVIDERS
+    return [p for p in _PROVIDERS if p not in DISABLED_PROVIDERS]
 
 
 def _call_openai_compat(url: str, api_key: str, model: str, messages: list, timeout: int = 15) -> str | None:
@@ -87,45 +88,31 @@ def _try_gemini(full_prompt: str) -> str | None:
     if not GEMINI_API_KEYS:
         return None
 
-    models_to_try = [
-        "gemini-2.0-flash",
-        "gemini-1.5-flash",
-        "gemini-1.5-flash-8b",
-    ]
-
     # Start from current key, rotate through all keys once
     keys_ordered = GEMINI_API_KEYS[GEMINI_KEY_INDEX:] + GEMINI_API_KEYS[:GEMINI_KEY_INDEX]
 
     for api_key in keys_ordered:
         GEMINI_KEY_INDEX = GEMINI_API_KEYS.index(api_key)
-        client = genai.Client(api_key=api_key)
-
-        for model_name in models_to_try:
-            for use_search in [True, False]:
-                try:
-                    search_label = "(Search)" if use_search else "(Basic)"
-                    print(f"    Gemini/{model_name} {search_label} | key ...{api_key[-5:]}")
-                    config = None
-                    if use_search:
-                        grounding_tool = types.Tool(google_search=types.GoogleSearch())
-                        config = types.GenerateContentConfig(tools=[grounding_tool])
-                    response = client.models.generate_content(
-                        model=model_name, contents=full_prompt, config=config
-                    )
-                    return response.text
-                except Exception as e:
-                    err_msg = str(e).upper()
-                    if "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg:
-                        if not use_search:
-                            print(f"    [!] Gemini key exhausted (429). Rotating key...")
-                            break  # try next key
-                        # search mode 429 → fall through to basic
-                    elif "404" in err_msg:
-                        break  # model not found, try next
-                    else:
-                        print(f"    [!] Gemini error ({model_name} {search_label}): {e}")
-                        if not use_search:
-                            break
+        try:
+            client = genai.Client(api_key=api_key)
+            print(f"    Gemini/gemini-2.0-flash | key ...{api_key[-5:]}")
+            response = client.models.generate_content(
+                model="gemini-2.0-flash", contents=full_prompt
+            )
+            return response.text
+        except Exception as e:
+            err_msg = str(e)
+            upper_msg = err_msg.upper()
+            if "401" in upper_msg or "UNAUTHENTICATED" in upper_msg or "ACCOUNT_STATE_INVALID" in upper_msg:
+                print(f"    [!] Gemini key ...{api_key[-5:]} invalid/disabled (401). Skipping key.")
+                continue
+            elif "429" in upper_msg or "RESOURCE_EXHAUSTED" in upper_msg:
+                print(f"    [!] Gemini key ...{api_key[-5:]} rate-limited (429). Rotating key...")
+                continue
+            else:
+                first_line = err_msg.split("\n")[0][:120]
+                print(f"    [!] Gemini error (key ...{api_key[-5:]}): {first_line}")
+                continue
     return None
 
 
@@ -143,24 +130,16 @@ def _try_deepseek(messages: list) -> str | None:
 
 
 def _try_groq(messages: list) -> str | None:
-    """Groq free API (generous free tier, fast inference)."""
+    """Groq API."""
     if not GROQ_API_KEY:
         return None
-    groq_models = [
-        "llama-3.3-70b-versatile",
-        "llama-3.1-8b-instant",
-    ]
-    for model in groq_models:
-        print(f"    Groq/{model}")
-        res = _call_openai_compat(
-            url="https://api.groq.com/openai/v1/chat/completions",
-            api_key=GROQ_API_KEY,
-            model=model,
-            messages=messages,
-        )
-        if res:
-            return res
-    return None
+    print("    Groq/llama-3.3-70b-versatile")
+    return _call_openai_compat(
+        url="https://api.groq.com/openai/v1/chat/completions",
+        api_key=GROQ_API_KEY,
+        model="llama-3.3-70b-versatile",
+        messages=messages,
+    )
 
 
 def _try_openrouter(messages: list) -> str | None:
@@ -170,7 +149,6 @@ def _try_openrouter(messages: list) -> str | None:
     openrouter_models = [
         "openrouter/free",
         "meta-llama/llama-3.3-70b-instruct:free",
-        "google/gemini-2.0-flash-exp:free",
     ]
     for model in openrouter_models:
         print(f"    OpenRouter/{model}")
@@ -179,7 +157,7 @@ def _try_openrouter(messages: list) -> str | None:
             api_key=OPENROUTER_API_KEY,
             model=model,
             messages=messages,
-            timeout=20,  # OpenRouter can be slightly slower
+            timeout=20,
         )
         if res:
             return res
@@ -437,7 +415,8 @@ def analyze_with_ai(program, platform, prompt_type="new_program"):
         else:
             PROVIDER_STATS.setdefault(provider, {"ok": 0, "fail": 0})
             PROVIDER_STATS[provider]["fail"] += 1
-            print(f"  [!] {provider} failed. Rotating...")
+            DISABLED_PROVIDERS.add(provider)
+            print(f"  [!] {provider} failed. Disabled for remaining targets in this run. Rotating...")
 
     return "AI analysis failed (all providers exhausted).", 0, "none"
 
