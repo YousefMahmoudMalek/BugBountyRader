@@ -88,9 +88,9 @@ def _try_gemini(full_prompt: str) -> str | None:
         return None
 
     models_to_try = [
-        "models/gemini-2.5-flash",
-        "models/gemini-2.0-flash",
-        "models/gemini-1.5-flash-latest",
+        "gemini-2.0-flash",
+        "gemini-1.5-flash",
+        "gemini-1.5-flash-8b",
     ]
 
     # Start from current key, rotate through all keys once
@@ -122,11 +122,15 @@ def _try_gemini(full_prompt: str) -> str | None:
                         # search mode 429 → fall through to basic
                     elif "404" in err_msg:
                         break  # model not found, try next
+                    else:
+                        print(f"    [!] Gemini error ({model_name} {search_label}): {e}")
+                        if not use_search:
+                            break
     return None
 
 
 def _try_deepseek(messages: list) -> str | None:
-    """DeepSeek free chat API."""
+    """DeepSeek chat API."""
     if not DEEPSEEK_API_KEY:
         return None
     print("    DeepSeek/deepseek-chat")
@@ -142,27 +146,44 @@ def _try_groq(messages: list) -> str | None:
     """Groq free API (generous free tier, fast inference)."""
     if not GROQ_API_KEY:
         return None
-    print("    Groq/llama3-70b-8192")
-    return _call_openai_compat(
-        url="https://api.groq.com/openai/v1/chat/completions",
-        api_key=GROQ_API_KEY,
-        model="llama3-70b-8192",
-        messages=messages,
-    )
+    groq_models = [
+        "llama-3.3-70b-versatile",
+        "llama-3.1-8b-instant",
+    ]
+    for model in groq_models:
+        print(f"    Groq/{model}")
+        res = _call_openai_compat(
+            url="https://api.groq.com/openai/v1/chat/completions",
+            api_key=GROQ_API_KEY,
+            model=model,
+            messages=messages,
+        )
+        if res:
+            return res
+    return None
 
 
 def _try_openrouter(messages: list) -> str | None:
-    """OpenRouter — uses a free-tier model (:free suffix)."""
+    """OpenRouter — uses free-tier models."""
     if not OPENROUTER_API_KEY:
         return None
-    print("    OpenRouter/gemini-2.0-flash-lite-preview-02-05:free")
-    return _call_openai_compat(
-        url="https://openrouter.ai/api/v1/chat/completions",
-        api_key=OPENROUTER_API_KEY,
-        model="google/gemini-2.0-flash-lite-preview-02-05:free",
-        messages=messages,
-        timeout=20,  # OpenRouter can be slightly slower
-    )
+    openrouter_models = [
+        "openrouter/free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "google/gemini-2.0-flash-exp:free",
+    ]
+    for model in openrouter_models:
+        print(f"    OpenRouter/{model}")
+        res = _call_openai_compat(
+            url="https://openrouter.ai/api/v1/chat/completions",
+            api_key=OPENROUTER_API_KEY,
+            model=model,
+            messages=messages,
+            timeout=20,  # OpenRouter can be slightly slower
+        )
+        if res:
+            return res
+    return None
 
 
 # ── State helpers ─────────────────────────────────────────────────────────────
