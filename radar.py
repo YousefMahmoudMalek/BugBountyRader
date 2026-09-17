@@ -595,6 +595,12 @@ def main():
                     days_since = int(time_since // (3600 * 24))
                     time_desc  = f"{days_since} days" if days_since > 0 else f"{int(time_since // 3600)} hours"
 
+                    # Record reopen event for viewer history
+                    reopen_ev = {"closed_at": int(prev_last_seen), "reopened_at": int(now)}
+                    existing_history = entry.get("reopen_history", [])
+                    existing_history.append(reopen_ev)
+                    state["programs"][unique_id]["reopen_history"] = existing_history
+
                     if time_since > ALERT_THRESHOLD:
                         print(f"Program REOPENED (Long absence: {time_desc}): {handle}")
                         should_alert_new = True
@@ -633,7 +639,11 @@ def main():
                     send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title=alert_title, use_embed=False)
                     new_programs_found += 1
 
+                # Preserve reopen_history when rewriting entry after alert
+                existing_history = state["programs"].get(unique_id, {}).get("reopen_history", [])
                 state["programs"][unique_id] = {"targets": current_targets, "first_seen": first_seen_ts, "last_seen": now}
+                if existing_history:
+                    state["programs"][unique_id]["reopen_history"] = existing_history
                 continue
 
             # Case: Scope Update
