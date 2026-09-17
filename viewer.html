@@ -46,36 +46,36 @@
     /* ── Header ────────────────────────────────────────────────────────── */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(13,15,20,0.85);
+      background: rgba(13,15,20,0.92);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
+      padding: 0 28px;
     }
     .header-inner {
-      max-width: 1400px; margin: 0 auto;
+      width: 100%; margin: 0 auto;
       display: flex; align-items: center; gap: 16px;
-      height: 60px;
+      height: 62px;
     }
     .logo {
       display: flex; align-items: center; gap: 10px;
-      font-weight: 700; font-size: 1rem; color: var(--text);
+      font-weight: 700; font-size: 1.05rem; color: var(--text);
       white-space: nowrap;
     }
     .logo-icon {
-      width: 30px; height: 30px;
+      width: 32px; height: 32px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
+      font-size: 16px;
     }
     .header-stats {
-      display: flex; gap: 12px; margin-left: auto;
+      display: flex; gap: 10px; margin-left: auto;
       flex-wrap: wrap;
     }
     .stat-chip {
       background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 20px; padding: 4px 12px;
-      font-size: 0.75rem; color: var(--text2);
+      border-radius: 20px; padding: 5px 13px;
+      font-size: 0.78rem; color: var(--text2);
       display: flex; align-items: center; gap: 6px;
     }
     .stat-chip b { color: var(--text); }
@@ -83,22 +83,28 @@
     /* ── Load overlay ──────────────────────────────────────────────────── */
     #load-overlay {
       position: fixed; inset: 0; z-index: 200;
-      background: var(--bg);
+      background: rgba(13,15,20,0.95);
+      backdrop-filter: blur(8px);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      gap: 24px; transition: opacity .4s;
+      gap: 24px; transition: opacity .35s;
     }
     #load-overlay.hidden { opacity: 0; pointer-events: none; }
     .load-card {
       background: var(--bg2); border: 1px solid var(--border2);
       border-radius: 20px; padding: 40px 48px;
-      text-align: center; max-width: 420px;
+      text-align: center; max-width: 480px; width: 90%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .load-card.drag-over {
+      border-color: var(--accent);
+      background: var(--bg3);
     }
     .load-icon { font-size: 48px; margin-bottom: 16px; }
     .load-card h2 { font-size: 1.4rem; margin-bottom: 8px; }
     .load-card p { color: var(--text2); font-size: .9rem; line-height: 1.6; }
     .btn-load {
-      margin-top: 24px;
+      margin-top: 20px;
       display: inline-block;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #fff; border: none; border-radius: var(--radius);
@@ -107,12 +113,15 @@
     }
     .btn-load:hover { opacity: .9; transform: translateY(-1px); }
     #file-input { display: none; }
-    .auto-note { font-size: .78rem; color: var(--text3); margin-top: 12px; }
+    .auto-note { font-size: .8rem; color: var(--text3); margin-top: 14px; }
+    #load-status {
+      font-size: .85rem; color: var(--blue); margin-top: 10px; font-weight: 500;
+    }
 
-    /* ── Main layout ───────────────────────────────────────────────────── */
+    /* ── Main layout (Full screen fluid) ────────────────────────────────── */
     main {
-      max-width: 1400px; margin: 0 auto;
-      padding: 24px;
+      width: 100%; margin: 0 auto;
+      padding: 20px 28px;
     }
 
     /* ── Filter bar ────────────────────────────────────────────────────── */
@@ -123,7 +132,7 @@
       align-items: center; margin-bottom: 20px;
     }
     .search-wrap {
-      flex: 1; min-width: 200px;
+      flex: 1; min-width: 220px;
       position: relative;
     }
     .search-wrap svg {
@@ -166,11 +175,11 @@
     }
     #results-count { font-size: .82rem; color: var(--text3); white-space: nowrap; }
 
-    /* ── Grid ──────────────────────────────────────────────────────────── */
+    /* ── Grid (Fluid Full Screen) ───────────────────────────────────────── */
     #grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 16px;
     }
 
     /* ── Card ──────────────────────────────────────────────────────────── */
@@ -264,7 +273,35 @@
       font-family: 'JetBrains Mono', monospace;
       color: var(--text2); flex: 1; min-width: 0;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      display: flex; align-items: center; gap: 6px;
     }
+    .t-name a:hover { text-decoration: underline !important; }
+    .t-regex {
+      color: var(--accent2); background: rgba(167, 139, 250, 0.1);
+      padding: 1px 6px; border-radius: 4px; font-size: .78rem;
+      border: 1px dashed rgba(167, 139, 250, 0.3);
+      cursor: text; user-select: all;
+    }
+    .badge-regex {
+      font-size: .62rem; font-weight: 700;
+      background: rgba(167, 139, 250, 0.2); color: var(--accent2);
+      border: 1px solid rgba(167, 139, 250, 0.4);
+      border-radius: 3px; padding: 1px 4px; flex-shrink: 0;
+      letter-spacing: .5px;
+    }
+    .badge-wildcard {
+      font-size: .62rem; font-weight: 700;
+      background: rgba(56, 189, 248, 0.15); color: var(--blue);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 3px; padding: 1px 4px; flex-shrink: 0;
+    }
+    .btn-copy-regex {
+      background: none; border: none; cursor: pointer;
+      color: var(--text3); font-size: 11px; padding: 2px;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: color .15s; border-radius: 3px;
+    }
+    .btn-copy-regex:hover { color: var(--text); background: var(--bg3); }
     .t-type {
       font-size: .68rem; background: var(--bg3);
       border-radius: 3px; padding: 1px 5px; color: var(--text3);
@@ -307,15 +344,20 @@
 
 <!-- ── Load overlay ───────────────────────────────────────────────────────── -->
 <div id="load-overlay">
-  <div class="load-card">
+  <div class="load-card" id="drop-zone">
     <div class="load-icon">📡</div>
     <h2>BugBountyRadar Viewer</h2>
-    <p>Select your <code>state.json</code> file to explore all tracked programs with filtering and search.</p>
-    <button class="btn-load" onclick="document.getElementById('file-input').click()">
-      Open state.json
-    </button>
+    <p id="load-status">Attempting auto-load...</p>
+    <div style="margin-top: 16px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+      <button class="btn-load" onclick="document.getElementById('file-input').click()">
+        Select state.json
+      </button>
+      <button class="btn-load" style="background: var(--bg3); border: 1px solid var(--border2);" onclick="tryAutoLoad()">
+        Reload from GitHub
+      </button>
+    </div>
     <input type="file" id="file-input" accept=".json" />
-    <p class="auto-note">Tip: place this HTML in the same folder as state.json and open via a local server to auto-load.</p>
+    <p class="auto-note">💡 Drag & drop <code>state.json</code> anywhere on this page to load instantly.</p>
   </div>
 </div>
 
@@ -402,30 +444,83 @@ const PLATFORM_META = {
   Chaos:     { short: 'EXT', cls: 'badge-ch',  emoji: '🌐' },
 };
 
+const REMOTE_STATE_URL = 'https://raw.githubusercontent.com/YousefMahmoudMalek/BugBountyRader/main/state.json';
+
 // ── Load ──────────────────────────────────────────────────────────────────────
 async function tryAutoLoad() {
+  const statusEl = document.getElementById('load-status');
+  if (statusEl) statusEl.innerHTML = '<span style="color:var(--accent2)">⏳ Checking for local state.json...</span>';
+
+  // 1. Try relative path (works on web servers & GitHub Pages)
   try {
-    const r = await fetch('./state.json');
-    if (!r.ok) throw new Error();
-    const data = await r.json();
-    parseState(data);
-  } catch {
-    // Stay on load overlay — user must pick file
+    const r = await fetch('./state.json', { cache: 'no-cache' });
+    if (r.ok) {
+      const data = await r.json();
+      parseState(data);
+      return;
+    }
+  } catch (e) {
+    // Relative fetch failed (common on file:// due to browser CORS policies)
+  }
+
+  // 2. Fallback: fetch from GitHub repository raw URL (CORS allowed from anywhere)
+  try {
+    if (statusEl) statusEl.innerHTML = '<span style="color:var(--blue)">🌐 Fetching live state from GitHub repository...</span>';
+    const r = await fetch(REMOTE_STATE_URL, { cache: 'no-cache' });
+    if (r.ok) {
+      const data = await r.json();
+      parseState(data);
+      return;
+    }
+  } catch (e) {
+    console.warn('Fallback GitHub state fetch failed:', e);
+  }
+
+  // 3. Prompt user if auto-detection failed (e.g. offline on file://)
+  if (statusEl) {
+    statusEl.innerHTML = '<span style="color:var(--yellow)">⚠️ Auto-load unavailable (local file security). Please select state.json below or drag & drop it here.</span>';
   }
 }
 
-document.getElementById('file-input').addEventListener('change', e => {
-  const file = e.target.files[0];
-  if (!file) return;
+// Global Drag & Drop Support
+window.addEventListener('dragover', e => {
+  e.preventDefault();
+  const card = document.getElementById('drop-zone');
+  if (card) card.classList.add('drag-over');
+});
+window.addEventListener('dragleave', e => {
+  e.preventDefault();
+  const card = document.getElementById('drop-zone');
+  if (card) card.classList.remove('drag-over');
+});
+window.addEventListener('drop', e => {
+  e.preventDefault();
+  const card = document.getElementById('drop-zone');
+  if (card) card.classList.remove('drag-over');
+  const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+  if (file && (file.name.endsWith('.json') || file.type.includes('json'))) {
+    readFile(file);
+  }
+});
+
+function readFile(file) {
+  const statusEl = document.getElementById('load-status');
+  if (statusEl) statusEl.textContent = `Reading ${file.name}...`;
   const reader = new FileReader();
   reader.onload = ev => {
     try {
       parseState(JSON.parse(ev.target.result));
-    } catch {
-      alert('Invalid JSON file.');
+    } catch (err) {
+      alert('Invalid JSON file format: ' + err.message);
+      if (statusEl) statusEl.textContent = 'Error parsing JSON file.';
     }
   };
   reader.readAsText(file);
+}
+
+document.getElementById('file-input').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (file) readFile(file);
 });
 
 function parseState(data) {
@@ -567,25 +662,7 @@ function cardHTML(p) {
     .sort((a,b) => b[1]-a[1]).slice(0,4)
     .map(([ty, n]) => `<span class="type-dot">${ty} ${n}</span>`).join('');
 
-  const targetRows = p.targets.slice(0, 100).map(t => {
-    const sev = (t.severity || 'unknown').toLowerCase();
-    const icon = t.bounty ? '💰' : '📋';
-    
-    // Make target clickable link
-    let tLink = esc(t.target);
-    if (t.type === 'Domain' || t.type === 'URL' || t.type === 'Web' || tLink.includes('.')) {
-      let url = t.target;
-      if (!url.startsWith('http')) url = 'https://' + url;
-      tLink = `<a href="${esc(url)}" target="_blank" style="color:var(--blue);text-decoration:none">${tLink}</a>`;
-    }
-
-    return `<div class="target-row">
-      <span class="t-icon">${icon}</span>
-      <span class="t-name" title="${esc(t.target)}">${tLink}</span>
-      <span class="t-type">${esc(t.type || 'Other')}</span>
-      <span class="t-sev ${sev}">${sev}</span>
-    </div>`;
-  }).join('');
+  const targetRows = p.targets.slice(0, 100).map(t => renderTargetRow(t)).join('');
 
   const moreNote = p.targets.length > 100
     ? `<div style="text-align:center;padding:8px;color:var(--text3);font-size:.78rem">+${p.targets.length - 100} more targets</div>` : '';
@@ -594,7 +671,7 @@ function cardHTML(p) {
   
   const progUrl = getProgramUrl(p.platform, p.name);
   const nameEl = progUrl
-    ? `<a href="${esc(progUrl)}" target="_blank" style="color:inherit;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${esc(p.name)}</a> <a href="${esc(progUrl)}" target="_blank" style="text-decoration:none;font-size:0.85em;opacity:0.7;margin-left:4px">🔗</a>`
+    ? `<a href="${esc(progUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color:inherit;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${esc(p.name)}</a> <a href="${esc(progUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="text-decoration:none;font-size:0.85em;opacity:0.7;margin-left:4px">🔗</a>`
     : esc(p.name);
 
   return `<div class="${cardClass}" data-uid="${esc(p.uid)}">
@@ -622,6 +699,82 @@ function cardHTML(p) {
       ${moreNote}
     </div>
   </div>`;
+}
+
+function renderTargetRow(t) {
+  const raw = (t.target || '').trim();
+  const sev = (t.severity || 'unknown').toLowerCase();
+  const icon = t.bounty ? '💰' : '📋';
+
+  // Detect regex patterns:
+  // - Starts with ^ or ends with $
+  // - Contains escaped characters like \. or \w or \d
+  // - Contains character classes [something]
+  // - Contains group / alternation: |, (?
+  // - Contains regex wildcard patterns: .*, *., /*, etc.
+  const isRegex = /[\^\\$|\[\]\(\)]|\.\*|\*\.\*|\/\*|\.\+/.test(raw);
+  const isWildcard = !isRegex && raw.startsWith('*.');
+
+  let targetContent = '';
+  if (isRegex) {
+    targetContent = `
+      <span class="badge-regex" title="Regular Expression">REGEX</span>
+      <span class="t-regex" title="Regex pattern: ${esc(raw)}">${esc(raw)}</span>
+      <button class="btn-copy-regex" title="Copy regex" onclick="copyText(event, ${JSON.stringify(raw)})">📋</button>
+    `;
+  } else if (isWildcard) {
+    const domainOnly = raw.replace(/^\*\./, '');
+    const cleanUrl = 'https://' + domainOnly;
+    targetContent = `
+      <span class="badge-wildcard" title="Wildcard scope">*.</span>
+      <a href="${esc(cleanUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color:var(--blue);text-decoration:none" title="Open root domain: ${esc(cleanUrl)}">${esc(raw)}</a>
+      <button class="btn-copy-regex" title="Copy wildcard" onclick="copyText(event, ${JSON.stringify(raw)})">📋</button>
+    `;
+  } else if (t.type === 'Domain' || t.type === 'URL' || t.type === 'Web' || (raw.includes('.') && !raw.includes(' ') && !raw.includes('/'))) {
+    let url = raw;
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      url = 'https://' + url;
+    }
+    targetContent = `
+      <a href="${esc(url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color:var(--blue);text-decoration:none" title="${esc(url)}">${esc(raw)}</a>
+      <button class="btn-copy-regex" title="Copy target" onclick="copyText(event, ${JSON.stringify(raw)})">📋</button>
+    `;
+  } else {
+    targetContent = `
+      <span title="${esc(raw)}">${esc(raw)}</span>
+      <button class="btn-copy-regex" title="Copy" onclick="copyText(event, ${JSON.stringify(raw)})">📋</button>
+    `;
+  }
+
+  return `<div class="target-row">
+    <span class="t-icon">${icon}</span>
+    <div class="t-name">${targetContent}</div>
+    <span class="t-type">${esc(t.type || 'Other')}</span>
+    <span class="t-sev ${sev}">${sev}</span>
+  </div>`;
+}
+
+function copyText(e, text) {
+  if (e) e.stopPropagation();
+  navigator.clipboard.writeText(text).then(() => {
+    if (e && e.currentTarget) {
+      const btn = e.currentTarget;
+      const old = btn.textContent;
+      btn.textContent = '✓';
+      btn.style.color = 'var(--green)';
+      setTimeout(() => {
+        btn.textContent = old;
+        btn.style.color = '';
+      }, 1400);
+    }
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  });
 }
 
 // ── Utils ─────────────────────────────────────────────────────────────────────
