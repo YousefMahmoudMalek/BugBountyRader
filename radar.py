@@ -183,16 +183,20 @@ def load_state():
                     new_state["programs"][entry] = {"targets": [], "last_seen": now}
                 return new_state
 
-            # 2. Schema Migration: [targets] -> {"targets": [...], "last_seen": ...}
+            # 2. Schema Migration: ensure first_seen and last_seen exist
             if "programs" in data:
                 modified = False
                 now = time.time()
                 for uid, val in data["programs"].items():
                     if isinstance(val, list):
-                        data["programs"][uid] = {"targets": val, "last_seen": now}
+                        data["programs"][uid] = {"targets": val, "first_seen": now, "last_seen": now}
                         modified = True
+                    elif isinstance(val, dict):
+                        if "first_seen" not in val:
+                            val["first_seen"] = val.get("last_seen", now)
+                            modified = True
                 if modified:
-                    print("Migrated program entries to include 'last_seen' timestamp.")
+                    print("Migrated program entries to include 'first_seen' timestamp.")
 
             return data
     return {"programs": {}}
@@ -567,7 +571,8 @@ def main():
             # Initial Run / Seed Mode
             if is_initial_run or is_seed_run:
                 old_last_seen = state.get("programs", {}).get(unique_id, {}).get("last_seen", now)
-                state["programs"][unique_id] = {"targets": current_targets, "last_seen": old_last_seen}
+                old_first_seen = state.get("programs", {}).get(unique_id, {}).get("first_seen", old_last_seen)
+                state["programs"][unique_id] = {"targets": current_targets, "first_seen": old_first_seen, "last_seen": old_last_seen}
                 continue
 
             # Case: New Program or Reopened after long time
@@ -577,9 +582,11 @@ def main():
                 should_alert_new = True
                 old_data       = []
                 prev_last_seen = now
+                first_seen_ts  = now
             else:
                 is_new         = False
                 entry          = state["programs"][unique_id]
+                first_seen_ts  = entry.get("first_seen", entry.get("last_seen", now))
                 prev_last_seen = entry.get("last_seen", 0)
                 time_since     = now - prev_last_seen
                 old_data       = entry.get("targets", [])
@@ -598,6 +605,7 @@ def main():
                 else:
                     should_alert_new = False
 
+                state["programs"][unique_id]["first_seen"] = first_seen_ts
                 state["programs"][unique_id]["last_seen"] = now
 
             # Trigger "New Program" alert
@@ -625,7 +633,7 @@ def main():
                     send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title=alert_title, use_embed=False)
                     new_programs_found += 1
 
-                state["programs"][unique_id] = {"targets": current_targets, "last_seen": now}
+                state["programs"][unique_id] = {"targets": current_targets, "first_seen": first_seen_ts, "last_seen": now}
                 continue
 
             # Case: Scope Update
@@ -704,7 +712,8 @@ def main():
                 send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title="New Bug Bounty Program!", use_embed=False)
                 new_programs_found += 1
 
-            state["programs"][unique_id] = {"targets": current_targets, "last_seen": now}
+            old_first_seen = state.get("programs", {}).get(unique_id, {}).get("first_seen", now)
+            state["programs"][unique_id] = {"targets": current_targets, "first_seen": old_first_seen, "last_seen": now}
 
     elif is_seed_run:
         # Seed Chaos too — record all so they're not re-alerted on first live run
@@ -718,7 +727,8 @@ def main():
             unique_id = f"Chaos:{name}"
             current_targets = extract_targets(prog, "Chaos")
             old_last_seen = state.get("programs", {}).get(unique_id, {}).get("last_seen", now)
-            state["programs"][unique_id] = {"targets": current_targets, "last_seen": old_last_seen}
+            old_first_seen = state.get("programs", {}).get(unique_id, {}).get("first_seen", old_last_seen)
+            state["programs"][unique_id] = {"targets": current_targets, "first_seen": old_first_seen, "last_seen": old_last_seen}
         print(f"  Chaos: seeded {len(chaos_programs)} programs.")
 
     # ── Wrap-up ───────────────────────────────────────────────────────────────

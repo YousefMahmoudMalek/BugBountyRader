@@ -682,8 +682,8 @@ function cardHTML(p) {
         <div class="card-sub">
           ${platformBadge}
           ${bountyBadge}
-          <span class="badge badge-last" title="Date Added">🚀 ${addedStr}</span>
-          <span class="badge badge-last" title="Last Checked">🔍 ${checkedStr}</span>
+          <span class="badge badge-last" title="Date Added: ${formatDate(p.first_seen)}">🚀 ${addedStr}</span>
+          <span class="badge badge-last" title="Last Checked: ${formatDate(p.last_seen)}">🔍 ${checkedStr}</span>
         </div>
       </div>
       <svg class="card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -783,10 +783,19 @@ function esc(s) {
 }
 
 function timeAgo(ts) {
+  if (!ts) return '—';
   const diff = Date.now() / 1000 - ts;
-  if (diff < 3600)   return `${Math.round(diff/60)}m ago`;
-  if (diff < 86400)  return `${Math.round(diff/3600)}h ago`;
-  return `${Math.round(diff/86400)}d ago`;
+  if (diff < 60) return 'Just now';
+  if (diff < 3600) return `${Math.round(diff/60)}m ago`;
+  if (diff < 86400) return `${Math.round(diff/3600)}h ago`;
+  if (diff < 86400 * 30) return `${Math.round(diff/86400)}d ago`;
+  if (diff < 86400 * 365) return `${Math.round(diff/(86400 * 30))}mo ago`;
+  return `${(diff/(86400 * 365)).toFixed(1)}y ago`;
+}
+
+function formatDate(ts) {
+  if (!ts) return '';
+  return new Date(ts * 1000).toLocaleString();
 }
 
 // ── Event listeners ────────────────────────────────────────────────────────────

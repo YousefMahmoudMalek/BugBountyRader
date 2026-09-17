@@ -1,5 +1,6 @@
 import json
 import subprocess
+import time
 
 def run_git(cmd):
     return subprocess.check_output(cmd, shell=True, text=True)
@@ -12,46 +13,55 @@ except Exception as e:
     print(f"Error loading state.json: {e}")
     exit(1)
 
-# Get all commits that modified state.json, from oldest to newest
-commits_out = run_git("git log --reverse --pretty=format:'%H %ct' state.json")
-commits = [line.strip().split() for line in commits_out.strip().split('\n') if line.strip()]
+print("Extracting commit history from git...")
+# Get daily commits: take first commit of each day from oldest to newest
+out = run_git("git log --reverse --pretty=format:'%H %ct %cs' state.json")
+seen_dates = set()
+daily_commits = []
+for line in out.strip().split('\n'):
+    parts = line.split()
+    if len(parts) == 3:
+        h, ct, cs = parts
+        if cs not in seen_dates:
+            seen_dates.add(cs)
+            daily_commits.append((h, float(ct), cs))
 
+print(f"Scanning {len(daily_commits)} historical daily commits...")
 first_seen_map = {}
+t0 = time.time()
 
-for commit_hash, ts_str in commits:
-    ts = float(ts_str)
+for i, (commit_hash, ts, cs) in enumerate(daily_commits):
     try:
-        # Show file content at this commit
-        file_content = run_git(f"git show {commit_hash}:state.json")
-        old_state = json.loads(file_content)
-        programs = old_state.get("programs", {})
-        if not programs and isinstance(old_state, dict) and "programs" not in old_state:
-            # maybe legacy format
-            if isinstance(old_state.get("notified_handles"), list):
-                for uid in old_state["notified_handles"]:
-                    if uid not in first_seen_map:
-                        first_seen_map[uid] = ts
-            else:
-                for uid in old_state.keys():
-                    if uid != "notified_handles" and uid not in first_seen_map:
-                        first_seen_map[uid] = ts
-        else:
-            for uid in programs.keys():
-                if uid not in first_seen_map:
-                    first_seen_map[uid] = ts
-    except Exception as e:
+        content = run_git(f"git show {commit_hash}:state.json")
+        d = json.loads(content)
+        programs = d.get("programs", {}) if isinstance(d, dict) else {}
+        if not programs and isinstance(d, dict) and "notified_handles" in d:
+            for nh in d["notified_handles"]:
+                if nh not in first_seen_map:
+                    first_seen_map[nh] = ts
+        for uid in programs.keys():
+            if uid not in first_seen_map:
+                first_seen_map[uid] = ts
+    except Exception:
         continue
 
-# Now update the current state
+print(f"Discovered first_seen timestamps for {len(first_seen_map)} programs in {time.time()-t0:.1f}s.")
+
+# Update the state.json programs with their restored first_seen timestamps
 programs = state.get("programs", {})
+updated_count = 0
+now = time.time()
+
 for uid, entry in programs.items():
     if isinstance(entry, dict):
         if uid in first_seen_map:
             entry["first_seen"] = first_seen_map[uid]
+            updated_count += 1
         else:
-            entry["first_seen"] = entry.get("last_seen", 0)
+            entry["first_seen"] = entry.get("last_seen", now)
 
 with open(state_file, "w") as f:
     json.dump(state, f, indent=2)
 
-print("Recovered first_seen dates!")
+print(f"Successfully updated {updated_count} programs in state.json with historical first_seen timestamps!")
+
