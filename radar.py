@@ -616,28 +616,25 @@ def main():
 
             # Trigger "New Program" alert
             if should_alert_new:
-                ai_summary, rating, provider = analyze_with_ai(program, platform)
+                # AI call omitted to lower API usage — uncomment below to re-enable:
+                # ai_summary, rating, provider = analyze_with_ai(program, platform)
+                # if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
+                #     rating = 10
+                #     ai_fail += 1
+                #     LOG_BUFFER.append(f"❌ **AI FAIL**: `{handle}` ({platform})")
+                # else:
+                #     ai_success += 1
 
-                if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
-                    rating = 10
-                    ai_fail += 1
-                    LOG_BUFFER.append(f"❌ **AI FAIL**: `{handle}` ({platform})")
-                else:
-                    ai_success += 1
+                alert_title = "New Bug Bounty Program!"
+                if not is_new:
+                    days = int((now - prev_last_seen) // (3600 * 24))
+                    alert_title = f"🛰️ Program Reopened! (After {days} days)"
 
-                if rating >= MIN_RATING:
-                    alert_title = "New Bug Bounty Program!"
-                    if not is_new:
-                        days = int((now - prev_last_seen) // (3600 * 24))
-                        alert_title = f"🛰️ Program Reopened! (After {days} days)"
-
-                    alert_msg  = f"**Platform:** {platform}\n"
-                    alert_msg += f"**Program:** {handle}\n"
-                    alert_msg += f"**Link:** {prog_url}\n"
-                    alert_msg += f"**AI:** {provider} | Rating: {rating}/10\n"
-                    alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
-                    send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title=alert_title, use_embed=False)
-                    new_programs_found += 1
+                alert_msg  = f"**Platform:** {platform}\n"
+                alert_msg += f"**Program:** {handle}\n"
+                alert_msg += f"**Link:** {prog_url}\n"
+                send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title=alert_title, use_embed=False)
+                new_programs_found += 1
 
                 # Preserve reopen_history when rewriting entry after alert
                 existing_history = state["programs"].get(unique_id, {}).get("reopen_history", [])
@@ -654,13 +651,14 @@ def main():
                 print(f"Scope update for {handle}: {len(new_targets)} new targets. Analyzing...")
                 target_summary = ", ".join([f"[{t['type']}] {t['target']}" for t in new_targets])
                 program["_scope_update_context"] = target_summary
-                ai_summary, rating, provider = analyze_with_ai(program, platform, prompt_type="scope_update")
-
-                if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
-                    ai_fail += 1
-                    LOG_BUFFER.append(f"❌ **AI FAIL (Scope)**: `{handle}`")
-                else:
-                    ai_success += 1
+                
+                # AI call omitted to lower API usage — uncomment below to re-enable:
+                # ai_summary, rating, provider = analyze_with_ai(program, platform, prompt_type="scope_update")
+                # if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
+                #     ai_fail += 1
+                #     LOG_BUFFER.append(f"❌ **AI FAIL (Scope)**: `{handle}`")
+                # else:
+                #     ai_success += 1
 
                 scope_url = prog_url
                 if platform == "HackerOne":
@@ -675,7 +673,6 @@ def main():
 
                 alert_msg  = f"**Program:** {handle} ({platform})\n"
                 alert_msg += f"**New Assets:**\n" + "\n".join(asset_list) + f"\n\n**Scope Link:** {scope_url}\n"
-                alert_msg += f"\n--- AI IMPACT ANALYSIS ---\n{ai_summary}\n"
 
                 send_discord_alert(alert_msg, SCOPE_WEBHOOK_URL, title="🛰️ Scope Expansion Detected!")
                 state["programs"][unique_id]["targets"] = current_targets
@@ -703,24 +700,21 @@ def main():
             current_targets = extract_targets(program, "Chaos")
 
             print(f"New Chaos program (external): {name}")
-            ai_summary, rating, provider = analyze_with_ai(program, "Chaos (External)")
+            # AI call omitted to lower API usage — uncomment below to re-enable:
+            # ai_summary, rating, provider = analyze_with_ai(program, "Chaos (External)")
+            # if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
+            #     rating = 10
+            #     ai_fail += 1
+            #     LOG_BUFFER.append(f"❌ **AI FAIL**: `{name}` (Chaos)")
+            # else:
+            #     ai_success += 1
 
-            if "FAILED" in ai_summary.upper() or "SKIPPED" in ai_summary.upper():
-                rating = 10
-                ai_fail += 1
-                LOG_BUFFER.append(f"❌ **AI FAIL**: `{name}` (Chaos)")
-            else:
-                ai_success += 1
-
-            if rating >= MIN_RATING:
-                bounty_label = "💰 Paid" if bounty else "📋 VDP"
-                alert_msg  = f"**Source:** Chaos (External / Self-hosted)\n"
-                alert_msg += f"**Program:** {name} | {bounty_label}\n"
-                alert_msg += f"**Link:** {prog_url}\n"
-                alert_msg += f"**AI:** {provider} | Rating: {rating}/10\n"
-                alert_msg += f"\n--- AI SUMMARY ---\n{ai_summary}\n"
-                send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title="New Bug Bounty Program!", use_embed=False)
-                new_programs_found += 1
+            bounty_label = "💰 Paid" if bounty else "📋 VDP"
+            alert_msg  = f"**Source:** Chaos (External / Self-hosted)\n"
+            alert_msg += f"**Program:** {name} | {bounty_label}\n"
+            alert_msg += f"**Link:** {prog_url}\n"
+            send_discord_alert(alert_msg, DISCORD_WEBHOOK_URL, title="New Bug Bounty Program!", use_embed=False)
+            new_programs_found += 1
 
             old_first_seen = state.get("programs", {}).get(unique_id, {}).get("first_seen", now)
             state["programs"][unique_id] = {"targets": current_targets, "first_seen": old_first_seen, "last_seen": now}
