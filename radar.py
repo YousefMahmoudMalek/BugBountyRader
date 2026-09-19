@@ -350,6 +350,34 @@ def extract_targets(program, platform):
     return unique
 
 
+def stamp_targets(current_targets, old_targets, ts_new, ts_existing=None):
+    """Return current_targets with first_added stamped.
+    - Targets already in old_targets keep their existing first_added.
+    - Brand-new targets get first_added = ts_new.
+    - ts_existing: if given, use it for targets with no prior record (seed/initial).
+    """
+    old_map = {}
+    for t in old_targets:
+        if isinstance(t, dict):
+            key = t.get("target", "")
+            if key:
+                old_map[key] = t.get("first_added")  # may be None for legacy entries
+
+    stamped = []
+    for t in current_targets:
+        t = dict(t)  # shallow copy to avoid mutating cached objects
+        key = t.get("target", "")
+        if key in old_map:
+            # Existing target — preserve first_added if present, else assign ts_existing
+            existing_ts = old_map[key]
+            t["first_added"] = existing_ts if existing_ts is not None else (ts_existing or ts_new)
+        else:
+            # Brand new target
+            t["first_added"] = ts_new
+        stamped.append(t)
+    return stamped
+
+
 # ── AI analysis ───────────────────────────────────────────────────────────────
 
 def extract_rating(ai_text):
@@ -570,9 +598,13 @@ def main():
 
             # Initial Run / Seed Mode
             if is_initial_run or is_seed_run:
-                old_last_seen = state.get("programs", {}).get(unique_id, {}).get("last_seen", now)
-                old_first_seen = state.get("programs", {}).get(unique_id, {}).get("first_seen", old_last_seen)
-                state["programs"][unique_id] = {"targets": current_targets, "first_seen": old_first_seen, "last_seen": old_last_seen}
+                old_entry     = state.get("programs", {}).get(unique_id, {})
+                old_last_seen  = old_entry.get("last_seen", now)
+                old_first_seen = old_entry.get("first_seen", old_last_seen)
+                old_tgts       = old_entry.get("targets", [])
+                # Stamp targets — preserve existing first_added, new ones get old_first_seen
+                stamped = stamp_targets(current_targets, old_tgts, ts_new=old_first_seen, ts_existing=old_first_seen)
+                state["programs"][unique_id] = {"targets": stamped, "first_seen": old_first_seen, "last_seen": old_last_seen}
                 continue
 
             # Case: New Program or Reopened after long time
@@ -637,8 +669,11 @@ def main():
                 new_programs_found += 1
 
                 # Preserve reopen_history when rewriting entry after alert
+                # Stamp all targets with first_seen_ts (new program or reopen = all targets fresh)
                 existing_history = state["programs"].get(unique_id, {}).get("reopen_history", [])
-                state["programs"][unique_id] = {"targets": current_targets, "first_seen": first_seen_ts, "last_seen": now}
+                old_tgts_for_stamp = state["programs"].get(unique_id, {}).get("targets", [])
+                stamped = stamp_targets(current_targets, old_tgts_for_stamp, ts_new=first_seen_ts)
+                state["programs"][unique_id] = {"targets": stamped, "first_seen": first_seen_ts, "last_seen": now}
                 if existing_history:
                     state["programs"][unique_id]["reopen_history"] = existing_history
                 continue
@@ -675,7 +710,9 @@ def main():
                 alert_msg += f"**New Assets:**\n" + "\n".join(asset_list) + f"\n\n**Scope Link:** {scope_url}\n"
 
                 send_discord_alert(alert_msg, SCOPE_WEBHOOK_URL, title="🛰️ Scope Expansion Detected!")
-                state["programs"][unique_id]["targets"] = current_targets
+                # Stamp new targets with now; existing targets keep their first_added
+                old_tgts_for_stamp = state["programs"].get(unique_id, {}).get("targets", [])
+                state["programs"][unique_id]["targets"] = stamp_targets(current_targets, old_tgts_for_stamp, ts_new=now)
                 scope_updates_found += 1
 
     # ── Chaos Processing Block ────────────────────────────────────────────────
@@ -717,7 +754,9 @@ def main():
             new_programs_found += 1
 
             old_first_seen = state.get("programs", {}).get(unique_id, {}).get("first_seen", now)
-            state["programs"][unique_id] = {"targets": current_targets, "first_seen": old_first_seen, "last_seen": now}
+            old_tgts_for_stamp = state.get("programs", {}).get(unique_id, {}).get("targets", [])
+            stamped = stamp_targets(current_targets, old_tgts_for_stamp, ts_new=old_first_seen)
+            state["programs"][unique_id] = {"targets": stamped, "first_seen": old_first_seen, "last_seen": now}
 
     elif is_seed_run:
         # Seed Chaos too — record all so they're not re-alerted on first live run
@@ -730,9 +769,12 @@ def main():
                 continue
             unique_id = f"Chaos:{name}"
             current_targets = extract_targets(prog, "Chaos")
-            old_last_seen = state.get("programs", {}).get(unique_id, {}).get("last_seen", now)
-            old_first_seen = state.get("programs", {}).get(unique_id, {}).get("first_seen", old_last_seen)
-            state["programs"][unique_id] = {"targets": current_targets, "first_seen": old_first_seen, "last_seen": old_last_seen}
+            old_entry      = state.get("programs", {}).get(unique_id, {})
+            old_last_seen  = old_entry.get("last_seen", now)
+            old_first_seen = old_entry.get("first_seen", old_last_seen)
+            old_tgts       = old_entry.get("targets", [])
+            stamped = stamp_targets(current_targets, old_tgts, ts_new=old_first_seen, ts_existing=old_first_seen)
+            state["programs"][unique_id] = {"targets": stamped, "first_seen": old_first_seen, "last_seen": old_last_seen}
         print(f"  Chaos: seeded {len(chaos_programs)} programs.")
 
     # ── Wrap-up ───────────────────────────────────────────────────────────────

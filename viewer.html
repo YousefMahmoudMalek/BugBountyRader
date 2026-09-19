@@ -316,6 +316,13 @@
     .t-sev.medium   { background: #eab30820; color: var(--yellow); }
     .t-sev.low      { background: #22c55e20; color: var(--green); }
     .t-sev.unknown  { background: var(--bg3); color: var(--text3); }
+    .badge-new {
+      font-size: .65rem; font-weight: 700;
+      background: rgba(34,197,94,0.18); color: var(--green);
+      border: 1px solid rgba(34,197,94,0.35);
+      border-radius: 3px; padding: 1px 5px; flex-shrink: 0;
+      letter-spacing: .3px;
+    }
 
     /* ── Empty state ───────────────────────────────────────────────────── */
     #empty {
@@ -410,6 +417,7 @@
     <div class="filter-right">
       <select id="sort-by">
         <option value="first_seen">↓ Date Added</option>
+        <option value="newest_target">🆕 Newest Target</option>
         <option value="last_seen">↓ Last Checked</option>
         <option value="name_asc">A → Z</option>
         <option value="name_desc">Z → A</option>
@@ -512,6 +520,10 @@ function parseState(data) {
       const gap = (ev.reopened_at || 0) - (ev.closed_at || 0);
       return gap > max ? gap : max;
     }, 0);
+    // newest_target_added: most recent first_added timestamp across all targets
+    const newest_target_added = targets.reduce((max, t) => {
+      return (t.first_added || 0) > max ? (t.first_added || 0) : max;
+    }, 0);
     return {
       uid, platform, name, targets, hasBounty,
       first_seen: entry.first_seen || entry.last_seen || 0,
@@ -519,6 +531,7 @@ function parseState(data) {
       domain,
       reopen_history,
       longest_closed,
+      newest_target_added,
     };
   });
   maxLastSeen = Math.max(...ALL_PROGRAMS.map(p => p.last_seen));
@@ -585,12 +598,13 @@ function applyFilters() {
   });
 
   filtered.sort((a, b) => {
-    if (sortMode === 'first_seen')    return b.first_seen - a.first_seen;
-    if (sortMode === 'last_seen')     return b.last_seen - a.last_seen;
-    if (sortMode === 'name_asc')      return a.name.localeCompare(b.name);
-    if (sortMode === 'name_desc')     return b.name.localeCompare(a.name);
-    if (sortMode === 'targets')       return b.targets.length - a.targets.length;
-    if (sortMode === 'longest_closed') return b.longest_closed - a.longest_closed;
+    if (sortMode === 'first_seen')      return b.first_seen - a.first_seen;
+    if (sortMode === 'newest_target')   return b.newest_target_added - a.newest_target_added;
+    if (sortMode === 'last_seen')       return b.last_seen - a.last_seen;
+    if (sortMode === 'name_asc')        return a.name.localeCompare(b.name);
+    if (sortMode === 'name_desc')       return b.name.localeCompare(a.name);
+    if (sortMode === 'targets')         return b.targets.length - a.targets.length;
+    if (sortMode === 'longest_closed')  return b.longest_closed - a.longest_closed;
     return 0;
   });
 
@@ -630,6 +644,13 @@ function cardHTML(p) {
   // checkedStr only shown for missing programs
   const checkedStr = (!p.isActive && p.last_seen) ? timeAgo(p.last_seen) : null;
 
+  // Newest target badge — show when a target was added in the last 90 days
+  let newestTargetBadge = '';
+  const nowSec = Date.now() / 1000;
+  if (p.newest_target_added && (nowSec - p.newest_target_added) < 86400 * 90) {
+    newestTargetBadge = `<span class="badge" style="background:rgba(34,197,94,0.18);color:var(--green);border:1px solid rgba(34,197,94,0.35)" title="Most recent target added: ${formatDate(p.newest_target_added)}">🆕 ${timeAgo(p.newest_target_added)}</span>`;
+  }
+
   const bountyBadge = p.hasBounty
     ? `<span class="badge badge-paid">💰 Paid</span>`
     : `<span class="badge badge-vdp">📋 VDP</span>`;
@@ -653,7 +674,12 @@ function cardHTML(p) {
     .sort((a,b) => b[1]-a[1]).slice(0,4)
     .map(([ty, n]) => `<span class="type-dot">${ty} ${n}</span>`).join('');
 
-  const targetRows = p.targets.slice(0, 100).map(t => renderTargetRow(t)).join('');
+  const targetRows = p.targets
+    .slice()
+    .sort((a, b) => (b.first_added || 0) - (a.first_added || 0))  // newest targets first
+    .slice(0, 100)
+    .map(t => renderTargetRow(t, nowSec))
+    .join('');
 
   const moreNote = p.targets.length > 100
     ? `<div style="text-align:center;padding:8px;color:var(--text3);font-size:.78rem">+${p.targets.length - 100} more targets</div>` : '';
@@ -674,6 +700,7 @@ function cardHTML(p) {
           ${platformBadge}
           ${bountyBadge}
           ${reopenBadge}
+          ${newestTargetBadge}
           <span class="badge badge-last" title="Date Added: ${formatDate(p.first_seen)}">🚀 ${addedStr}</span>
           ${checkedStr ? `<span class="badge" style="background:#ef444420;color:var(--red)" title="Last seen: ${formatDate(p.last_seen)}">👻 ${checkedStr}</span>` : ''}
         </div>
@@ -693,10 +720,16 @@ function cardHTML(p) {
   </div>`;
 }
 
-function renderTargetRow(t) {
+function renderTargetRow(t, nowSec) {
   const raw = (t.target || '').trim();
   const sev = (t.severity || 'unknown').toLowerCase();
   const icon = t.bounty ? '💰' : '📋';
+
+  // New-target badge: show when first_added exists and is within 30 days
+  const isRecentTarget = t.first_added && nowSec && (nowSec - t.first_added) < 86400 * 30;
+  const newBadge = isRecentTarget
+    ? `<span class="badge-new" title="Added ${formatDate(t.first_added)}">🆕 ${timeAgo(t.first_added)}</span>`
+    : '';
 
   // Detect regex patterns:
   // - Starts with ^ or ends with $
@@ -744,6 +777,7 @@ function renderTargetRow(t) {
   return `<div class="target-row">
     <span class="t-icon">${icon}</span>
     <div class="t-name">${targetContent}</div>
+    ${newBadge}
     <span class="t-type">${esc(t.type || 'Other')}</span>
     <span class="t-sev ${sev}">${sev}</span>
   </div>`;
