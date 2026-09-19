@@ -459,7 +459,23 @@ const PLATFORM_META = {
 const REMOTE_STATE_URL = 'https://raw.githubusercontent.com/YousefMahmoudMalek/BugBountyRader/main/state.json';
 
 // ── Load ──────────────────────────────────────────────────────────────────────
-// No auto-load: user must select or drag-drop state.json (avoids file:// CORS headaches)
+window.addEventListener('DOMContentLoaded', () => {
+  const statusEl = document.getElementById('load-status');
+  fetch('state.json')
+    .then(res => {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(data => parseState(data))
+    .catch(() => {
+      fetch(REMOTE_STATE_URL)
+        .then(res => res.ok ? res.json() : Promise.reject())
+        .then(data => parseState(data))
+        .catch(() => {
+          if (statusEl) statusEl.textContent = 'Select or drag & drop state.json to load.';
+        });
+    });
+});
 
 // Global Drag & Drop Support
 window.addEventListener('dragover', e => {
