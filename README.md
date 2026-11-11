@@ -1,52 +1,22 @@
 # BugBountyRadar 🛰️
 
-BugBountyRadar automatically scans major bug bounty platforms (HackerOne, Bugcrowd, Intigriti, YesWeHack, Federacy, and ProjectDiscovery Chaos) for new bug bounty programs and scope expansions. When a target is found, it uses AI scouts to generate instant reconnaissance summaries and sends notifications to Discord and WhatsApp.
+BugBountyRadar automatically scans major bug bounty platforms (HackerOne, Bugcrowd, Intigriti, YesWeHack, Federacy, and ProjectDiscovery Chaos) for new bug bounty programs and scope expansions. When the same asset appears with different formatting (for example `https://*.mybring.com` vs `*.mybring.com`), the scanner now compares canonicalized targets before alerting.
 
 ---
 
 ## ⚡ Features
 
 - **Multi-Platform Support**: HackerOne, Bugcrowd, Intigriti, YesWeHack, Federacy, and Chaos.
-- **Smart Scope Tracking**: Detects new targets added to existing programs as well as brand new programs.
-- **AI Intelligence Summaries**: Summarizes tech stack, priority bug types, dorks, and rating (1–10).
-- **Automated Fallback AI Providers**:
-  - **OpenRouter** (`openrouter/free` - zero setup cost)
-  - **Google Gemini** (`gemini-2.0-flash` with multi-key rotation)
-  - **Groq** (`llama-3.3-70b-versatile`)
-  - **DeepSeek** (`deepseek-chat`)
+- **Smart Scope Tracking**: Detects new targets added to existing programs as well as brand-new programs.
+- **Stable target comparison**: Scope comparison is done on normalized target values so `http`/`https`, trailing slashes, uppercase/lowercase, and equivalent wildcard formatting do not trigger duplicate alerts.
+- **Multiple Discord destinations**: Each Discord secret can contain more than one webhook URL separated by `|`.
 - **Automated State Tracking**: Saves seen targets in `state.json` directly back to GitHub.
 
 ---
 
 ## 🤖 AI Provider Setup
 
-### Free Tier Providers (Recommended)
-1. **OpenRouter (Active)**:
-   - Create a free account at [OpenRouter](https://openrouter.ai/).
-   - Create an API key.
-   - Add to GitHub Repository Secrets as `OPENROUTER_API_KEY`.
-   - Uses `openrouter/free` with zero credit balance needed.
-
-2. **Google Gemini (How to Add Back)**:
-   - Go to [Google AI Studio](https://aistudio.google.com/).
-   - Sign in and click **"Get API key"** -> **"Create API key"**.
-   - Ensure it is linked to an active Google Cloud project.
-   - You can generate multiple keys if you want automated round-robin key rotation to bypass rate limits!
-   - In your GitHub Repository:
-     - Navigate to **Settings** > **Secrets and variables** > **Actions**.
-     - Add or update the secret **`GEMINI_API_KEYS`**.
-     - Value: `YOUR_KEY_1` or comma-separated for rotation: `KEY_1,KEY_2,KEY_3`.
-   - *Note*: If `GEMINI_API_KEYS` is left blank or removed, the script gracefully skips Gemini and uses the other available providers.
-
-3. **Groq**:
-   - Go to [Groq Console](https://console.groq.com/keys).
-   - Generate an API key.
-   - Add to GitHub Repository Secrets as `GROQ_API_KEY`.
-
-4. **DeepSeek**:
-   - Go to [DeepSeek Platform](https://platform.deepseek.com/).
-   - Add API credits and generate an API key.
-   - Add to GitHub Repository Secrets as `DEEPSEEK_API_KEY`.
+Add any provider keys you use as GitHub Actions secrets: `OPENROUTER_API_KEY`, `GEMINI_API_KEYS`, `GROQ_API_KEY`, and/or `DEEPSEEK_API_KEY`.
 
 ---
 
@@ -54,7 +24,7 @@ BugBountyRadar automatically scans major bug bounty platforms (HackerOne, Bugcro
 
 Settings can be customized in [`config.py`](config.py):
 
-- **`MIN_RATING`**: Minimum AI score (1–10) required to trigger an alert. Default is `1`. Raise to `6` or `7` if you only want alerts for top-priority programs.
+- **`MIN_RATING`**: Minimum AI score (1–10) required to trigger an alert. Default is `1`.
 - **`DATA_SOURCES`**: Toggle or configure bounty feeds.
 
 ### Scan Frequency
@@ -64,18 +34,25 @@ The check interval is defined in [`.github/workflows/check.yml`](.github/workflo
 ```yaml
 on:
   schedule:
-    - cron: '0 * * * *'    # Runs hourly (recommended)
+    - cron: '0 * * * *'    # Runs hourly
 ```
-
-Other options:
-- Every 2 hours: `0 */2 * * *`
-- Every 30 minutes: `*/30 * * * *`
 
 ---
 
 ## 🔔 Notification Webhooks
 
 Set the following in GitHub Repository Secrets:
-- `DISCORD_WEBHOOK_URL`: Primary channel for new programs.
-- `SCOPE_WEBHOOK_URL`: Dedicated channel for scope expansion alerts.
-- `LOG_WEBHOOK_URL`: Run summary logs.
+
+- `DISCORD_WEBHOOK_URL`: Primary channel for new programs. You can list multiple webhook URLs in the same secret, separated by `|`.
+- `SCOPE_WEBHOOK_URL`: Dedicated channel for scope expansion alerts. Same `|` format is supported.
+- `LOG_WEBHOOK_URL`: Run summary logs. Leave blank if a destination should not receive logs.
+
+Example:
+
+```text
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/PRIMARY_A|https://discord.com/api/webhooks/PRIMARY_B
+SCOPE_WEBHOOK_URL=https://discord.com/api/webhooks/SCOPE_A|https://discord.com/api/webhooks/SCOPE_B
+LOG_WEBHOOK_URL=https://discord.com/api/webhooks/LOG_A
+```
+
+This makes it possible to send one server the full set of notifications while another server only receives selected channels. The `|` separator is only used inside the GitHub secret value; it is not part of the Discord webhook URL itself.
