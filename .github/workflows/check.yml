@@ -43,7 +43,7 @@ jobs:
           LOG_WEBHOOK_URL: ${{ secrets.LOG_WEBHOOK_URL }}
           WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
           WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
-        run: python radar.py
+        run: python radar_runner.py
 
       - name: Commit and Push State Changes
         run: |
