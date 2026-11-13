@@ -203,6 +203,21 @@ def fetch_chaos_programs(state: dict) -> list[dict]:
     return new_programs
 
 
+def get_program_handle_and_url(program: dict, platform: str) -> tuple[str, str]:
+    if platform == "Intigriti":
+        company = program.get("company_handle")
+        raw_handle = program.get("handle") or program.get("name") or ""
+        handle = f"{company}/{raw_handle}" if company else raw_handle
+    else:
+        handle = program.get("handle") or program.get("name") or ""
+
+    prog_url = program.get("url") or "Check platform link"
+    if platform == "Intigriti" and prog_url.startswith("https://www.intigriti.com/"):
+        prog_url = prog_url.replace("https://www.intigriti.com/", "https://app.intigriti.com/")
+
+    return handle, prog_url
+
+
 def extract_targets(program, platform):
     targets = []
     try:
@@ -309,7 +324,10 @@ def analyze_with_ai(program, platform, prompt_type="new_program"):
 
 
 def _webhook_urls(value):
-    return [url.strip() for url in str(value or "").split("|") if url.strip()]
+    if not value:
+        return []
+    raw = str(value).replace(",", "|")
+    return [url.strip() for url in raw.split("|") if url.strip()]
 
 
 def send_discord_alert(message, webhook_url=None, title="BugBountyRadar Info", use_embed=True):
@@ -361,8 +379,9 @@ def run_test():
         if not programs:
             continue
         latest = programs[0]
-        handle = latest.get("handle") or latest.get("name")
-        prog_url = latest.get("url") or "Check platform for link"
+        handle, prog_url = get_program_handle_and_url(latest, platform)
+        if not handle:
+            continue
         ai_summary, rating, provider = analyze_with_ai(latest, platform)
         test_msg = f"🧪 **BugBountyRadar LIVE TEST (New Program)**\n**Platform:** {platform}\n**Program:** {handle} (Rating: {rating}/10) | AI: {provider}\n**Link:** {prog_url}\n\n--- AI SUMMARY ---\n{ai_summary}\n"
         send_discord_alert(test_msg, DISCORD_WEBHOOK_URL)
@@ -391,18 +410,26 @@ def main():
         providers = get_providers()
         print(f"  AI providers active: {', '.join(providers) if providers else 'NONE'}")
     now = time.time()
-    reopen_threshold = 3600 * 6
+    reopen_threshold = 3600 * 24
     alert_threshold = 3600 * 24 * 7
 
     for platform, url in DATA_SOURCES.items():
         print(f"Checking {platform}...")
         programs = fetch_programs(platform, url)
         for program in programs:
-            handle = program.get("handle") or program.get("name")
-            prog_url = program.get("url") or "Check platform link"
+            handle, prog_url = get_program_handle_and_url(program, platform)
             if not handle:
                 continue
             unique_id = f"{platform}:{handle}"
+            # Backward-compatibility fallback for Intigriti if stored under legacy un-scoped handle
+            if platform == "Intigriti" and unique_id not in programs_state:
+                raw_handle = program.get("handle") or program.get("name")
+                legacy_id = f"{platform}:{raw_handle}"
+                if legacy_id in programs_state:
+                    if raw_handle != "vdp":
+                        programs_state[unique_id] = programs_state.pop(legacy_id)
+                    elif program.get("company_handle") == "showpad":
+                        programs_state[unique_id] = programs_state.pop(legacy_id)
             current_targets = extract_targets(program, platform)
             if is_initial_run or is_seed_run:
                 old_entry = programs_state.get(unique_id, {})

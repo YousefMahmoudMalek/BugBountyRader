@@ -3,15 +3,15 @@ BugBountyRadar Configuration
 ---------------------------
 Customize your AI prompt, platform sources, and filters here.
 
-HOW TO CHANGE CHECK FREQUENCY:
-To change how often the service runs (e.g., every 15 mins vs hourly):
-1. Open '.github/workflows/check.yml'
-2. Find the line: "- cron: '0 * * * *'"
-3. Replace the cron value. 
-   Examples: 
-   '*/15 * * * *'  -> Every 15 minutes
-   '*/30 * * * *'  -> Every 30 minutes
-   '0 * * * *'     -> Every hour (default)
+# HOW TO CHANGE CHECK FREQUENCY:
+# To change how often the service runs (e.g., every 8 hours vs hourly):
+# 1. Open '.github/workflows/check.yml'
+# 2. Find the line: "- cron: '0 */8 * * *'"
+# 3. Replace the cron value. 
+#    Examples: 
+#    '0 */8 * * *'   -> Every 8 hours (3 times a day, default)
+#    '0 * * * *'     -> Every hour
+#    '*/30 * * * *'  -> Every 30 minutes
 """
 
 # AI Analysis Settings

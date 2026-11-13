@@ -34,7 +34,7 @@ The check interval is defined in [`.github/workflows/check.yml`](.github/workflo
 ```yaml
 on:
   schedule:
-    - cron: '0 * * * *'    # Runs hourly
+    - cron: '0 */8 * * *'    # Runs every 8 hours (3 times a day by default)
 ```
 
 ---

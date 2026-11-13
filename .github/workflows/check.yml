@@ -4,11 +4,12 @@ on:
   schedule:
     # -------------------------------------------------------------
     # CUSTOMIZE FREQUENCY HERE:
-    # '0 * * * *'      = Every Hour (Default / Recommended)
+    # '0 */8 * * *'    = Every 8 Hours (Default - 3 times a day)
+    # '0 * * * *'      = Every Hour
     # '0 */2 * * *'    = Every 2 Hours
     # '*/30 * * * *'   = Every 30 Minutes
     # -------------------------------------------------------------
-    - cron: '0 * * * *'
+    - cron: '0 */8 * * *'
   push:
     branches: [ main ]
   workflow_dispatch: # Allows manual run
